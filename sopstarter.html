@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The SOP Starter Kit — EVA's Consulting</title>
+<meta name="description" content="Everything you need to document your first process — template, guide, checklist, and a real example. A free resource from EVA's Consulting.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:   #2F3437;
+    --teal:   #00CFC1;
+    --orange: #FF621D;
+    --gray:   #6B7177;
+    --lgray:  #DDDDDD;
+    --offwhite: #F7F8F8;
+    --white:  #FFFFFF;
+    --teal-light: #E5FBF9;
+    --orange-light: #FFEFE7;
+    --teal-dark: #00b8ab;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--navy);
+    background: var(--offwhite);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+  .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── STICKY NAV ── */
+  .top-nav {
+    position: sticky; top: 0; z-index: 999;
+    background: var(--white);
+    border-bottom: 1px solid var(--lgray);
+  }
+  .top-nav-inner {
+    display: flex; align-items: center; gap: 14px;
+    width: 100%; max-width: 780px; margin: 0 auto; padding: 12px 24px;
+  }
+  .top-nav img { width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0; }
+  .top-nav-title { font-size: 13.5px; font-weight: 700; flex: 1; }
+  .top-nav-links { display: flex; gap: 4px; }
+  .top-nav-links a {
+    font-size: 12.5px; font-weight: 600; color: var(--gray);
+    text-decoration: none; padding: 7px 11px; border-radius: 6px;
+    transition: all .15s;
+  }
+  .top-nav-links a:hover { background: var(--teal-light); color: var(--teal-dark); }
+  @media (max-width: 700px) { .top-nav-links { display: none; } }
+
+  /* ── HERO ── */
+  header.hero {
+    background: var(--navy); padding: 72px 0 64px; position: relative; overflow: hidden;
+  }
+  .hero-bg-text {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-size: clamp(60px, 11vw, 150px); font-weight: 900; letter-spacing: -0.02em;
+    color: rgba(255,255,255,0.03); white-space: nowrap; pointer-events: none;
+    user-select: none; text-align: center; width: 100%;
+  }
+  .hero-content { position: relative; z-index: 1; }
+  .hero-eyebrow {
+    display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+    color: var(--teal); text-transform: uppercase; margin-bottom: 20px;
+  }
+  .hero-title {
+    font-size: clamp(32px, 5vw, 46px); font-weight: 800; line-height: 1.14;
+    letter-spacing: -0.02em; color: var(--white); margin-bottom: 18px; max-width: 16ch;
+  }
+  .hero-title .highlight { color: var(--teal); }
+  .hero-sub {
+    font-size: 17px; color: rgba(255,255,255,0.65); line-height: 1.7;
+    max-width: 50ch; margin-bottom: 32px;
+  }
+  .hero-whats-inside {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; padding: 26px 28px;
+  }
+  .hero-whats-inside span.lbl {
+    display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--teal); margin-bottom: 14px;
+  }
+  .hero-whats-inside ul { list-style: none; }
+  .hero-whats-inside li {
+    font-size: 14.5px; color: rgba(255,255,255,0.75); padding: 7px 0 7px 22px;
+    position: relative;
+  }
+  .hero-whats-inside li::before {
+    content: '→'; position: absolute; left: 0; color: var(--teal);
+  }
+
+  /* ── EMAIL GATE ── */
+  .gate-wrap { padding: 56px 0; }
+  .gate-card {
+    background: var(--white); border: 1px solid var(--lgray); border-radius: 16px;
+    padding: 44px 40px; text-align: center;
+  }
+  .gate-icon {
+    width: 52px; height: 52px; border-radius: 12px; background: var(--teal-light);
+    display: flex; align-items: center; justify-content: center; font-size: 24px;
+    margin: 0 auto 20px;
+  }
+  .gate-card h2 { font-size: 24px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; }
+  .gate-card p { font-size: 15px; color: var(--gray); max-width: 44ch; margin: 0 auto 28px; line-height: 1.65; }
+  .gate-form { display: flex; flex-direction: column; gap: 10px; max-width: 380px; margin: 0 auto; }
+  .gate-form-row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+  .gate-form input[type="email"],
+  .gate-form input[type="text"] {
+    flex: 1; min-width: 220px; padding: 14px 16px; border-radius: 8px;
+    border: 1.5px solid var(--lgray); font-family: 'Poppins', sans-serif;
+    font-size: 15px; color: var(--navy); outline: none; transition: border-color .2s;
+  }
+  .gate-form input[type="email"]:focus,
+  .gate-form input[type="text"]:focus { border-color: var(--teal); }
+  .gate-form input[type="email"].error,
+  .gate-form input[type="text"].error { border-color: var(--orange); }
+  .gate-form .gate-btn { width: 100%; justify-content: center; }
+  .gate-btn {
+    display: inline-flex; align-items: center; gap: 8px; padding: 14px 26px;
+    border-radius: 8px; background: var(--orange); color: var(--white);
+    font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 15px;
+    border: none; cursor: pointer; transition: all .2s; white-space: nowrap;
+  }
+  .gate-btn:hover { background: #e5571a; transform: translateY(-1px); }
+  .gate-error { font-size: 13px; color: var(--orange); margin-top: 10px; min-height: 16px; }
+  .gate-note { font-size: 12.5px; color: var(--gray); margin-top: 18px; }
+
+  /* ── MAIN CONTENT (gated) ── */
+  #mainContent { display: none; }
+  #mainContent.unlocked { display: block; }
+  .gate-wrap.hidden { display: none; }
+
+  main { padding: 8px 0 40px; }
+
+  .part {
+    background: var(--white); border: 1px solid var(--lgray); border-radius: 14px;
+    padding: 36px 34px; margin: 28px 0; scroll-margin-top: 76px;
+  }
+
+  .part-eyebrow {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 8px;
+  }
+  .part-title { font-size: 24px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 6px; }
+  .part-sub { font-style: italic; color: var(--gray); font-size: 15px; margin-bottom: 26px; max-width: 56ch; }
+
+  .part p.body-text { font-size: 15px; color: var(--navy); margin-bottom: 18px; max-width: 62ch; }
+
+  /* Without/With SOPs comparison */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 24px 0; }
+  @media (max-width: 640px) { .compare-grid { grid-template-columns: 1fr; } }
+  .compare-card { border-radius: 10px; padding: 22px 24px; }
+  .compare-card.without { background: var(--orange-light); }
+  .compare-card.with { background: var(--teal-light); }
+  .compare-card h4 {
+    font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+    margin-bottom: 14px;
+  }
+  .compare-card.without h4 { color: var(--orange); }
+  .compare-card.with h4 { color: var(--teal-dark); }
+  .compare-card ul { list-style: none; }
+  .compare-card li { font-size: 14px; color: var(--navy); padding: 8px 0 8px 20px; position: relative; line-height: 1.55; }
+  .compare-card.without li::before { content: '×'; position: absolute; left: 0; color: var(--orange); font-weight: 700; }
+  .compare-card.with li::before { content: '✓'; position: absolute; left: 0; color: var(--teal-dark); font-weight: 700; }
+
+  .callout {
+    background: var(--offwhite); border-left: 4px solid var(--teal);
+    border-radius: 8px; padding: 20px 24px; margin: 22px 0;
+  }
+  .callout .callout-label {
+    font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--teal-dark); margin-bottom: 8px; display: block;
+  }
+  .callout p { font-size: 14.5px; color: var(--gray); margin: 0; max-width: none; }
+
+  /* Step cards for Part 2 */
+  .step-card { display: flex; gap: 18px; padding: 20px 0; border-bottom: 1px solid var(--offwhite); }
+  .step-card:last-of-type { border-bottom: none; }
+  .step-num {
+    width: 34px; height: 34px; border-radius: 50%; background: var(--navy); color: var(--white);
+    font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-body h4 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+  .step-body p { font-size: 14.5px; color: var(--gray); line-height: 1.6; }
+  .step-body ul { margin-top: 8px; padding-left: 18px; }
+  .step-body li { font-size: 14px; color: var(--gray); margin-bottom: 4px; }
+
+  /* Checklist (Part 3) */
+  .checklist-group { margin-bottom: 30px; }
+  .checklist-group:last-child { margin-bottom: 0; }
+  .checklist-group-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 4px;
+  }
+  .checklist-group h4 { font-size: 15.5px; font-weight: 700; }
+  .checklist-group-count { font-size: 12.5px; color: var(--gray); font-weight: 500; }
+  .checklist-group-count b { color: var(--navy); font-weight: 700; }
+  .pipe { height: 4px; background: var(--offwhite); border-radius: 2px; overflow: hidden; margin: 10px 0 14px; }
+  .pipe-fill { height: 100%; width: 0%; border-radius: 2px; background: var(--teal); transition: width .4s ease; }
+  ul.checklist { list-style: none; }
+  .check-item { display: flex; align-items: flex-start; gap: 14px; padding: 11px 4px; cursor: pointer; user-select: none; }
+  .box {
+    width: 20px; height: 20px; border: 1.5px solid var(--lgray); border-radius: 6px;
+    flex-shrink: 0; margin-top: 2px; position: relative; background: var(--white);
+    transition: background .15s ease, border-color .15s ease;
+  }
+  .check-item input { position: absolute; opacity: 0; width: 20px; height: 20px; cursor: pointer; }
+  .box::after {
+    content: ''; position: absolute; left: 6px; top: 2.5px; width: 5px; height: 9px;
+    border-right: 2px solid var(--white); border-bottom: 2px solid var(--white);
+    transform: rotate(40deg) scale(0); transition: transform .15s ease;
+  }
+  .check-item input:checked ~ .box { background: var(--teal); border-color: var(--teal); }
+  .check-item input:checked ~ .box::after { transform: rotate(40deg) scale(1); }
+  .check-item span.txt { font-size: 14.5px; color: var(--navy); padding-top: 1px; }
+  .check-item input:checked ~ .txt { color: var(--gray); text-decoration: line-through; text-decoration-color: var(--lgray); }
+
+  .checklist-total {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 24px; padding-top: 20px; border-top: 1px dashed var(--lgray);
+    font-size: 13px; color: var(--gray); font-weight: 500;
+  }
+  .checklist-total b { color: var(--navy); font-size: 15px; }
+
+  /* Template builder (Part 4) */
+  .builder-toolbar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 26px; }
+  .tbtn {
+    font-family: 'Poppins', sans-serif; font-size: 13.5px; font-weight: 600;
+    padding: 10px 18px; border-radius: 8px; cursor: pointer; border: none;
+    transition: all .15s;
+  }
+  .tbtn-primary { background: var(--orange); color: var(--white); }
+  .tbtn-primary:hover { background: #e5571a; }
+  .tbtn-secondary { background: var(--offwhite); color: var(--navy); border: 1px solid var(--lgray) !important; }
+  .tbtn-secondary:hover { background: var(--lgray); }
+  .tbtn-ghost { background: transparent; color: var(--gray); border: 1px solid var(--lgray) !important; }
+  .tbtn-ghost:hover { background: var(--offwhite); }
+
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  @media (max-width: 640px) { .field-row { grid-template-columns: 1fr; } }
+  .field { margin-bottom: 16px; }
+  .field label {
+    display: block; font-size: 12.5px; font-weight: 700; color: var(--navy);
+    text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px;
+  }
+  .field input[type="text"], .field textarea, .field select {
+    width: 100%; padding: 12px 14px; border-radius: 8px; border: 1.5px solid var(--lgray);
+    font-family: 'Poppins', sans-serif; font-size: 14.5px; color: var(--navy);
+    outline: none; transition: border-color .2s; background: var(--white);
+  }
+  .field input[type="text"]:focus, .field textarea:focus, .field select:focus { border-color: var(--teal); }
+  .field textarea { resize: vertical; min-height: 64px; line-height: 1.5; }
+  .field .hint { font-size: 12px; color: var(--gray); margin-top: 6px; font-style: italic; }
+
+  .section-label {
+    font-size: 13px; font-weight: 700; color: var(--teal-dark); text-transform: uppercase;
+    letter-spacing: 0.06em; margin: 30px 0 14px; padding-top: 20px; border-top: 1px solid var(--offwhite);
+  }
+  .section-label:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+
+  .dyn-list { margin-bottom: 6px; }
+  .dyn-row { display: flex; gap: 10px; margin-bottom: 10px; align-items: center; }
+  .dyn-row input[type="text"] { flex: 1; }
+  .dyn-remove {
+    width: 34px; height: 34px; border-radius: 8px; border: 1.5px solid var(--lgray);
+    background: var(--white); color: var(--gray); cursor: pointer; font-size: 16px;
+    flex-shrink: 0; transition: all .15s;
+  }
+  .dyn-remove:hover { background: var(--orange-light); color: var(--orange); border-color: var(--orange-light); }
+  .dyn-add {
+    font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600;
+    color: var(--teal-dark); background: var(--teal-light); border: none;
+    padding: 9px 16px; border-radius: 8px; cursor: pointer; transition: all .15s;
+  }
+  .dyn-add:hover { background: var(--teal); color: var(--white); }
+
+  .step-input-row { display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start; }
+  .step-input-row .step-num-badge {
+    width: 34px; height: 34px; border-radius: 50%; background: var(--offwhite); color: var(--navy);
+    font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 1px;
+  }
+
+  .copy-toast {
+    display: none; background: var(--teal-light); color: var(--teal-dark); font-size: 13.5px;
+    font-weight: 600; padding: 12px 16px; border-radius: 8px; margin-top: 16px;
+  }
+  .copy-toast.show { display: block; }
+
+  /* Example (Part 5) */
+  .example-toggle {
+    display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer; user-select: none;
+  }
+  .example-toggle-icon {
+    width: 30px; height: 30px; border-radius: 50%; background: var(--offwhite);
+    display: flex; align-items: center; justify-content: center; font-size: 14px;
+    color: var(--navy); transition: transform .2s; flex-shrink: 0;
+  }
+  .example-body { display: none; margin-top: 24px; }
+  .example-body.open { display: block; }
+  .example-toggle.open .example-toggle-icon { transform: rotate(45deg); }
+  .example-field { margin-bottom: 18px; }
+  .example-field .lbl {
+    font-size: 12px; font-weight: 700; color: var(--teal-dark); text-transform: uppercase;
+    letter-spacing: 0.05em; margin-bottom: 6px; display: block;
+  }
+  .example-field .val { font-size: 14.5px; color: var(--navy); line-height: 1.6; }
+  .example-field ol, .example-field ul { padding-left: 20px; margin-top: 4px; }
+  .example-field li { margin-bottom: 6px; font-size: 14.5px; color: var(--navy); line-height: 1.55; }
+
+  /* CTA */
+  .cta-section { padding: 12px 0 60px; }
+  .cta-inner {
+    background: linear-gradient(135deg, var(--navy) 0%, #3a4147 100%);
+    border-radius: 20px; padding: 56px 44px; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .cta-inner::before {
+    content: ''; position: absolute; top: -60px; right: -60px; width: 260px; height: 260px;
+    border-radius: 50%; background: rgba(0,207,193,0.08); pointer-events: none;
+  }
+  .cta-inner::after {
+    content: ''; position: absolute; bottom: -70px; left: -70px; width: 320px; height: 320px;
+    border-radius: 50%; background: rgba(255,98,29,0.06); pointer-events: none;
+  }
+  .cta-content { position: relative; z-index: 1; }
+  .cta-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+  .cta-inner h2 { font-size: clamp(24px, 3.4vw, 32px); font-weight: 800; color: var(--white); line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.01em; }
+  .cta-inner p { font-size: 15.5px; color: rgba(255,255,255,0.6); max-width: 480px; margin: 0 auto 32px; line-height: 1.7; }
+  .cta-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 22px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px;
+    font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 15px; text-decoration: none;
+    cursor: pointer; border: none; transition: all .2s;
+  }
+  .btn-primary { background: var(--orange); color: var(--white); }
+  .btn-primary:hover { background: #e5571a; transform: translateY(-1px); }
+  .btn-secondary { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.4); }
+  .btn-secondary:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+  .cta-meta { font-size: 12.5px; color: rgba(255,255,255,0.45); }
+
+  footer { background: var(--navy); padding: 40px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.08); }
+  .footer-logo { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 10px; }
+  .footer-logo img { width: 26px; height: 26px; border-radius: 50%; }
+  .footer-logo-text { font-size: 13px; font-weight: 700; color: var(--white); letter-spacing: 0.04em; }
+  footer p { font-size: 12.5px; color: rgba(255,255,255,0.4); }
+
+  @media (max-width: 600px) {
+    header.hero { padding: 52px 0 44px; }
+    .hero-title { font-size: 28px; }
+    .part { padding: 26px 22px; margin: 20px 0; }
+    .cta-inner { padding: 40px 24px; }
+    .gate-card { padding: 34px 22px; }
+    .gate-form-row { flex-direction: column; }
+    .gate-btn { width: 100%; justify-content: center; }
+    .compare-grid { gap: 14px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-nav">
+  <div class="top-nav-inner">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAIAAAC2BqGFAAAxcUlEQVR42t19eZhlVXXvWmvvM9yxhq7uhm66mUHmwQEFUTRG7GgEGsdMJE9jzHsSjV+ij4QQ85xiTIwvPvWLSqKinxox4oTiCIIQhTA1M9IMTdPdVV3THc+093p/nHPP2We4VQWImPTXNFW3bt177jprr/1bv/VbayM8zX8QgHPfkxBSkrSFlCRsIS0kIhJIInsuAnDyHbNipZhZqVBHoQpDHQUqCrVWK7/RL/9zPv32JSGl7cZ/SUgkgYiAwAwAjBWXatgbcj9HAK2ZtdIqigJPhX4UeCoKn3aL49N4k6XtWE7DcuvSsgEJEQGAmRk4NQVm/7FxwVWWMmwO8WshAQArFYV+FAxDbxD5Hj9Nfo2/fBcW0rZrTbvWEJaDhMDArJk5sQ8DY+VljTdx5trVRkQkQARmFQbBsOcPeyr0V3bwX7jb4y8xRqDt1p1G23LrSAJGxi1dyaoPrvpu4/6NbU6sdeQP/X4n8Hqja3jK48kvw6MR0a633MaEtF1AYK2BGRCrrIlVtuY1G3cUaBC4+u5w5uMAKgr8fsfrL7PW/9VDBzr1ptuclLbLwKz1KHyuMSyUrYz5zbB8h7D4mwZEKd9FIlJh4PWWhv1lYP4vaWjbbdTa64TtxFEiM3DOGpXW4dUumKu+AAAsf5d37dIdYkYSSBgF/rCz4A+6T1EkeUoMLaRVm5hxak0A0FpVezEDoPl5Cu7JVU5dGXYhh/DyjyEDjA0jufuESIgYeP3B0v4o2yp/hQ3tNiZrE9NEglmvhMDGvvU4by2APOPB2HO59GPT1jwmDnFuJREJ1nrQmR92F3/BzvcLfC0SsrnugFprioGBNeTcOP7QOPoax6ceWL4nK7oIjrtbOAod8RdQzHwYR0ttdF3IzABs15rSdqPAizeVXy2Ptpx6Y2qDsCytFBZNXF77UHLVlf+Me4WRjQz0bQbkBH4AIFe/GZcxCzMzEwmtVX9xNhj2foU82m1ONac3IhFoHSMnw3NNV+Vsv0oezydzozS6tBjQeHLuddI4H/9KalbACndC84vCE9B4A8Q4ajv1FgKG/vDpNzQiNqY21iemWWvMWagQAdBgIyrXPpbgW2X0MF4QM+gWP8CFUASMiIQggAGzJyZAO/c9x5wKYjGy2bUGSTv0B08S/IknZ2VqzWx26i2tIkSElewYB00seRkXHD9d7BXxobgf5m9O/qYQskBQjANNPUUMYFPCocSJPiDkMUw5qCbci+W4llMLhv3RlvrLNbSQVmtmk+XUtDaDMq4Iewv/K34q09y5Xyw6PULpy/QJApkQ+hF1FTUln9b2XrZhqJgeGZBDKcpInbd4NZjbohEAWWshLcttRIHHOvqlboZC2q31m4WwtFaIK+RyRWSLmC5BLj1SwoDmAkhR2rj7yIAIArijhGZ49oT/mgO622b6R9YCENwP5ctu3Hhzr14XWjOmaAQgcdNsU+RKlMmIpLXqzu1+Yij7iXg0kWivP4ikZK2MrW/VG4n5u2CEi+znGSxLgzCm+IHHYnIAkMihxo6Sz5/y/uHo/e87cv/zpgfrpNIaByE1HOVp52v7ak2ZAc/kXTDn2IhQ2mwSWxMJu9YMht2KFGFVTvhxLwESrZlNJC3QGjHvvxURzIROnDcuZzseAjIwJ/sVl1h+hHLGkXsni2AhFJsc9eHDZy84cAmJOYKACRgkcsNhQLija0nKrTLOI5b0cpgTrMi5lB2ZNQrRntnc2b9bq+gpDB1I1J7ZLG3XvKVsbmzlSgjCGpLsvPOMbkKG2FZMoAXyfChfsWHwkaP3ba0FOsKIgQil1CAAlLi3L6/Y13rvAxM2xXga04SFRzGn/NoxNOdCVsWARFHod+d2l6plvxhDIwA3pw9wGm1WEWQbd57yhGL6kAMpFRarIN5iBzd3pRUIT4GwEMm3bln8+6PnEDhUhAiSNEjY2bO/Mtv+1lzjjq61HGFb8NiEE0vuwSbEzMcsZhIiGPa783tW8IIn7tH1ifW19mQp8VshblS8Vz7UmqVWRK4udVQ9nll5PhR/fdjiJUfO6RA0IBGQxfd3nQ8/PHn53uZcKBzUdQECWXEx5iYOi7nQhMVFx2WGlpmFsLzeUm9x3xqpPlyjLzv1dmN6I+sxVl7zHUWsBv6FoFGE1XkkEhdtJcL+QLztkOV/eMa+KEQAkIKB8B8emvrAzqn5QExY2kLWAJqxKuM3Vp3BOmH56wochQCMJAZLc2ukn9ZkNWk57fUHrfnpWFWO4krwDGmVmzMf48rKSe7VWSAsR/Tidd43T3kUGFijlHpZiTfu2Hj53uaUrS1kxcgZIY1mQpje1OzfND3kbG9ANvdDrkzZOnOPriVHXx3eIVJrZhMJOcbQWJV3rMrTr/Z7Jv+AxTCKABFg24Kvnrxn2oqUQsuCRSVfedOm78w3NjqKATVglRsW8szk9dmkn9KYkrEpOKaSCYBgu41g0OXVEnRa0TMRABqT6xOYUfZIzBAw4splJ8NWCUBGIhSCpBDZXymEICTM0SKcwgBIQ3Mnor84dPGQph8oIgE+0OtvPfC6JXejHYUJYEgshAZSTndvc5flPLAYgQvD1ghYkUMmryWk1ZjasGp4kCtSk2zXmk5zgtXY0IwIzJhcVowrMAWoeUYUkQEIiQiZWSnl+2EYRkorHddGmQGQBLmuU3NdZtaak4QiszITQF/hia3wDQct6RCJQFh80Z3TV825m1wVMggEANAAOv4tnVhKICBw7LmaixtdfNXMRUaWR+lSvh6W8YhKKbvWdOptf9B5goYmIRqT66t82YCaWVkOsQLzplVnFCQU68Fg4Pm+FHJionX4YQcdtOnA9TPrpqamGo26QBx43t59s7fctuPe++53HKder0WRMmpeyc0canrzlvmarXyPHJd/ttD6yEOtCUvvD0TEiAgWsiPAFSxil2WImDxGL8KIUSC4pF1ixNjiMQmNhVDMRvGFGfIkrVleYGauT86E/mCFLGYlQ9fbMyQt1tH4RZF7V64M4YhCCN8PFnvL9Xrt+OOOPevM008/7TnHHXv05k2bajW3/Cu9Xv+b377q3R/40M6dD7ZaTaUUc1acCjQe1IDtmzyOQEoIfL7wzikP7INt7+iWf3wrPKrmb3GjdbZqkZaYVHtCwIVQPBaKBzz3lo5967L14NDyNTaFdogVjxIZLiLLNGqP6CgzGGMKWUjIxuT67vyex406LKfeXr95lAGiSbdUZXpQCYCEEGEYdTqdgzZvOu+cV7zuVec969STpczurlKKmbXWqb5FCBJCAMC+2bnzX3fBzbfvaDYaauQpRDQY+Me+4OT/OPBaXFgkl3Z0ah99sPa6zf5JE/6UDIBGQUtXZf4y+bofyJs67uX7ml+frT86lG2pbIKIS0xevrBb2oW4QAF15nYHXv9xGRonNm6RlsNal6RvXMGbjXHkxcWl6empN/2PC/7oDRds3nRg/KMwDFlznNALQYRkXoVSCgEipW3bemzP3ue/5OXz8/OWZTNrACTkXkSnvfn8H+3+v9z3EEEjCUtDyAAYMkYaCVgQSBxRJISgmRkUUKSBgaVACxgEA8Jjnv2pXe1/3jUx69O0pSM2Cr48QoGQVzMUEV9G70Wh35ndVYlARKXpnXrbbU2OrFzAGJgn9SsAMhEBw8Li0rmv+I3LLv34q7e/st1qRfG+p7RlWQnIEISIfhB0Op35hcWl5eUgCJrNJhIRURRFkxMTWulvfvu7zWZDaw2AFEWDdRuOPOes37nrikhYjAgAoSLFKEELiy2LpQBC6iqxpMRiJLqRCJGEFLbQUrJlgUBWmkKNrGBSqBeuH5yzfrDbt/9z2XYFk7GxlHiDBOjjiGM0SW1mLaSttYoCb1zSUGSOJjZuJZKlqDtOVpFbTEKIIAgird5zyV+87S1vjl2YEBkgDhpKqTvuuvvGm2655fYdDz70yOzc3OLSku8HrLW0rGefeso//f37Dzxwo1JKCLF7957nvPClw+GASACi8Abdo0845L3vvPuTL4YegwWgAByAGi768uZl98aOc0fPfnhozYeirzDUgACugLbUG63w6FZ46kRwent4ZNMHYggx1AgMltCA9KGdExffP+0IlJQsuRWkZSkfU2AvWeulfQ9ziW/CMq/gNicbUxtYqTHE21iYHMcpP/Ad2/7sJz++7exfU5GKl1ps4gd2PvSlf7/iG9/6zj333tft9QHAklJKKYRAQgAgpIW9+85/zfYvf/5ftdZEBABnvuTlN996W6PR0ADoefrwIxb/9Qvn3XHFK+/+AdoIk9PRXff87Nq7fthpPzoUgQIBLIklghhprDWDYowYI0AAmLb0c6b83zlg+fyNXUvqKCBkYM3S4W/sa1+wY4NmthBKYMtgSBJWhAGAC1V1EoPl/cPOwkqsbpwHTmzcSkKupoTDkioDCClSkRDiq1/87JlnPC8MQyEEMwshdj26+4Mf/ui/feWKuf3zruvUXEcIAYDMHEe0kWwXNLPruDdd9/0DD9gYhZG05PbXX/DNK6+anJxQWiMzS2v5Xz6jDj0CIgYh4F8uFV/6Ana7dckOZaQGc9Ep0iQzYuwrVBqeNelfcsTCtvVdjlAzag2Wo7+7r3n+LRssihXFha0I02zGMEZO6BMXYpb2PlQQTlIxOjdawrLHVHw5/zUXSDgG8Pzg05/4aGJlEgAohPj0ZV8448W/8bF/vjQMw/Uz0/V6jQEipZSKlFaaNbOOef9YhO573tLSUmp917F5lL2xENhZrl32GQmRDHuT7/yTjR96z7rBwrStbWTNoBgU4wgdZxtXDEMihogBgdtST9v6tmX73Js2vv3ujSGhEEwIgUcv3dj75AnzPRUrErhYwMUkpCDnjJA9zFoIy2m0C+SrzFcy0G1MjAHEsKIUHKQQc/v3v+ddF79i20tjX0YEZr7w7Rd99BOXttutmXXTkVJhFGEqJzAgTJL7jYyDiNU4UiluNJ2vfZWWl0BK8d2rwg0bQWnQXCrpcoEhMXftODNsSg0A/7hz4q6e9YWT9k6JCJBCH1930PKtHffvHmyvt1McAmmyW7U9cRJIYodn7TYm/N6yCT/ILOjbTl3kqydrrTySWO52X3zWme98+4VRFAmiOIH+/Tdd+P8+/sn1M+uklGEUJV0TnCcxYBQ+yqsFq4owrLnZtK652vrBD/TEBESRmbeZsiQ2ErzkBqY/YAAGxagYNzrqu3O17bds6rBAYkJUPr7riP3Pmgh6UVwSzdwZ2cR0mK/fJxfCrIXlWG7DvHQy80270Rrf04A4jsEC1My2JT/wnnfFuYZmFkK88+L/c9nnvnDAARuiSBUCVsozYIVyw0jQUm1Agc3RDM0mNxqoi+CSOSONzFI35Mut5nuHjBttfc28+8YdBwABA2tGV6oPHLWggbCk88nMgYWIagIQjqNH+iAZzIa0nUa+DpZXI2aKEzTFFkLQ0vLya1913jNPOSmKIgCQUn7p8q9+6CMf23DAhiCMymqY9NdH8iDkFfaDLCkd7bpEAlESSSmIEsfikfm4pEUz6zuxL6OxPSJAwLjRUV9+rP6hnVPSZkSIAnrRdO83NwyWIhJY2pVSDh2hql0MmNl26kJaudARf3C71kQhyoAkvSZmyKsyk9fUWtdrtf/1pjfEEEKQ2Dc795fvel+r2VRKl920LIPjwuvyOJszIgmi4XA4P78wP7+wsLAYBKEUMtmLOVt6VZU1LBe80w8aapi29d8+uO7eXk1Q7G584UGLIqmzGSJ3zCXoiJWyIQYiu9ZIzSvTndmuNaCKqOOCEpmZjSgihFhe7rz011508kknaKUREQn/6WOfeGDnzo0bN4RhVEk5mXQfY7lcPhKPYc7ORBSG0XA4fOapJz/32c+aaDf3ze6/5rrr773//snJSTNQ4ti8DIvA17gkiTAf4Xvvn/zsiUMJoEM8Y2pw2oT/047TEqzy6KNY+88toTg0suU2ht2l2IAy1XdJ2zX3JLPoMwIInCTiSQUoSZ6UUtvPfQUARErZtjU3t/8LX/739kQ7DiM5UbjpBZyxvWD2EyIXMXBGJw0n2q1PfvTD573yN1Jmamlp+eOf+vT7PvhhSwoiLKnjcFwJvZiqASqACaG+Ple/u+se0/B8RY7Q2w/oX7vkotAwKm1gETpXVpyBWUvbFZatwiAOHQgA0qkhktELhlx125hH9YjEyBiG0czMuhe94Pnps75x5VUPPfyI67jMkJNloFGaG4E5LGSwlfICBkQKw6jZqH/jK1949fZXCiLf8z3P9z1/cnLioj976wfffUmv14szSUPGj1VhCNOwz1kxK3PqrhJf3NcCCxABNJw9NZiSOoqfw8WyLuYgUnFbRhKWU094jfhpttsogc7Cb2JVGome5z3jqCMP3rqFNceQ45vf+Z6UZl8FZwifR7FilFgx4kiCZSjxc3UOYGAS1B/0L/mLd5x84vG+7zOA4zqu6ziuo5QKguDNb/qD7ee+crnTja8hy9uyrYALFA1iRWTVgDXi78w3oogswcx4RN0/uhF6amQprFJFpl5p7GvxnbGcWloYAiSStlvOU9LKW3FDSy6RiSgIgpNOOA4RoygSQsztn7/51tvqtZrW2gTDmQunem8E5KyglNbu8hgpCRqB7x+8dctvveZ8rbWUkogu/+rX3/Cm/3nNtdcLIeICye//9mtZl0joLAtC85NwdbqLDOAS39e37hm4iBxqFDaf3PY8Zciv2SxkGhgG8w0xAMwsbReJkhgtpE1Cmj6ImeAt88AUjkG26EAzH3/sMQAQ1/3uuvue2dm5RqOuNZeDYarbzMr/1f1UuXI1IbHvH33EEe12K2Y/bvjpja///T+MgvDK7199w4++c/DWLYh4zNFHrVu3zvc9IlFFmhcRY5VAkGOB2VJENy1ZxzdBaQbFxzeDYiDlbLPJ1XYTiRYmTqOZhJCWHfoeAYC0HczF82KAzlkHMxStNduWddihh6TvdNc99/m+T0SlzomRShPMVDvdYcs7Vh4Ba242GwCgtAaAu++9nxm2bNmyuLD485/vjG9XrV5zbCvR5K4EErE6SzDWEDPc1bPTpx7qhDIFW2wge84H/lSsl/2MAVDaboKjpWXijWLxEfLqcUxzaARmXavVNqyfSb3v4Ud2VQjuSplCmrrxqP6fW9mY24JxlKan30ghgDkIAyISUph7gQFHsSpnK/NiWFUN4UcDCxCIEBgOsJVLo5pe/jZxKdtlYM6jS2klhkZhWRVNfWj271SrOpXWtZo7MdFOo8Dc/nlMmsiMy0prmGagMJmC4oYNFfgOM5eLMyNEzBX0isQIZ0GO8wKRKk9nI9khhMVQACMhA8CEpd2kFGAknxkVy2mTI442MrOTiaSNGJfthFVBi3IuV+Gq9I4127YdV7JjRfpw6MUUfroHjtNsYo6dgBXlJWuqdDJUlI9xzSpO0wsFQi9C0EgMAOAi2yKuAxQ+1LjGyCwRYAaSkoQkkhbGuweWkZyxz7Lp6+YcAYxNHD+otcIcC26aBSvvJZotDrByL8xqxkYo1ay5+DgXeYvKV1GMDBhTQYSj0iqy2fiCpZzH2G0yoxMRCYuktLBAzI2CF2a6FTY8htmQZzNrk1YlEubljmE/wQR8kCMzuQL6V1oWywzB6LfHaaq58kKqKAdMZE3x9xpAG0QrMuR3jUyVOkLImI9IGDu1vYKgvpTCF8o2EIaR7weppWo1N+1LKET28qfDXIaycrBgI2tdZf2v0B3ABnAar0pBzewKBgLWAAgBY6hLwxkytJu1jxY9dnTpSeioynVGt7YYiXKgGJGCIBgOvdSz6rUaFxIfTghMc6lxhugNlIBjiD4j6y82uGC195uEQUIb4Ni7VI5omrElNMRyC4RBiIEGyovvGLJsN1v4Fb39DAjScmhlYXkcNLC88DiJPp7vLy0vp3ZYP7OuLB/Biv09DjtYnaMVR2wwlCdR8Hg7Y9bIleX3UMHwlutR8RtpgBk7AgLNDABLSvgazQQLR4UizAIkV6IaHCk4CCsgR3ExVUii4pyN0Pf82bn96fLfvHkTYo4nx3zUYFMbm5dl8rhNrjrYcpWculiaZxhfAeXizR1dOGvGza5Ou5rnfAoZyeDuzJZ2rCYIc6Q1kiCoDmuYB55c9aEwpkZ3P7YnXe5bD9psWVaCOY3litURsSoomfbGVYBF1VaLBchYtRKKAao0xwYOqWWj8nb7lsrnQkneVk3oYkVmxExU6sjEcrurUWE3nDGZd/Hgww+nOHrrQZvr9ZrK9NRc4VF518WCsh+qhnmMx7ylzvEcpAPOqN2KBcMV6YsGcAQc6oYwkh0+6FtZrGJzZRaKFmNVAiQkxdxSQaxU2K0ZcARrMJ97sSCxc+eDid4OYNOmA9bPzIRRZOwQWG0jzEJGVfsxr0XyWo3URriUTYKFq183JTZHalZWjG0RHWyHoOJSLdw/kKKCKE9UlCtnRUmRLlYjjilcFT9POTIys2VZDz28K1JKSqGVarVahxy8NQgDNDpPTDlBNgWT8wln4ebCeKC2MpLjfMc85/isMWWseHNLtjdfw2Yn2mSHzCgJglA8NJA2ZTveKE8bId+k43dcKSetguNqSVKePzf5ema2bWv3Y3v27Z0FxEgpADjhuGPCMKJ0sx9JTjizNzIyGulmyvQXes1wbLTGal6Zcxs/cg6j8woUoZH0BhqPboSWpSMGJH4skHsCaRv8jRndEZGTMSqrJPuU1+ZWw3woUtqY2kxKa35h8b6fPxDjTwA4+cQTsNoemEV8LpVVzBJ1eWhPNf1WJfIsCJjTeadcGmxj3mXMFVmePeEDgWIEhPuH9lJEElPmsajKxxVDQWIurSkRcnA19QPVndJZEkqEvu/ffOtt6XuefOLx7XZLKTVKkziuVmWotoj3GIoV5Zwb83gvKA5awYwwyWU5VQzXKLagEdBYAzjEpza9pGEA4aaO7es4DmfLjkuyBSzM2SlMu9GKypqrqo5gHnuvmIWUN918ayw9AOYjDjv04K1b/MDP0neuwhFsagswj3EK6GiMVhgrqZ0c45PeXUTAMeE5i/YIoaZNrj6u7kMEkgAYbl5yJDLnmpfZkBRwXng2ZhgaEhUaibBqRMEKDIzW7LrObTvu7PX7UsooihzXedYpJw89j4hyJuUsR+E0glQM/ynP7i7O/OGqApXRIMuYr9mv8Q8BDDUc3/DX1VQEJIF7gbyjb9cSMprz0qlR2oLpHoN52QBn1KeOiPOhgytlPKUSuMFXsWM7u3bvvuvue9NS0wue/zxDxcImX545AY9IECh2ELDxV48QOhcJZ0QcC+/AEJGtampDgcUh0wvXeZogZNQSdvTsR3zpiPKYJ8wkC1waasiF6RmoVUQqCkrhArFiQF3ah5eqPhLrC0GD/uAnN/w0vQFnnvG89TPrwjA05UacNqOOchQ07Dzq80u+dxAQwEYkAGQFnJtqN/qUXMxeMF8FRlgDTsw+qgKawOClzUVSXNOKIv7JQm2oiYogyFibVVxbGfirMJA6igw5WSFWcAkSYj4V5fgDSymv/vFP/vTCP5ZSaq0POXjryScef82117dasfyOs5p/KkDhfM+7ga0R8bcfW7DqcxyEVK/v6nuSSCOW6ikV1bU0R2JjrgmUVGdslMaShIYIfN8+5OA3vunvLJs0g5TWo+//SDu6W9k1YJ2xoIx5/ggzqRkaHpDykwhaRXI0/36tcwvSWu+IZGetdb1ev+nmW3c/tmfzpgODILBt++yXvPi7P7i6XZjRls7F4Lx4mc2iHQDATz0f/BB6fQDRYCBEnbv6bBRpYdq3ASUKsTzjipmzuh9m0iMi3++d9rz/eNY2WFwCx4W52daufbYl07aPEieORWUhp2V9s8KoozAgFYXJrBNeNd/N9O5sZGDMYFnWvtnZH11zXfqxt730JZMT7WgkcsQ0gzBFuxnaK65tm0AgSEJBIAUxcEXzHkOJPuWCqIVzbQBFHjXdMBEBWIPtRM8/g/rL0u8IimrXX+PM7WXLBjZjAlaRR2NH2yKi1kpFIbFWOgrNCSHja5oIudhvlj+ZBH39W9+O+zi11kcfdcSzn3lKfzAQoxCXKLfzvJ7BmuY0cJpBaVbMKmaFNBNirNFJNFCpwgTH5N+QH79QDspogmlEz1OHHxYde7z2fUWWYhA3XM+IVekSlxpbzWJDvkkLUUdRgqNV6MOIw2PA8YIHE5rziMcAQNBaN+r1G3520969+4QQKlKIeN5vvjwMw7gobmZqphrTyA55VHApQEpmrYWUQRgRESLF4t04IjKXNhRcK3mdZxIJfT8440zdamMYsmPTY7ut225ltw6poCMdiJPLVbg0MJgxJ7rC+OAGAoAo9OOwh8WW2MoQbRSR0m2H2bbtx/bsueLKq9JQ8MqXv+ygAw/0gyDjzzjTU+UT5xFLk5ZMRpIqAAQhm436dT+5/qrv/dCy5EMPP/Kpz3y+VqsprZCQTd4574CrFhmzrFApbjSDs84C3wcAcF3rxp+J/XNgW4aOLstGyyNM8yWt3F0OAy/R3kW+x1rBmOlRBZCYyZRyQ81RaW7b9nu/9O8fO+vXlWYCwJo7fM6z6corud2GWPqP1dM9sz02voNKo4qSpxFpBGCOlPqdN/zxkUcc9ujuxxYWFms1VzMLIsd1EgillFZqRPow54FfxRBSQ+CO/V703OeFRx2FgyETQRjZP/oREObdqpIPyOmhEDHXQIPIWqnASzxaqVCFASIZ/CRX8pJcgOwmfGQtavXejh077rn/Lg13dDo7+sOFV5wjLAs0m+WisX3+PPrYQYAL8xAL+JjVkUeBZstxtFa33X5Ht9ut1VxmiMJwemrq6KOOjJ1tfmGx1x/Esl0uzX4rD5DJMjkEUNrftg0sG7QCxxE/v9+65WZdi+NG1ew+Lo4eStILzrk2EukojHFdkiWPxi+NUzxwXEpNZX5c5n8YWJA16Lev+jY5liCiINQnnRw84xk4HAAhwEodu9kQHkQIQ3nX3RBPcRoMgnO268MP1/PzaNuNVtOybSJhWXJpfvG3XvuqmXXTgR8w89333tfr9aQUDIy4Bsgax1xC9Dw+/DD/9DOg3wdEcGv2D79P3Q4IUeLoDEWKoTbjClVfYuqRYUfy6sDrjxm/lGebRisfi5ZmQAbN2nXFD38As7PKcTkKueZ455zLYZivHhSTfTZRtNbs2PaPr8VeHywLldLtVucvL+atW2lhkbvdsD9YXl7eu2/21a/ZfslFf66UIkGI+I0rr+KiSA/HVrsTrRwzEXq+d/bLeHodhiFbFi4uOj/8Ibsu6BXmg5VFyWUiCYA5GCbjO8SIHFK22yQhmAuRfsw4bbOPaiQxRwa2bDE7qw49PDrpBPSGoLQ+9DD7xz+mhQWQskA65wq9aAy7tW3a/SjPbAif+1zs9yAI+KAtwcteznUXnNrMzMwLTjzury56x9/85Tssy1JKW5Z12447Lrrk3XFIKXRf8ZgabwLqo4gnJ/p//g62bIwUtFrO979X++pXuN7I8IZZP0EYk7NUFNRUFA07+01Dx9NipOXWmfVIQ8pVdBLm2cUqvK41zc8HZ5/NiBgpnphE37Ov/THU45CHhT7Lglskryql9Z//GR17vDriCPSGECm2LH3684dnvXj7q8/93Bt+94TjjgGAMIxs2/KD4Lf/4I8efmSX68Ztv3mf4IqRsskbCaJu1zv/1f7LtmGvx0IAQ+Mf/55mZ8GyMuoT83MIkwi90ulcscQgGHQCrx+/FaU+6Q97zBorJtUVpdMmeY+cV09r5lpd3nG7df1/QKMBADDo+du2RYcegp6XYRQsaoiMAgYgMwgBgd/8339uX301T02DY6OOaHEe+r1Q6yAI+p4PDLZtLS93Xvd7f3jDT2+Mqw2FW1eOH2y4M0aRnp72tm8HzwcAaDSsn/3Muv02rtVh1OqLBnPMpvJ61XOlAILk+BwGs3M2PvoPk3ItVp4iaNJ6mJWOzWbVJNa6//ZFDEMQhGHEBxzov+b1MBwAiUKoRhPSovE2WoNtU7/ffMefNd7/XrF7NzebPD0N09P16WnbthuuE6no69/6zou2nfut73x3cnIiihTi2JpnhcRMEHZ7wTnnqMMPx+GQiUBz7ctfhGRQiaHbRjBU8FWYqyJuUBQMYwRd5kfYqbeb0xtjTF1ZSMKCGMio5GeNiMBAhL1e94P/GLz4LOx0WEiMVPuP3iB3Psium8Y+KLVr56lCjvdq7HZhcio88UT9jKODjZteNFl/vSVuu/veG2742a237xBSNur1SEX5MzEqhtRx2kIKDEgYhTwxuXTpv+ipafB9aLWt669rv/1PuV4buXN++m8mviiHPC68EwnZW9zn9ZZT/k2aTw28noqmhZBczMLzPZ0j5BGL51JCagTXEzhc+/xlwRmnAxFGEbcnBhf8Qeuid3LNxXLNlQunQ2ZNuoDAE5MQBtZ118I1VztENwB+Xylgdhyn1WoCgFIRZllUZo5yU7R5edAfDN/yFr15MywugyBQqva5z43O6ckVe7IZy1wmvzMu1jzLT6koPnYrDTEiX8ZiJLJrjXxLy5hcCAsVVHOAPIPjiIce1FsOjk48CT0Pg0Adc4z4+X3WvfdCrQb5yjOOO2IhVjBpBkJwXKi54DjScRr1Wr1ek5ZkxbpIppsC2hJESPZAgb2+OvWU/p+9A4Yesob2hP29q2qXfYZbrSSJTW2GxprDMWNU8wIREtLvLwXDvvlUKuwTfm+5ahxh1nSeK5pU1qlxVM5xnNq/Xorz8xzv4FE0uPBtenoagiDtjhl72eVBf1qj0qC0ViqKVBQprU0ZyNgjJgs9HIwASoHj9N/6NhYSlGLLwqWl+qWfAtsyVXs5DzLLa2YxqPAJ4jnYSg27S4WLKQjvUGvl9TupcB9zF5nVyBHLagBzABGC1uzWxM4H6p/9LDSbAIzDoT70sMFb/gT7fSDBIx7LKJRULKSUlEUEIAJBIAQIgVLE57WNOacIyl8n3iEELS8P3/iH4UmnYK+PANBo1T73WfHz+9hNozMUBtty1vZgtkAkJjFV7UjCH3S0Ko6/rBhrrELfbrSIaCUNE0LhsCBMD7QxzyZ0Xev226NTTlUHb8UgxMCPTjpRLC7IG2+EZjOZz2Psq1g5Rw8RSKDWMBjSYIiej76HnoeRAkEg5CrFIbMPU1q0sBhs29Z7659irw/A3GjK229r/t372XVL6bmxO60cRfOP9Bb3lo/8FFUZKgODU2vyWg/SGfUdY0kBQIRBIO65Jzh7G1gCmCFS4emn0z13W/fdz83GyIM4o6nNQx0RUApUijrLUKupE44PX/CC4AVnhqc9Vx15BDdquLRMS0sgBEsLSweoQA6cMVgWLi5Ep5zSfd/fAgNoBVJiGLb+6iKanQXbAdbVsqnSC1fBSAQAFMLrLBai80oZJCJObNwqLVtrDStS1DnhBVbcMhASl5e8c8/vv+uvcXkZAFkIVFHrry62vv89nplBJNAqY1HSlyIBWmNnGdZv8M89b/iSl6hDD2XHyS4kCMTevc63v2Vffrmc28+tFhNhcYIOx2wXMODCvDrtuZ0PfEDXm0mGMjHZ+Nv3uP/2JZ6cgmxnyso/aCKt1UQiiKiVWtr3cOUJtmIc+6yjyGm0DWkfcoWsu3T/oXDGLgBrqNWsW2+BeiM8/Qwc9FEz245/1lmklL1jBwwGYFkoJAoCJCACIlQaul0UIjhve/fii72zt+l2GwIfPA+HA/R99HzUrNvt8DmnBWe/FJnFHTvEYMDSAiGBBBABISABM/Z7FEbh9vM7l7yL63X0fACGdeucz19W/9QneGISstuDANWtGFgijwqmIBL9xdkokWitydAAgCoKhGVbtsuaTW0frGpoMxCkeivXsa67Vm84IDr1VBwOQUVAIvy1Xw+PeQZ2lsT+eex00PPQ99H3MQyh2Qxf+MLeO945fO3rdK2O3Q4qBQwgJNTrYFuAiDpCpdAPudUKzjwzPO00Cnyxby8uL9PQA89Dz6cwZNeJnvnMwdv/fPB7F4BSMeaB6XX2N77R+sD7uV4vsWZpBYKTwzQqgkCx3xdJhMP+YHn/CgeNj5dICTm5cSsiceFEiQqxNaZ5VyldGq0ErSEM+xdd7G8/H5YWAQC0hkYdSIgHd1p33Sn27gXfg1pdbdocHXdcdPDBoBT2+4wEzCAlNBrY7Yrdu4CEXr9ez8zAoI9+kOSjjSYg0K5HrDvvFLt343AAbk2t3xAde1x0+GGAiL1ewndPT9tfu6L57r8BKYFEEprz55MYA1i5+jyHUi60vO+RkXYDHp+hAcCuNVvrDozJpjHnG+dP7hqxj1wSq8W2Rs8fvPFNwze+EVhjvw+ATASOA44NsVYPAZSGIADfS6CUkNBs4eKC+/WvOVd+Uzy2BwD0hg3+2S/zzj9fr1+PvV48/Y4BwXHAcdLqDGiGMATfR6WAmesNsCz305c2Pv5xduyRlTFNK1NbG+dbrH70LZHoLezz+sursUwrqqUaUxtqzcn4MORxp+NippdN1TVYKcIAAOx0gzPPHFz4J+oZx4Dvw3CA8aDuXJkLGREsCfUGekPn29+ufe4y+cAD2rHBtpkZwxA9T23ZOvzd3/V/8xxuNKDfgyjC5LiAXD2OicCtgeuK++6tf/yj9tU/4mYzlrZAnlc3J5AaJNlKfbYkhD/oduf3rHzyzeroDYkmNmwV0hpRvascQ28OsSvwiTEzAkTY7XKrFZxznvfyl0eHHgKOC0qD1klqTghCAAPNz9k3XO9efrm8/Ta2Ha65oBlZQ/o6noeeFx17vPeqVwVnnqnXrwdEiBSwBh0fuyeACDxfPPyge+WVzteuoE5Ht1qgVBGuVR3xlZs5M8Y8WkWd2V2rnpu15gNvNmwZaaLGn/ps1i6gPDbcIP8EoVLY63GrFR53fHTqKdEhh/HMjHYc1Bo7HbF7t7xjh3XrLWLXLpYyrneksrBsqyJkIhwMMAzVps3hSSdFJ5ygtmzhiUkmRD+ghXnx4E558y3WnXdSZ5kbTZbSQHKVJ5ZntR7MHYJdiehwee7RaA0H3qx1yoJTbzXXHcjV923MeTDmwWrlcciITAQqwuEQIwVSgO2wFKA1hiEEYTxolx0HYqIjfyhQ7u0IGRACH4ceAoNtg2UxIiiFQQhRxFJwrQZSQqy4NBQBWFJcM6zQ2JGvoQjZX9zn9ZbWclzWGg2NAFxrr2tMrNO5Ad5jUUjlOYHVUY4oIdtGwnFGTKrGOpnnYkjqEDmf5Ru3lOPjAjQD63hT5kTpz6B1qqMw4BNinqNlY7QaZl3tpU2HgYQcdhf6S3NrPJRs7Sd0YuQPkIRda4zvL8rYjyJZuUInHjNmRa20m4iROVV7FpgVzNWOje4R1sic9FmO0m/UjLHWPJdJY9rFlpOG5QAyFg+9hZTXt/xBZ+1Hv8HjPQo18gfCsi27tnIvVyrt4gIxDJWVlOo2lDxPnuficA1rsbQzYP4/Q3GFlekIlgeHMDAwkQj9QW9+7xpN/EQMDQDBsFfIGCsDB0PxyAfEKjXcuB4eLj2nQiDKsMJxYUmGlz+qvSScwJL6wTyMojTOkkmI0B929z/2eKdsP5HDfYNhT1iOZbusdaWdsGp8UsVU3byqOT1IMKtKYfHBavph/O6TSCe5eoq08WCqZcm6P8pTz0nI0HsiVoYnfC54YmtnXAwp6gvTFoqK5hhztiOWJ0GxGYuwIiMdG5rKEaMIlNC4o0bfIedEKxkhEXr97v49T8DK8GQOYA+HPRLCcmpVk1Awd/5wtto5a3gbN/eUC43RaOqKxm+/a8lyc09kY/Svye5jufzAgEL4/U5vYS8/roa6X4ihASAY9gHRchvIlaA6W4/JYsSSxKBUNOT8UWDm4BesamCoVsyPpXSLLYtV3dSFzQSRxLC32F+cfTK2elKGBsDQH2gV2m4DkYA1VJw2kRWSkQ2NXdrjVUR7UEAG5RM6q87HxmKoWFV+l//96pNwERGxvzQ77Cw8OUM9WUMDAKrQD/2B5dSFtJh5BZ1QvmmzCNKyMemYq71DYbaOqQrkcbPbcrsorqQOSPc9Lm19QquoM78nGPYe7wHqT4WhAQC0ivxBh4QcjUvOCInYn/ODPLM8IR3dnTZqQFGnk+P1CudlYtHN88XCsUceVEYTMzdCEsIb9Hr798QNr48LMj+Fho5dIBj2lAotp2YMSa7sEUPzkA3kIrg1c2zm3Hn3iMYpvGXpTuVEq9Um5RW6V4kEs+4vzg2W9z/hre+Jk0pr/xOfVWnXW8BsIiHMs+q5CFqqMJd3M863Nazt3ldkftUQfnScESIFw35/aU5FwS/WLL9wQyduZdea9fY6aTvM2tTFYPFAXQMqZ+OvjYMBntwFrj79kVMTCxUFg+X5lc/o/RXyaHPLdpuTtdYUSYszQUEhb0Y0qAzOW79MRnChhWsNHl0uY5r/R0AgYq283vKwu1CpFPhVN/Qokgi3Oek2JklK1ppZV5U2IZOAmnbPwxU0erhzMiweS5ikJ2qa06eTtyckElpFfr8z7C5pFT6ldnjKDZ0Gbqcx4dZbwrIBwCz8FEpfUIjUWCWkLDNvJb64fExbSkPHoj0Vhf6w6/eWjbED/F/e0CPXJbvWcBpty64hCWYNRpNxdvJlzsNHPmt0RXChTSmjW5ODijg//jp+eUIERM06Cryg3/WH3acuUDy9hs5cRli2U2vZtYaw4uEn8ZGRnPJPvApSwOqxAkbdGtMZ2Ji0WqooCId9f9CNQr+CL/hvZOiKzyYsx3brlluXlkNCJDJ2zVA5N2KV10VOedFR3UGrKAr90BuG/iAKvHGX8d/S0NUflUgI25G2Ky1HSJuEACyMXOZcyOZC6jN6Cut4PoYKvCjwo9DP6+p/2fb9VTD0+A8fn/EgLZKWEFJIC5BIWIZR0/ovaxUyg4qCuOtaqUirqGrGHT+9H/L/A8fkIkQUNYTlAAAAAElFTkSuQmCC" alt="EVA's Consulting">
+    <span class="top-nav-title">The SOP Starter Kit</span>
+    <nav class="top-nav-links">
+      <a href="#guide">Guide</a>
+      <a href="#checklist">Checklist</a>
+      <a href="#template">Template</a>
+      <a href="#example">Example</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-bg-text">SOP</div>
+  <div class="container hero-content">
+    <span class="hero-eyebrow">Free Resource · EVA'S Consulting</span>
+    <h1 class="hero-title">The SOP <span class="highlight">Starter</span> Kit</h1>
+    <p class="hero-sub">Everything you need to document your first process — template, guide, checklist, and a real example.</p>
+    <div class="hero-whats-inside">
+      <span class="lbl">What's Inside</span>
+      <ul>
+        <li>Why SOPs matter (and why most founders skip them)</li>
+        <li>The SOP writing guide — how to write one in 30 minutes</li>
+        <li>The process documentation checklist</li>
+        <li>An interactive SOP template you can fill in and copy out</li>
+        <li>A real filled-in example SOP to model</li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="gate-wrap" id="gateWrap">
+    <div class="gate-card">
+      <div class="gate-icon">🔓</div>
+      <h2>Enter your email to unlock the kit</h2>
+      <p>We'll open the full kit right away — no spam, just your download and the occasional operations tip from EVA's Consulting.</p>
+      <form class="gate-form" id="gateForm" novalidate>
+        <div class="gate-form-row">
+          <input type="text" id="gateName" placeholder="Your name" required>
+          <input type="email" id="gateEmail" placeholder="you@company.com" required>
+        </div>
+        <button type="submit" class="gate-btn">Unlock the Kit →</button>
+      </form>
+      <div class="gate-error" id="gateError"></div>
+      <div class="gate-note">By continuing, you agree to receive your resource by email.</div>
+    </div>
+  </div>
+
+  <div id="mainContent">
+    <main>
+
+      <section class="part" id="guide">
+        <span class="part-eyebrow">Part 1</span>
+        <h2 class="part-title">Why SOPs Matter</h2>
+        <p class="part-sub">(and why most founders skip them)</p>
+        <p class="body-text">A Standard Operating Procedure (SOP) is a written, step-by-step set of instructions for how a specific task gets done. Nothing fancy — just clear enough that someone other than you could follow it and get the same result.</p>
+        <p class="body-text">Most founders know they should have SOPs. Almost none do. Here's why that costs more than it seems:</p>
+
+        <div class="compare-grid">
+          <div class="compare-card without">
+            <h4>Without SOPs</h4>
+            <ul>
+              <li>Every new hire learns by shadowing someone — slow, inconsistent, and dependent on whoever's training them that day.</li>
+              <li>Quality varies depending on who does the task.</li>
+              <li>You're the institutional memory. If you're out, the process stalls or breaks.</li>
+              <li>The same mistakes get repeated because nothing was written down the first time.</li>
+            </ul>
+          </div>
+          <div class="compare-card with">
+            <h4>With SOPs</h4>
+            <ul>
+              <li>New hires get productive faster, with less of your time spent training.</li>
+              <li>Tasks get done the same way regardless of who's doing them.</li>
+              <li>You can delegate with confidence instead of anxiety.</li>
+              <li>Mistakes get fixed once — in the document — instead of repeatedly in real life.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout">
+          <span class="callout-label">The 30-Minute Rule</span>
+          <p>You don't need to document everything at once. Pick one process that you or your team repeats weekly, and that causes friction when it's done inconsistently. Document just that one first. Momentum matters more than completeness.</p>
+        </div>
+      </section>
+
+      <section class="part">
+        <span class="part-eyebrow">Part 2</span>
+        <h2 class="part-title">The SOP Writing Guide</h2>
+        <p class="part-sub">Follow these five steps to turn any process living in your head (or your best employee's head) into a usable SOP.</p>
+
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Do the task yourself, and take notes as you go</h4>
+            <p>Don't write an SOP from memory. Either perform the task while narrating each click and decision, or shadow whoever does it best and write down exactly what they do — including the small judgment calls they make without thinking.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Break it into numbered steps</h4>
+            <p>Each step should be one action. If a single line in your notes contains the word "and," it's probably two steps. Aim for steps specific enough that someone with no context could follow them without guessing.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>Add the details that prevent mistakes</h4>
+            <p>This is what separates a real SOP from a vague outline. For each step, ask:</p>
+            <ul>
+              <li>What tool, login, or system is needed?</li>
+              <li>What does 'done correctly' look like for this step?</li>
+              <li>What's the most common mistake made here, and how do you avoid it?</li>
+            </ul>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h4>Define the trigger and the outcome</h4>
+            <p>State clearly what kicks off this process (a new lead comes in, a client signs a contract, it's the first of the month) and what the finished result should look like when the process is complete.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <h4>Test it on someone who's never done the task</h4>
+            <p>Hand the SOP to a teammate who doesn't normally do this task and watch them follow it without help. Anywhere they hesitate, ask a question, or get it wrong is a gap in the document — not a gap in them. Fix the SOP, not the person.</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <span class="callout-label">Common Mistake</span>
+          <p>Writing SOPs that are too vague ("reach out to the client") or too rigid (scripting every word). Aim for clear enough to remove guesswork, flexible enough to allow judgment where it's actually needed.</p>
+        </div>
+      </section>
+
+      <section class="part" id="checklist">
+        <span class="part-eyebrow">Part 3</span>
+        <h2 class="part-title">Process Documentation Checklist</h2>
+        <p class="part-sub">Run through this checklist before you consider an SOP finished. Check off each item as you confirm it.</p>
+        <div id="checklistGroups"></div>
+        <div class="checklist-total">
+          <span>Total progress</span>
+          <span><b id="checklistTotal">0</b>/12 confirmed</span>
+        </div>
+      </section>
+
+      <section class="part" id="template">
+        <span class="part-eyebrow">Part 4</span>
+        <h2 class="part-title">The SOP Template</h2>
+        <p class="part-sub">Fill this in for each new process you document. Use the example below as a model, then copy your finished SOP out when you're done.</p>
+
+        <div class="builder-toolbar">
+          <button type="button" class="tbtn tbtn-secondary" id="loadExampleBtn">Load Example</button>
+          <button type="button" class="tbtn tbtn-ghost" id="clearFormBtn">Clear Form</button>
+          <button type="button" class="tbtn tbtn-secondary" id="copyBtn">Copy as Text</button>
+          <button type="button" class="tbtn tbtn-primary" id="downloadPdfBtn">Download as PDF ↓</button>
+        </div>
+
+        <div class="section-label">Header Information</div>
+        <div class="field-row">
+          <div class="field">
+            <label>Process Name</label>
+            <input type="text" id="f-processName" placeholder="e.g. New Client Onboarding">
+          </div>
+          <div class="field">
+            <label>Department / Area</label>
+            <input type="text" id="f-department" placeholder="e.g. Client Services">
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Owner</label>
+            <input type="text" id="f-owner" placeholder="e.g. Operations Manager">
+          </div>
+          <div class="field">
+            <label>Last Updated</label>
+            <input type="text" id="f-lastUpdated" placeholder="e.g. July 2026">
+          </div>
+        </div>
+        <div class="field">
+          <label>Review Frequency</label>
+          <input type="text" id="f-reviewFrequency" placeholder="e.g. Every 90 days">
+        </div>
+
+        <div class="section-label">Purpose</div>
+        <div class="field">
+          <textarea id="f-purpose" placeholder="1–2 sentences: why this process exists and what problem it solves."></textarea>
+        </div>
+
+        <div class="section-label">Trigger</div>
+        <div class="field">
+          <textarea id="f-trigger" placeholder='What starts this process? e.g. "A new lead fills out the contact form."'></textarea>
+        </div>
+
+        <div class="section-label">Tools &amp; Access Needed</div>
+        <div class="dyn-list" id="toolsList"></div>
+        <button type="button" class="dyn-add" data-list="tools">+ Add tool or access item</button>
+
+        <div class="section-label">Step-by-Step Instructions</div>
+        <div class="dyn-list" id="stepsList"></div>
+        <button type="button" class="dyn-add" data-list="steps">+ Add step</button>
+
+        <div class="section-label">Common Mistakes to Avoid</div>
+        <div class="dyn-list" id="mistakesList"></div>
+        <button type="button" class="dyn-add" data-list="mistakes">+ Add mistake</button>
+
+        <div class="section-label">Definition of Done</div>
+        <div class="field">
+          <textarea id="f-definitionOfDone" placeholder="What does a correctly completed process look like? How would someone verify it was done right?"></textarea>
+        </div>
+
+        <div class="section-label">Related Resources</div>
+        <div class="dyn-list" id="relatedList"></div>
+        <button type="button" class="dyn-add" data-list="related">+ Add related resource</button>
+
+        <div class="copy-toast" id="copyToast">✓ Copied your SOP to the clipboard — paste it into a doc, Notion page, or wiki.</div>
+        <div class="copy-toast" id="pdfToast">✓ Your SOP PDF is downloading now.</div>
+      </section>
+
+      <section class="part" id="example">
+        <span class="part-eyebrow">Part 5</span>
+        <div class="example-toggle" id="exampleToggle">
+          <div>
+            <h2 class="part-title" style="margin-bottom:4px;">Example SOP (Filled In)</h2>
+            <p class="part-sub" style="margin-bottom:0;">Here's the same template completed for a real process, so you can see what a finished SOP actually looks like.</p>
+          </div>
+          <div class="example-toggle-icon">+</div>
+        </div>
+        <div class="example-body" id="exampleBody">
+          <div class="field-row" style="margin-top:24px;">
+            <div class="example-field"><span class="lbl">Process Name</span><div class="val">New Client Onboarding</div></div>
+            <div class="example-field"><span class="lbl">Department / Area</span><div class="val">Client Services</div></div>
+          </div>
+          <div class="field-row">
+            <div class="example-field"><span class="lbl">Owner</span><div class="val">Operations Manager</div></div>
+            <div class="example-field"><span class="lbl">Last Updated</span><div class="val">June 2026</div></div>
+          </div>
+          <div class="example-field"><span class="lbl">Review Frequency</span><div class="val">Every 90 days</div></div>
+          <div class="example-field"><span class="lbl">Purpose</span><div class="val">Ensures every new client has a consistent, professional first experience and has everything needed to begin work without delay.</div></div>
+          <div class="example-field"><span class="lbl">Trigger</span><div class="val">A new client signs the service agreement and pays the initial deposit.</div></div>
+          <div class="example-field">
+            <span class="lbl">Tools &amp; Access Needed</span>
+            <ul>
+              <li>CRM (client record creation)</li>
+              <li>Email platform (welcome sequence)</li>
+              <li>Project management tool (project setup)</li>
+              <li>Shared client folder (Google Drive)</li>
+            </ul>
+          </div>
+          <div class="example-field">
+            <span class="lbl">Step-by-Step Instructions</span>
+            <ol>
+              <li>Create a new client record in the CRM with contact details and signed agreement attached.</li>
+              <li>Send the Welcome Email within 24 hours of contract signing, using the standard template.</li>
+              <li>Create a new project in the project management tool using the onboarding project template.</li>
+              <li>Create a shared client folder and share access with the client and assigned team members.</li>
+              <li>Send the Discovery Questionnaire and request it be completed within 5 business days.</li>
+              <li>Schedule the Kickoff Call once the questionnaire is returned.</li>
+              <li>Confirm internally which team member is the client's main point of contact and notify the client.</li>
+            </ol>
+          </div>
+          <div class="example-field">
+            <span class="lbl">Common Mistakes to Avoid</span>
+            <ul>
+              <li>Sending the Welcome Email before the deposit has actually cleared — confirm payment first.</li>
+              <li>Forgetting to assign folder permissions, which delays the client's ability to share files.</li>
+              <li>Scheduling the Kickoff Call before the Discovery Questionnaire is returned, which leads to an unfocused first meeting.</li>
+            </ul>
+          </div>
+          <div class="example-field"><span class="lbl">Definition of Done</span><div class="val">Client has received the Welcome Email, has access to their shared folder, has returned the Discovery Questionnaire, and the Kickoff Call is on the calendar — all within 7 business days of signing.</div></div>
+          <div class="example-field">
+            <span class="lbl">Related Resources</span>
+            <ul>
+              <li>Welcome Email Template</li>
+              <li>Discovery Questionnaire</li>
+              <li>Kickoff Call Agenda</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <section class="cta-section">
+      <div class="cta-inner">
+        <div class="cta-content">
+          <span class="cta-eyebrow">Your Next Step</span>
+          <h2>Need help documenting your entire operation?</h2>
+          <p>Documenting your first SOP is a strong start. But most businesses don't have one broken process — they have a dozen, scattered across sales, onboarding, delivery, and operations, each draining time in a different way. EVA's Consulting offers a free 20-minute Process Clarity Call — no pitch, just a clear read on your operation.</p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="https://calendar.app.google/kbPc9vozRLjeAAYq7" target="_blank" rel="noopener">Book Your Free Clarity Call</a>
+            <a class="btn btn-secondary" href="mailto:services@evasconsulting.com">Email Us Instead</a>
+          </div>
+          <div class="cta-meta">services@evasconsulting.com &nbsp;|&nbsp; +1 (786) 505-9903</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <img src="data:image/png;base64,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" alt="EVA's Consulting">
+    <span class="footer-logo-text">EVA'S CONSULTING</span>
+  </div>
+  <p>© 2026 EVA's Consulting — Operations &amp; Business Systems Consulting for Small Businesses</p>
+</footer>
+
+<script>
+/* ── CHECKLIST (Part 3) ── */
+const CHECKLIST = [
+  { title: "Before You Write", items: [
+    "I performed the task myself or directly observed someone doing it.",
+    "I identified the trigger that starts this process.",
+    "I identified what 'done' looks like at the end.",
+    "I know which tools, logins, or systems are involved."
+  ]},
+  { title: "While You Write", items: [
+    "Each step describes one action, not several.",
+    "Steps are written in the order they actually happen.",
+    "I've noted where judgment calls are allowed vs. where the step must be followed exactly.",
+    "I've called out the most common mistake(s) for this process.",
+    "I've included screenshots or links where they'd remove ambiguity."
+  ]},
+  { title: "Before You Publish", items: [
+    "Someone unfamiliar with the task followed the SOP successfully.",
+    "The SOP has an owner — someone responsible for keeping it current.",
+    "The SOP has a 'last updated' date.",
+    "The SOP is saved somewhere the whole team can find it (not just your inbox or desktop)."
+  ]}
+];
+
+const checklistGroupsEl = document.getElementById('checklistGroups');
+const checklistState = CHECKLIST.map(g => g.items.map(() => false));
+const totalChecklistItems = CHECKLIST.reduce((sum, g) => sum + g.items.length, 0);
+
+CHECKLIST.forEach((group, gIdx) => {
+  const el = document.createElement('div');
+  el.className = 'checklist-group';
+  el.innerHTML = `
+    <div class="checklist-group-head">
+      <h4>${group.title}</h4>
+      <span class="checklist-group-count"><b id="cg-count-${gIdx}">0</b>/${group.items.length}</span>
+    </div>
+    <div class="pipe"><div class="pipe-fill" id="cg-pipe-${gIdx}"></div></div>
+    <ul class="checklist">
+      ${group.items.map((item, iIdx) => `
+        <li class="check-item" data-g="${gIdx}" data-i="${iIdx}">
+          <input type="checkbox" id="cchk-${gIdx}-${iIdx}">
+          <span class="box"></span>
+          <span class="txt">${item}</span>
+        </li>
+      `).join('')}
+    </ul>
+  `;
+  checklistGroupsEl.appendChild(el);
+});
+
+checklistGroupsEl.addEventListener('click', (e) => {
+  const li = e.target.closest('.check-item');
+  if (!li) return;
+  const gIdx = +li.dataset.g, iIdx = +li.dataset.i;
+  const checkbox = li.querySelector('input');
+  if (e.target !== checkbox) checkbox.checked = !checkbox.checked;
+  checklistState[gIdx][iIdx] = checkbox.checked;
+  updateChecklist();
+});
+
+function updateChecklist() {
+  let total = 0;
+  CHECKLIST.forEach((group, gIdx) => {
+    const count = checklistState[gIdx].filter(Boolean).length;
+    total += count;
+    document.getElementById(`cg-count-${gIdx}`).textContent = count;
+    document.getElementById(`cg-pipe-${gIdx}`).style.width = (count / group.items.length * 100) + '%';
+  });
+  document.getElementById('checklistTotal').textContent = total;
+}
+updateChecklist();
+
+/* ── TEMPLATE BUILDER (Part 4) ── */
+const listConfigs = {
+  tools: { containerId: 'toolsList', placeholder: 'e.g. CRM (client record creation)', numbered: false },
+  steps: { containerId: 'stepsList', placeholder: 'One clear action', numbered: true },
+  mistakes: { containerId: 'mistakesList', placeholder: 'A mistake and how to avoid it', numbered: false },
+  related: { containerId: 'relatedList', placeholder: 'e.g. Welcome Email Template', numbered: false }
+};
+
+const listState = { tools: [''], steps: ['', '', ''], mistakes: [''], related: [''] };
+
+function renderList(key) {
+  const cfg = listConfigs[key];
+  const container = document.getElementById(cfg.containerId);
+  container.innerHTML = listState[key].map((val, idx) => `
+    <div class="${cfg.numbered ? 'step-input-row' : 'dyn-row'}" data-list="${key}" data-idx="${idx}">
+      ${cfg.numbered ? `<div class="step-num-badge">${idx + 1}</div>` : ''}
+      <input type="text" value="${escapeAttr(val)}" placeholder="${cfg.placeholder}" data-list="${key}" data-idx="${idx}">
+      <button type="button" class="dyn-remove" data-remove="${key}" data-idx="${idx}" title="Remove">×</button>
+    </div>
+  `).join('');
+}
+
+function escapeAttr(str) {
+  return String(str).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+}
+
+Object.keys(listConfigs).forEach(renderList);
+
+document.querySelectorAll('.dyn-add').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const key = btn.dataset.list;
+    listState[key].push('');
+    renderList(key);
+  });
+});
+
+document.getElementById('template').addEventListener('input', (e) => {
+  const key = e.target.dataset.list;
+  if (key !== undefined && e.target.tagName === 'INPUT' && e.target.type === 'text' && e.target.dataset.idx !== undefined) {
+    listState[key][+e.target.dataset.idx] = e.target.value;
+  }
+});
+
+document.getElementById('template').addEventListener('click', (e) => {
+  const removeKey = e.target.dataset.remove;
+  if (removeKey) {
+    const idx = +e.target.dataset.idx;
+    listState[removeKey].splice(idx, 1);
+    if (listState[removeKey].length === 0) listState[removeKey].push('');
+    renderList(removeKey);
+  }
+});
+
+const fieldIds = ['processName', 'department', 'owner', 'lastUpdated', 'reviewFrequency', 'purpose', 'trigger', 'definitionOfDone'];
+
+function getFieldValues() {
+  const vals = {};
+  fieldIds.forEach(id => { vals[id] = document.getElementById('f-' + id).value.trim(); });
+  return vals;
+}
+
+function setFieldValues(vals) {
+  fieldIds.forEach(id => { document.getElementById('f-' + id).value = vals[id] || ''; });
+}
+
+document.getElementById('loadExampleBtn').addEventListener('click', () => {
+  setFieldValues({
+    processName: 'New Client Onboarding',
+    department: 'Client Services',
+    owner: 'Operations Manager',
+    lastUpdated: 'June 2026',
+    reviewFrequency: 'Every 90 days',
+    purpose: 'Ensures every new client has a consistent, professional first experience and has everything needed to begin work without delay.',
+    trigger: 'A new client signs the service agreement and pays the initial deposit.',
+    definitionOfDone: "Client has received the Welcome Email, has access to their shared folder, has returned the Discovery Questionnaire, and the Kickoff Call is on the calendar — all within 7 business days of signing."
+  });
+  listState.tools = ['CRM (client record creation)', 'Email platform (welcome sequence)', 'Project management tool (project setup)', 'Shared client folder (Google Drive)'];
+  listState.steps = [
+    'Create a new client record in the CRM with contact details and signed agreement attached.',
+    'Send the Welcome Email within 24 hours of contract signing, using the standard template.',
+    'Create a new project in the project management tool using the onboarding project template.',
+    'Create a shared client folder and share access with the client and assigned team members.',
+    'Send the Discovery Questionnaire and request it be completed within 5 business days.',
+    'Schedule the Kickoff Call once the questionnaire is returned.',
+    "Confirm internally which team member is the client's main point of contact and notify the client."
+  ];
+  listState.mistakes = [
+    'Sending the Welcome Email before the deposit has actually cleared — confirm payment first.',
+    "Forgetting to assign folder permissions, which delays the client's ability to share files.",
+    'Scheduling the Kickoff Call before the Discovery Questionnaire is returned, which leads to an unfocused first meeting.'
+  ];
+  listState.related = ['Welcome Email Template', 'Discovery Questionnaire', 'Kickoff Call Agenda'];
+  Object.keys(listConfigs).forEach(renderList);
+});
+
+document.getElementById('clearFormBtn').addEventListener('click', () => {
+  setFieldValues({});
+  listState.tools = [''];
+  listState.steps = ['', '', ''];
+  listState.mistakes = [''];
+  listState.related = [''];
+  Object.keys(listConfigs).forEach(renderList);
+  document.getElementById('copyToast').classList.remove('show');
+});
+
+document.getElementById('copyBtn').addEventListener('click', () => {
+  const v = getFieldValues();
+  const nonEmpty = arr => arr.map(s => s.trim()).filter(Boolean);
+  const tools = nonEmpty(listState.tools);
+  const steps = nonEmpty(listState.steps);
+  const mistakes = nonEmpty(listState.mistakes);
+  const related = nonEmpty(listState.related);
+
+  const text = `SOP: ${v.processName || '[Process Name]'}
+Department / Area: ${v.department || '[Department]'}
+Owner: ${v.owner || '[Owner]'}
+Last Updated: ${v.lastUpdated || '[Date]'}
+Review Frequency: ${v.reviewFrequency || '[Frequency]'}
+
+PURPOSE
+${v.purpose || '[Purpose]'}
+
+TRIGGER
+${v.trigger || '[Trigger]'}
+
+TOOLS & ACCESS NEEDED
+${tools.length ? tools.map(t => '- ' + t).join('\n') : '[None listed]'}
+
+STEP-BY-STEP INSTRUCTIONS
+${steps.length ? steps.map((s, i) => (i + 1) + '. ' + s).join('\n') : '[No steps listed]'}
+
+COMMON MISTAKES TO AVOID
+${mistakes.length ? mistakes.map(m => '- ' + m).join('\n') : '[None listed]'}
+
+DEFINITION OF DONE
+${v.definitionOfDone || '[Definition of done]'}
+
+RELATED RESOURCES
+${related.length ? related.map(r => '- ' + r).join('\n') : '[None listed]'}`;
+
+  const toast = document.getElementById('copyToast');
+  const showToast = () => { toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 4000); };
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(showToast).catch(() => fallbackCopy(text, showToast));
+  } else {
+    fallbackCopy(text, showToast);
+  }
+});
+
+document.getElementById('downloadPdfBtn').addEventListener('click', () => {
+  const v = getFieldValues();
+  const nonEmpty = arr => arr.map(s => s.trim()).filter(Boolean);
+  const tools = nonEmpty(listState.tools);
+  const steps = nonEmpty(listState.steps);
+  const mistakes = nonEmpty(listState.mistakes);
+  const related = nonEmpty(listState.related);
+
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ unit: 'pt', format: 'letter' });
+  const pageW = doc.internal.pageSize.getWidth();
+  const pageH = doc.internal.pageSize.getHeight();
+  const marginX = 56;
+  const contentW = pageW - marginX * 2;
+  const navy = [47, 52, 55];
+  const teal = [0, 184, 171];
+  const gray = [107, 113, 119];
+  let y = 0;
+
+  function ensureSpace(needed) {
+    if (y + needed > pageH - 50) {
+      doc.addPage();
+      drawHeaderBand();
+      y = 96;
+    }
+  }
+
+  function drawHeaderBand() {
+    doc.setFillColor(navy[0], navy[1], navy[2]);
+    doc.rect(0, 0, pageW, 56, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(11);
+    doc.text("EVA'S CONSULTING", marginX, 34);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(9);
+    doc.setTextColor(0, 207, 193);
+    doc.text('SOP Starter Kit', pageW - marginX, 34, { align: 'right' });
+  }
+
+  function sectionLabel(text) {
+    ensureSpace(30);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(10.5);
+    doc.setTextColor(teal[0], teal[1], teal[2]);
+    doc.text(text.toUpperCase(), marginX, y);
+    y += 8;
+    doc.setDrawColor(230, 230, 230);
+    doc.line(marginX, y, pageW - marginX, y);
+    y += 18;
+  }
+
+  function bodyText(text, opts) {
+    opts = opts || {};
+    doc.setFont('helvetica', opts.bold ? 'bold' : 'normal');
+    doc.setFontSize(opts.size || 10.5);
+    doc.setTextColor(navy[0], navy[1], navy[2]);
+    const lines = doc.splitTextToSize(text, contentW - (opts.indent || 0));
+    lines.forEach(line => {
+      ensureSpace(16);
+      doc.text(line, marginX + (opts.indent || 0), y);
+      y += (opts.size || 10.5) * 1.4;
+    });
+  }
+
+  function listBlock(items, ordered) {
+    if (!items.length) { bodyText('None listed.', { size: 10, indent: 0 }); return; }
+    items.forEach((item, idx) => {
+      const prefix = ordered ? `${idx + 1}. ` : '– ';
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(10.5);
+      doc.setTextColor(navy[0], navy[1], navy[2]);
+      const lines = doc.splitTextToSize(prefix + item, contentW - 10);
+      lines.forEach((line, li) => {
+        ensureSpace(16);
+        doc.text(line, marginX + 4, y);
+        y += 15;
+      });
+      y += 2;
+    });
+  }
+
+  drawHeaderBand();
+  y = 96;
+
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(20);
+  doc.setTextColor(navy[0], navy[1], navy[2]);
+  const titleLines = doc.splitTextToSize(v.processName || 'Untitled Process', contentW);
+  titleLines.forEach(line => { doc.text(line, marginX, y); y += 24; });
+  y += 4;
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(10);
+  doc.setTextColor(gray[0], gray[1], gray[2]);
+  const metaLine = [
+    v.department ? `Department: ${v.department}` : null,
+    v.owner ? `Owner: ${v.owner}` : null,
+    v.lastUpdated ? `Last Updated: ${v.lastUpdated}` : null,
+    v.reviewFrequency ? `Review: ${v.reviewFrequency}` : null
+  ].filter(Boolean).join('   |   ');
+  if (metaLine) { bodyText(metaLine, { size: 10 }); }
+  y += 10;
+
+  sectionLabel('Purpose');
+  bodyText(v.purpose || 'Not specified.');
+  y += 6;
+
+  sectionLabel('Trigger');
+  bodyText(v.trigger || 'Not specified.');
+  y += 6;
+
+  sectionLabel('Tools & Access Needed');
+  listBlock(tools, false);
+  y += 6;
+
+  sectionLabel('Step-by-Step Instructions');
+  listBlock(steps, true);
+  y += 6;
+
+  sectionLabel('Common Mistakes to Avoid');
+  listBlock(mistakes, false);
+  y += 6;
+
+  sectionLabel('Definition of Done');
+  bodyText(v.definitionOfDone || 'Not specified.');
+  y += 6;
+
+  sectionLabel('Related Resources');
+  listBlock(related, false);
+
+  const fileName = (v.processName || 'sop').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') || 'sop';
+  doc.save(`${fileName}-sop.pdf`);
+
+  const toast = document.getElementById('pdfToast');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 4000);
+});
+
+function fallbackCopy(text, cb) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); } catch (e) {}
+  document.body.removeChild(ta);
+  cb();
+}
+
+/* ── EXAMPLE TOGGLE (Part 5) ── */
+const exampleToggle = document.getElementById('exampleToggle');
+const exampleBody = document.getElementById('exampleBody');
+exampleToggle.addEventListener('click', () => {
+  exampleToggle.classList.toggle('open');
+  exampleBody.classList.toggle('open');
+});
+
+/* ── EMAIL GATE ── */
+const gateForm = document.getElementById('gateForm');
+const gateName = document.getElementById('gateName');
+const gateEmail = document.getElementById('gateEmail');
+const gateError = document.getElementById('gateError');
+const gateWrap = document.getElementById('gateWrap');
+const mainContent = document.getElementById('mainContent');
+
+function isValidEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+/* Google Form relay — sends leads straight to your "New lead" Google Form,
+   no backend, no Zapier. Response lands in the Sheet linked to that form. */
+const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSeuFy9rEbKCAGmE1n-zpxVOwDG4L-x6Vm0HighGx1gsXqe_Ag/formResponse';
+const GOOGLE_FORM_FIELDS = {
+  email: 'entry.1617230043',
+  fullName: 'entry.1873023225',
+  source: 'entry.920209662'
+};
+
+function submitLeadToGoogleForm(name, email) {
+  const fd = new FormData();
+  fd.append(GOOGLE_FORM_FIELDS.email, email);
+  fd.append(GOOGLE_FORM_FIELDS.fullName, name);
+  fd.append(GOOGLE_FORM_FIELDS.source, 'SOP Starter Kit');
+  // no-cors: we can't read the response, but the submission still goes through.
+  fetch(GOOGLE_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: fd }).catch(() => {});
+}
+
+function unlock(name, email, isNewSignup) {
+  try {
+    localStorage.setItem('sop_kit_email', email);
+    localStorage.setItem('sop_kit_name', name || '');
+  } catch (e) {}
+  if (isNewSignup) submitLeadToGoogleForm(name, email);
+  gateWrap.classList.add('hidden');
+  mainContent.classList.add('unlocked');
+}
+
+gateForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = gateName.value.trim();
+  const email = gateEmail.value.trim();
+
+  if (!name) {
+    gateName.classList.add('error');
+    gateError.textContent = 'Please enter your name.';
+    return;
+  }
+  gateName.classList.remove('error');
+
+  if (!isValidEmail(email)) {
+    gateEmail.classList.add('error');
+    gateError.textContent = 'Please enter a valid email address.';
+    return;
+  }
+  gateEmail.classList.remove('error');
+  gateError.textContent = '';
+  unlock(name, email, true);
+});
+
+try {
+  const savedEmail = localStorage.getItem('sop_kit_email');
+  const savedName = localStorage.getItem('sop_kit_name');
+  if (savedEmail) unlock(savedName, savedEmail, false);
+} catch (e) {}
+</script>
+
+</body>
+</html>
