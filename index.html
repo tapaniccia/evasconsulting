@@ -14,7 +14,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EVA's Consulting — Operations & Business Systems for Small Businesses</title>
+<title>EVA's Consulting | Operations & Business Systems for Small Businesses</title>
 <meta name="description" content="We turn operational chaos into clear, scalable systems. Operations consulting for small businesses ready to grow without everything depending on you.">
 
 <link rel="canonical" href="https://evasconsulting.com/">
@@ -27,7 +27,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:image" content="https://evasconsulting.com/images/social-preview.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="EVA's Consulting — We turn chaos into clear, scalable systems.">
+<meta property="og:image:alt" content="EVA's Consulting | We turn chaos into clear, scalable systems.">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
@@ -478,6 +478,97 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .resource-cta svg { transition: transform .2s; }
   .resource-card:hover .resource-cta svg { transform: translateX(4px); }
+  .resource-card.featured-resource {
+    grid-column: 1 / -1;
+    min-height: 280px;
+    margin-top: 8px;
+    padding: 44px 46px;
+    background: linear-gradient(135deg, var(--orange) 0%, #e5571a 100%);
+    border: 1px solid rgba(255,255,255,0.28);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .resource-card.featured-resource::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    right: -90px;
+    top: -130px;
+    background: rgba(255,255,255,0.10);
+    pointer-events: none;
+  }
+  .resource-card.featured-resource::after {
+    content: '';
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    right: 120px;
+    bottom: -170px;
+    background: rgba(47,52,55,0.12);
+    pointer-events: none;
+  }
+  .featured-resource-content,
+  .featured-resource-action { position: relative; z-index: 1; }
+  .featured-resource .resource-type {
+    display: inline-flex;
+    width: fit-content;
+    color: var(--white);
+    background: rgba(47,52,55,0.20);
+    border: 1px solid rgba(255,255,255,0.24);
+    border-radius: 999px;
+    padding: 7px 12px;
+    margin-bottom: 18px;
+  }
+  .featured-resource h3 {
+    font-size: clamp(28px, 4vw, 42px);
+    margin-bottom: 14px;
+  }
+  .featured-resource p {
+    max-width: 720px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.84);
+    margin-bottom: 22px;
+  }
+  .featured-resource-benefits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    list-style: none;
+  }
+  .featured-resource-benefits li {
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .featured-resource-benefits li::before {
+    content: '✓';
+    margin-right: 7px;
+  }
+  .featured-resource-action {
+    min-width: 190px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .featured-resource .resource-cta {
+    background: var(--white);
+    color: var(--navy);
+    padding: 14px 20px;
+    border-radius: 7px;
+    font-size: 14px;
+    box-shadow: 0 10px 26px rgba(47,52,55,0.18);
+  }
+  .resource-card.featured-resource:hover {
+    background: linear-gradient(135deg, #ff6f2e 0%, #db4f15 100%);
+    border-color: rgba(255,255,255,0.55);
+    box-shadow: 0 18px 48px rgba(255,98,29,0.24);
+  }
 
   /* ── TESTIMONIAL ── */
   #testimonial { padding: 100px 0; background: var(--offwhite); }
@@ -612,6 +703,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .process-steps::before { display: none; }
     .resources-grid { grid-template-columns: 1fr; }
+    .resource-card.featured-resource {
+      grid-template-columns: 1fr;
+      padding: 36px 30px;
+      gap: 26px;
+    }
+    .featured-resource-action { justify-content: flex-start; }
     .cta-inner { padding: 56px 32px; }
     .ideal-strip { flex-direction: column; align-items: flex-start; gap: 20px; }
     .packages-right { grid-template-columns: 1fr; }
@@ -679,7 +776,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
           <span class="strike">growing</span> but your<br>
           operations <span class="highlight">aren't.</span>
         </h1>
-        <p class="hero-sub">We turn operational chaos into clear, scalable systems — so growth doesn't break everything you've built.</p>
+        <p class="hero-sub">We turn operational chaos into clear, scalable systems | so growth doesn't break everything you've built.</p>
         <div class="hero-actions">
           <a href="https://calendar.app.google/kbPc9vozRLjeAAYq7" class="btn btn-primary">Book a Free Clarity Call</a>
           <a href="#services" class="btn btn-secondary">See What We Do</a>
@@ -699,7 +796,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
             <div class="hero-stat-icon"><i data-lucide="repeat"></i></div>
             <div class="hero-stat-text">
               <strong>Same questions, every day</strong>
-              We document the answers once — so your team stops asking.
+              We document the answers once | so your team stops asking.
             </div>
           </div>
           <div class="hero-stat-item">
@@ -739,20 +836,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
       <div>
         <div class="truth-box">
           <h3>Your people are fine.<br>Your <em>systems</em> need work.</h3>
-          <p>When a business runs on memory, hustle, and the founder being constantly available — it's not a business, it's a job. And it breaks the moment you try to grow it.</p>
+          <p>When a business runs on memory, hustle, and the founder being constantly available | it's not a business, it's a job. And it breaks the moment you try to grow it.</p>
           <p>Every healthy operation is built on the same three layers. Most businesses are missing at least one.</p>
           <div class="three-layers">
             <div class="layer">
               <div class="layer-num">01</div>
-              <div class="layer-text"><strong>Process</strong> — Defined steps that create clarity</div>
+              <div class="layer-text"><strong>Process</strong> | Defined steps that create clarity</div>
             </div>
             <div class="layer">
               <div class="layer-num">02</div>
-              <div class="layer-text"><strong>People</strong> — Clear roles and responsibilities</div>
+              <div class="layer-text"><strong>People</strong> | Clear roles and responsibilities</div>
             </div>
             <div class="layer">
               <div class="layer-num">03</div>
-              <div class="layer-text"><strong>Tools</strong> — The right systems to scale efficiently</div>
+              <div class="layer-text"><strong>Tools</strong> | The right systems to scale efficiently</div>
             </div>
           </div>
           <a href="https://calendar.app.google/kbPc9vozRLjeAAYq7" class="btn btn-primary" style="width:100%;justify-content:center;">Start With a Free Clarity Call</a>
@@ -780,13 +877,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
       <div class="service-card">
         <div class="service-icon"><i data-lucide="clipboard-list"></i></div>
         <h3>SOP &amp; Process Development</h3>
-        <p>We turn your institutional knowledge into documented, repeatable processes. SOPs, playbooks, training resources — built so new hires can follow them without shadowing you for a month.</p>
+        <p>We turn your institutional knowledge into documented, repeatable processes. SOPs, playbooks, training resources | built so new hires can follow them without shadowing you for a month.</p>
         <span class="service-deliverable">→ Operational Playbook</span>
       </div>
       <div class="service-card">
         <div class="service-icon"><i data-lucide="settings"></i></div>
         <h3>Workflow &amp; Systems Optimization</h3>
-        <p>We analyze where work slows down, stalls, or breaks — and redesign the flow. Accountability structures, technology recommendations, and process redesign so things move without you pushing them.</p>
+        <p>We analyze where work slows down, stalls, or breaks | and redesign the flow. Accountability structures, technology recommendations, and process redesign so things move without you pushing them.</p>
         <span class="service-deliverable">→ Optimized Operating System</span>
       </div>
       <div class="service-card">
@@ -799,19 +896,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
     <div class="packages-strip">
       <div class="packages-left">
         <h3>Ready to start?<br>Packages from $499.</h3>
-        <p>Every engagement starts with a free 20-minute Clarity Call — no commitment, just a clear read on where your operation stands.</p>
+        <p>Every engagement starts with a free 20-minute Clarity Call | no commitment, just a clear read on where your operation stands.</p>
         <a href="https://calendar.app.google/kbPc9vozRLjeAAYq7" class="btn btn-primary" style="margin-top:24px;">Book Your Free Call</a>
       </div>
       <div class="packages-right">
         <div class="package-card">
           <div class="package-name">Launch</div>
           <div class="package-price">$499</div>
-          <div class="package-desc">3 sessions · Process map · SOP checklist · Basic KPIs</div>
+          <div class="package-desc">3 sessions | Process map | SOP checklist | Basic KPIs</div>
         </div>
         <div class="package-card featured">
           <div class="package-name">Boost</div>
           <div class="package-price">$899</div>
-          <div class="package-desc">5 sessions · Full roadmap · Automation recs · 2 weeks support</div>
+          <div class="package-desc">5 sessions | Full roadmap | Automation recs | 2 weeks support</div>
         </div>
       </div>
     </div>
@@ -906,7 +1003,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
     <div class="process-header">
       <div class="section-eyebrow">How It Works</div>
       <h2 class="section-title">Four steps from chaos to clarity</h2>
-      <p class="section-sub">Every engagement follows the same four-step process — so you always know where you are and what comes next.</p>
+      <p class="section-sub">Every engagement follows the same four-step process | so you always know where you are and what comes next.</p>
     </div>
     <div class="process-steps">
       <div class="step">
@@ -927,7 +1024,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
       <div class="step">
         <div class="step-num">4</div>
         <h3>Implementation Support</h3>
-        <p>SOP creation, workflow design, process mapping, and accountability systems — built and running.</p>
+        <p>SOP creation, workflow design, process mapping, and accountability systems | built and running.</p>
       </div>
     </div>
   </div>
@@ -939,28 +1036,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
     <div class="resources-header">
       <div class="section-eyebrow">Free Resources</div>
       <h2 class="section-title">Start fixing things today</h2>
-      <p class="section-sub">Three free tools to help you self-diagnose and take your first step toward a more structured operation.</p>
+      <p class="section-sub">Free tools to help you self-diagnose, document your processes, and take your first step toward a more structured operation.</p>
     </div>
     <div class="resources-grid">
       <a href="founder.html" class="resource-card">
-        <div class="resource-type">Assessment · Free Download</div>
+        <div class="resource-type">Assessment | Free Download</div>
         <h3>The Founder Bottleneck Assessment</h3>
-        <p>20 questions across 4 categories to find out how dependent your business really is on you — and where to start fixing it.</p>
+        <p>20 questions across 4 categories to find out how dependent your business really is on you | and where to start fixing it.</p>
         <span class="resource-cta">Download Free <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
       <a href="sopstarter.html" class="resource-card">
-        <div class="resource-type">Starter Kit · Free Download</div>
+        <div class="resource-type">Starter Kit | Free Download</div>
         <h3>The SOP Starter Kit</h3>
         <p>A complete bundle: writing guide, documentation checklist, blank template, and a real filled-in example SOP you can model.</p>
         <span class="resource-cta">Download Free <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
       <a href="clarity.html" class="resource-card">
-        <div class="resource-type">Checklist · Free Download</div>
+        <div class="resource-type">Checklist | Free Download</div>
         <h3>The Process Clarity Checklist</h3>
-        <p>25 yes/no questions across 5 categories — Documentation, Delegation, Communication, Tools, Growth Readiness. Takes 10 minutes.</p>
+        <p>25 yes/no questions across 5 categories | Documentation, Delegation, Communication, Tools, Growth Readiness. Takes 10 minutes.</p>
         <span class="resource-cta">Download Free <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
-    </div>
+    
+      <a href="process-builder.html" class="resource-card featured-resource">
+        <div class="featured-resource-content">
+          <div class="resource-type">Featured Interactive Tool | Free</div>
+          <h3>EVA's Process Builder</h3>
+          <p>Design professional process maps, SOP workflows, decision trees, and operational systems directly in your browser. Build visually, organize every step, and export your completed workflow as a PDF.</p>
+          <ul class="featured-resource-benefits">
+            <li>Drag and drop builder</li>
+            <li>Decision paths</li>
+            <li>PDF export</li>
+            <li>User friendly</li>
+          </ul>
+        </div>
+        <div class="featured-resource-action">
+          <span class="resource-cta">Launch Free Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+</div>
   </div>
 </section>
 
@@ -970,7 +1084,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
     <div class="testimonial-inner">
       <span class="testimonial-mark" aria-hidden="true">"</span>
       <p class="testimonial-quote">EVA's Consulting helped us build processes, organize our team, and <em>reduce operational chaos by 40% in 60 days.</em></p>
-      <p class="testimonial-source"><strong>Restaurant, Columbus GA</strong> — EVA's Consulting client</p>
+      <p class="testimonial-source"><strong>Restaurant, Columbus GA</strong> | EVA's Consulting client</p>
     </div>
   </div>
 </section>
@@ -981,7 +1095,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
     <div class="cta-inner">
       <div class="cta-eyebrow">Get Started</div>
       <h2>Ready to stop running<br>your business on <span>chaos?</span></h2>
-      <p>Book a free 20-minute Process Clarity Call. We'll identify your biggest bottleneck and tell you exactly what to fix first — no pitch, no obligation.</p>
+      <p>Book a free 20-minute Process Clarity Call. We'll identify your biggest bottleneck and tell you exactly what to fix first | no pitch, no obligation.</p>
       <div class="cta-actions">
         <a href="https://calendar.app.google/kbPc9vozRLjeAAYq7" class="btn btn-primary" style="font-size:16px;padding:16px 36px;">Book Your Free Clarity Call</a>
         <a href="mailto:services@evasconsulting.com" class="btn btn-secondary">Email Us Instead</a>
