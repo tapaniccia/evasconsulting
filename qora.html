@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TGPT7VMK');
+</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2F3437">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<title>QORA | Quarterly Planning and Business Operating System</title>
+<meta name="description" content="QORA by EVA's Consulting is a free quarterly business operating system for planning priorities, tracking KPIs, solving issues, managing tasks, and running weekly accountability meetings.">
+<link rel="canonical" href="https://evasconsulting.com/qora.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EVA's Consulting">
+<meta property="og:title" content="QORA | Quarterly Planning and Business Operating System">
+<meta property="og:description" content="Plan your quarter, track priorities and KPIs, solve issues, and run weekly accountability meetings in one structured workspace.">
+<meta property="og:url" content="https://evasconsulting.com/qora.html">
+<meta property="og:image" content="https://evasconsulting.com/images/social-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="QORA by EVA's Consulting business operating system">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="QORA | Quarterly Planning and Business Operating System">
+<meta name="twitter:description" content="A structured workspace for quarterly planning, KPI tracking, priorities, issues, tasks, and weekly meetings.">
+<meta name="twitter:image" content="https://evasconsulting.com/images/social-preview.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://evasconsulting.com/#organization",
+      "name": "EVA's Consulting",
+      "url": "https://evasconsulting.com/",
+      "logo": "https://evasconsulting.com/images/logomini.png",
+      "email": "services@evasconsulting.com"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://evasconsulting.com/qora.html#software",
+      "name": "QORA",
+      "alternateName": "QORA by EVA's Consulting",
+      "url": "https://evasconsulting.com/qora.html",
+      "description": "A quarterly business operating system for planning priorities, tracking KPIs, solving issues, managing tasks, and running weekly accountability meetings.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "browserRequirements": "Requires JavaScript and a modern web browser",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/OnlineOnly"
+      },
+      "publisher": { "@id": "https://evasconsulting.com/#organization" },
+      "featureList": [
+        "Quarterly planning",
+        "KPI scorecards",
+        "90-day priorities",
+        "Issue tracking",
+        "Task management",
+        "Weekly meeting agenda",
+        "Vision and business plan"
+      ]
+    }
+  ]
+}
+</script>
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --teal: #00CFC1;
+  --teal-light: #e0faf8;
+  --teal-dark: #009e93;
+  --orange: #FF621D;
+  --orange-light: #fff0ea;
+  --orange-dark: #cc4e17;
+  --dark: #2F3437;
+  --mid: #4a5568;
+  --muted: #718096;
+  --light: #a0aec0;
+  --border: #e2e8f0;
+  --border-strong: #cbd5e0;
+  --surface: #f7f8fa;
+  --surface-card: #ffffff;
+  --text: #1a202c;
+  --text-secondary: #4a5568;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--surface);
+  color: var(--text);
+  min-height: 100vh;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* LAYOUT */
+.app { display: flex; min-height: 100vh; }
+
+.sidebar {
+  width: 220px;
+  min-width: 220px;
+  background: var(--dark);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  z-index: 100;
+}
+
+.sidebar-logo {
+  padding: 20px 18px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.logo-mark {
+  display: flex; align-items: center; gap: 10px;
+}
+
+.logo-circle {
+  width: 34px; height: 34px;
+  background: var(--teal);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.logo-circle img { width: 100%; height: 100%; object-fit: cover; }
+
+.logo-text { line-height: 1.2; }
+.logo-name { font-size: 14px; font-weight: 700; color: #fff; letter-spacing: 0.04em; }
+.logo-sub { font-size: 9px; color: var(--teal); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+
+.sidebar-nav { padding: 12px 0; flex: 1; overflow-y: auto; }
+
+.nav-section-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  padding: 12px 18px 4px;
+}
+
+.nav-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 18px;
+  cursor: pointer;
+  color: rgba(255,255,255,0.55);
+  font-size: 13px;
+  font-weight: 400;
+  transition: all 0.15s;
+  border-left: 2px solid transparent;
+  user-select: none;
+}
+
+.nav-item:hover { color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.04); }
+.nav-item.active { color: var(--teal); border-left-color: var(--teal); background: rgba(0,207,193,0.08); font-weight: 500; }
+
+.nav-icon { font-size: 16px; width: 18px; text-align: center; flex-shrink: 0; }
+
+.sidebar-footer {
+  padding: 14px 18px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  font-size: 11px;
+  color: rgba(255,255,255,0.25);
+}
+
+.main { margin-left: 220px; flex: 1; }
+
+.topbar {
+  background: var(--surface-card);
+  border-bottom: 1px solid var(--border);
+  padding: 0 28px;
+  height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+  position: sticky; top: 0; z-index: 50;
+}
+
+.topbar-title { font-size: 16px; font-weight: 600; color: var(--text); }
+.topbar-sub { font-size: 12px; color: var(--muted); margin-top: 1px; }
+
+.topbar-actions { display: flex; gap: 8px; align-items: center; }
+.signout-btn {
+  color: var(--orange-dark);
+  border-color: rgba(255,98,29,0.32);
+  white-space: nowrap;
+}
+.signout-btn:hover { background: var(--orange-light); border-color: var(--orange); color: var(--orange-dark); }
+.signout-btn:disabled { opacity: 0.55; cursor: wait; }
+
+.content { padding: 28px; }
+
+/* SECTIONS */
+.section { display: none; }
+.section.active { display: block; }
+
+/* CARDS */
+.card {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.card-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.card-title { font-size: 13px; font-weight: 600; color: var(--text); }
+.card-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.card-body { padding: 20px; }
+
+/* BUTTONS */
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 14px;
+  border-radius: var(--radius);
+  font-size: 12px; font-weight: 500;
+  cursor: pointer; border: none;
+  transition: all 0.15s;
+  line-height: 1;
+  font-family: inherit;
+}
+
+.btn-primary { background: var(--teal); color: var(--dark); }
+.btn-primary:hover { background: var(--teal-dark); }
+.btn-secondary { background: transparent; color: var(--text-secondary); border: 1px solid var(--border-strong); }
+.btn-secondary:hover { background: var(--surface); }
+.btn-danger { background: transparent; color: #e53e3e; border: 1px solid #fed7d7; }
+.btn-danger:hover { background: #fff5f5; }
+.btn-ghost { background: transparent; color: var(--muted); border: 1px solid transparent; padding: 6px 8px; }
+.btn-ghost:hover { background: var(--surface); color: var(--text); }
+.btn-sm { padding: 4px 10px; font-size: 11px; }
+
+/* BADGES */
+.badge {
+  display: inline-flex; align-items: center;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 11px; font-weight: 500;
+  line-height: 1.4;
+}
+.badge-teal { background: var(--teal-light); color: var(--teal-dark); }
+.badge-orange { background: var(--orange-light); color: var(--orange-dark); }
+.badge-green { background: #f0fff4; color: #276749; }
+.badge-red { background: #fff5f5; color: #c53030; }
+.badge-gray { background: #f7fafc; color: var(--muted); border: 1px solid var(--border); }
+.badge-purple { background: #faf5ff; color: #6b46c1; }
+
+/* FORMS */
+.form-group { margin-bottom: 14px; }
+.form-label { display: block; font-size: 11px; font-weight: 500; color: var(--text-secondary); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.04em; }
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--surface-card);
+  transition: border-color 0.15s;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(0,207,193,0.12);
+}
+.form-textarea { resize: vertical; min-height: 80px; }
+.form-select { cursor: pointer; }
+
+/* MODAL */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(15,23,42,0.45);
+  z-index: 200;
+  display: flex; align-items: center; justify-content: center;
+  display: none;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--surface-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  width: 480px; max-width: 95vw;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.modal-header {
+  padding: 18px 20px 14px;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.modal-title { font-size: 15px; font-weight: 600; }
+.modal-body { padding: 20px; }
+.modal-footer { padding: 14px 20px; border-top: 1px solid var(--border); display: flex; gap: 8px; justify-content: flex-end; }
+
+/* TABLES */
+.data-table { width: 100%; border-collapse: collapse; }
+.data-table th {
+  text-align: left;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.data-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 13px; vertical-align: middle; }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: var(--surface); }
+.data-table .actions { display: flex; gap: 4px; opacity: 0; transition: opacity 0.15s; }
+.data-table tr:hover .actions { opacity: 1; }
+
+/* GRID */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+/* STAT TILES */
+.stat-tile { background: var(--surface-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px 20px; }
+.stat-label { font-size: 11px; font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
+.stat-value { font-size: 28px; font-weight: 600; color: var(--text); line-height: 1; }
+.stat-meta { font-size: 12px; color: var(--muted); margin-top: 4px; }
+.stat-bar { height: 3px; background: var(--border); border-radius: 2px; margin-top: 12px; overflow: hidden; }
+.stat-bar-fill { height: 100%; border-radius: 2px; background: var(--teal); }
+
+/* PROGRESS */
+.progress-track { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 3px; background: var(--teal); transition: width 0.3s; }
+.progress-fill.warn { background: var(--orange); }
+.progress-fill.danger { background: #e53e3e; }
+
+/* ISSUE PRIORITY */
+.priority-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.p-high { background: #e53e3e; }
+.p-medium { background: var(--orange); }
+.p-low { background: var(--teal); }
+
+/* CHECKBOX */
+.checkbox-row { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.checkbox-row:last-child { border-bottom: none; }
+.custom-cb { width: 16px; height: 16px; border: 2px solid var(--border-strong); border-radius: 4px; flex-shrink: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; margin-top: 1px; transition: all 0.15s; }
+.custom-cb.checked { background: var(--teal); border-color: var(--teal); }
+.custom-cb.checked::after { content: '✓'; color: white; font-size: 10px; font-weight: 700; }
+.cb-text { flex: 1; font-size: 13px; }
+.cb-text.done { text-decoration: line-through; color: var(--light); }
+.cb-meta { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+/* MEETING */
+.agenda-item { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.agenda-item:last-child { border-bottom: none; }
+.agenda-time { font-size: 11px; font-weight: 600; color: var(--muted); width: 36px; flex-shrink: 0; padding-top: 1px; }
+.agenda-body { flex: 1; }
+.agenda-name { font-size: 13px; font-weight: 500; color: var(--text); }
+.agenda-desc { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.timer-active { color: var(--teal); font-weight: 600; }
+
+/* VTO */
+.vto-section { margin-bottom: 28px; }
+.vto-section-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--teal-light); }
+.vto-field { margin-bottom: 12px; }
+.vto-field label { display: block; font-size: 11px; font-weight: 600; color: var(--text-secondary); margin-bottom: 4px; }
+.vto-value { font-size: 13px; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 8px 12px; min-height: 36px; cursor: text; }
+.vto-value[contenteditable]:focus { outline: 2px solid var(--teal); outline-offset: 1px; background: #fff; }
+.vto-value.placeholder { color: var(--muted); font-style: italic; }
+
+/* TOAST */
+.toast {
+  position: fixed; bottom: 24px; right: 24px;
+  background: var(--dark); color: #fff;
+  padding: 10px 18px; border-radius: var(--radius);
+  font-size: 13px; font-weight: 500;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.2s; z-index: 999;
+  display: flex; align-items: center; gap: 8px;
+}
+.toast.show { opacity: 1; }
+
+/* EMPTY STATE */
+.empty-state { text-align: center; padding: 48px 20px; }
+.empty-icon { font-size: 36px; margin-bottom: 12px; }
+.empty-title { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+.empty-desc { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+
+/* WEEK NAV */
+.week-nav { display: flex; align-items: center; gap: 10px; }
+.week-nav button { background: none; border: 1px solid var(--border-strong); border-radius: var(--radius); padding: 5px 12px; font-size: 12px; cursor: pointer; color: var(--text); font-family: inherit; }
+.week-nav button:hover { background: var(--surface); }
+.week-range { font-size: 13px; font-weight: 500; color: var(--text); min-width: 160px; text-align: center; }
+
+/* MEETING TIMER */
+.meeting-timer { font-size: 36px; font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
+.timer-controls { display: flex; gap: 8px; margin-top: 12px; }
+
+/* ROCK PROGRESS */
+.rock-card { padding: 16px; border: 1px solid var(--border); border-radius: var(--radius-lg); margin-bottom: 10px; }
+.rock-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+.rock-title { font-size: 13px; font-weight: 600; color: var(--text); }
+.rock-owner { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.rock-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; }
+.rock-pct { font-size: 12px; font-weight: 600; color: var(--text-secondary); }
+.rock-due { font-size: 11px; color: var(--muted); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .sidebar { width: 100%; min-width: unset; position: relative; }
+  .main { margin-left: 0; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* LOGIN SCREEN */
+.login-screen {
+  position: fixed; inset: 0; z-index: 500;
+  background: var(--dark);
+  background-image: radial-gradient(circle at 15% 15%, rgba(0,207,193,0.16), transparent 45%), radial-gradient(circle at 85% 85%, rgba(255,98,29,0.14), transparent 45%);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.login-card {
+  width: 380px; max-width: 100%;
+  background: var(--surface-card);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  padding: 40px 32px 32px;
+  text-align: center;
+}
+.login-logo-mark { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-bottom: 22px; }
+.login-logo-circle {
+  width: 58px; height: 58px; border-radius: 50%;
+  background: var(--teal);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,207,193,0.22);
+}
+.login-logo-circle img { width: 100%; height: 100%; object-fit: cover; }
+.login-title { font-size: 20px; font-weight: 700; color: var(--text); letter-spacing: 0.01em; }
+.login-subtitle { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
+.login-tagline { font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 24px; }
+.login-btn-wrap { display: flex; justify-content: center; margin-bottom: 18px; min-height: 44px; }
+.login-fallback { font-size: 11px; color: var(--light); margin-top: 6px; }
+.google-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 9px 20px 9px 14px;
+  border-radius: 24px;
+  border: 1px solid var(--border-strong);
+  background: #fff;
+  font-family: inherit; font-size: 13px; font-weight: 500;
+  color: #3c4043;
+  cursor: pointer;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+.google-btn:hover { box-shadow: 0 1px 6px rgba(0,0,0,0.15); border-color: var(--border-strong); }
+.login-framework-strip { display: flex; justify-content: center; gap: 4px; margin-top: 26px; flex-wrap: wrap; }
+.login-framework-step { font-size: 9px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--teal-dark); background: var(--teal-light); border-radius: 20px; padding: 4px 9px; }
+
+/* USER CHIP */
+.user-chip { display: flex; align-items: center; gap: 8px; padding: 4px 10px 4px 4px; border-radius: 20px; border: 1px solid var(--border); }
+.user-avatar { width: 26px; height: 26px; border-radius: 50%; background: var(--teal); color: var(--dark); font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0; }
+.user-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.user-name { font-size: 12px; font-weight: 500; color: var(--text); max-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* QORA FRAMEWORK PAGE */
+.qora-cycle { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-bottom: 24px; }
+.qora-step { background: var(--surface-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 16px 14px; position: relative; }
+.qora-step-num { font-size: 10px; font-weight: 700; color: var(--teal-dark); letter-spacing: 0.06em; }
+.qora-step-name { font-size: 14px; font-weight: 600; color: var(--text); margin: 6px 0 4px; }
+.qora-step-desc { font-size: 11px; color: var(--muted); line-height: 1.4; }
+@media (max-width: 900px) { .qora-cycle { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .qora-cycle { grid-template-columns: repeat(2, 1fr); } }
+
+.divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: 8px; }
+.gap-3 { gap: 12px; }
+.mt-4 { margin-top: 16px; }
+.mb-4 { margin-bottom: 16px; }
+.text-muted { color: var(--muted); }
+.text-sm { font-size: 12px; }
+.font-medium { font-weight: 500; }
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+
+/* ONBOARDING */
+.onboarding-screen {
+  position: fixed; inset: 0; z-index: 450;
+  background: rgba(47,52,55,0.92);
+  backdrop-filter: blur(8px);
+  display: none; align-items: center; justify-content: center;
+  padding: 24px;
+}
+.onboarding-screen.open { display: flex; }
+.onboarding-card {
+  width: 640px; max-width: 100%; max-height: 92vh; overflow-y: auto;
+  background: var(--surface-card); border-radius: 16px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.35); padding: 32px;
+}
+.onboarding-progress { display: flex; gap: 8px; margin: 22px 0 26px; }
+.onboarding-progress span { height: 4px; flex: 1; border-radius: 4px; background: var(--border); }
+.onboarding-progress span.active { background: var(--teal); }
+.onboarding-step { display: none; }
+.onboarding-step.active { display: block; }
+.onboarding-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 24px; }
+.onboarding-summary { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 16px; }
+.onboarding-summary-row { display: flex; justify-content: space-between; gap: 20px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.onboarding-summary-row:last-child { border-bottom: none; }
+
+/* SETTINGS */
+.settings-grid { display: grid; grid-template-columns: 1.35fr 0.65fr; gap: 16px; }
+.setting-help { font-size: 11px; color: var(--muted); margin-top: 5px; }
+.danger-zone { border-color: #fed7d7; }
+.danger-zone .card-header { background: #fffafa; }
+.brand-preview { display:flex; align-items:center; gap:12px; padding:14px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); }
+.brand-preview-logo { width:44px; height:44px; border-radius:10px; background:var(--teal); display:flex; align-items:center; justify-content:center; font-weight:700; color:#fff; overflow:hidden; }
+.brand-preview-logo img { width:100%; height:100%; object-fit:cover; }
+@media (max-width: 900px) { .settings-grid { grid-template-columns: 1fr; } }
+
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGPT7VMK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- LOGIN -->
+<div class="login-screen" id="login-screen">
+  <div class="login-card">
+    <div class="login-logo-mark">
+      <div class="login-logo-circle"><img src="images/logomini.png" alt="EVA's Consulting logo"></div>
+      <div>
+        <div class="login-title">QORA</div>
+        <div class="login-subtitle">by EVA's Consulting</div>
+      </div>
+    </div>
+    <div class="login-tagline">Sign in with Google to open your private QORA workspace. Plan your quarter, track execution, and review results in one structured operating rhythm.</div>
+    <div id="login-loading" style="font-size:12px;color:var(--muted);margin-bottom:16px;">Checking sign-in status…</div>
+    <div class="login-btn-wrap">
+      <button class="google-btn" id="login-btn-google" style="display:none;">
+        <svg width="18" height="18" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.91c1.7-1.57 2.69-3.88 2.69-6.62z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.91-2.26c-.81.54-1.85.86-3.05.86-2.34 0-4.33-1.58-5.04-3.71H.96v2.33A9 9 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.96 10.71A5.4 5.4 0 0 1 3.68 9c0-.59.1-1.17.28-1.71V4.96H.96A9 9 0 0 0 0 9c0 1.45.35 2.83.96 4.04l3-2.33z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.51.46 3.44 1.35l2.58-2.58C13.46.89 11.43 0 9 0A9 9 0 0 0 .96 4.96l3 2.33C4.67 5.16 6.66 3.58 9 3.58z"/></svg>
+        Sign in with Google
+      </button>
+    </div>
+    <div class="login-fallback" id="login-fallback" style="display:none;">
+      Firebase isn't configured yet | <a href="#" onclick="devSignIn();return false;" style="color:var(--teal-dark);">continue for preview</a>.
+    </div>
+    <div class="login-framework-strip">
+      <span class="login-framework-step">Reflect</span>
+      <span class="login-framework-step">Analyze</span>
+      <span class="login-framework-step">Prioritize</span>
+      <span class="login-framework-step">Plan</span>
+      <span class="login-framework-step">Execute</span>
+      <span class="login-framework-step">Review</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- FIRST-TIME ONBOARDING -->
+<div class="onboarding-screen" id="onboarding-screen" aria-hidden="true">
+  <div class="onboarding-card">
+    <div class="flex items-center justify-between gap-3">
+      <div>
+        <div class="login-title">Welcome to QORA</div>
+        <div class="text-sm text-muted" style="margin-top:4px;">Set up your workspace and first 90-day operating cycle.</div>
+      </div>
+      <div class="logo-circle"><img src="images/logomini.png" alt="EVA's Consulting logo"></div>
+    </div>
+    <div class="onboarding-progress" id="onboarding-progress"><span class="active"></span><span></span><span></span></div>
+
+    <div class="onboarding-step active" data-step="1">
+      <div class="card-title" style="font-size:16px;margin-bottom:16px;">Tell us about your business</div>
+      <div class="grid-2">
+        <div class="form-group"><label class="form-label">Business name</label><input class="form-input" id="ob-company" placeholder="Your company" /></div>
+        <div class="form-group"><label class="form-label">Industry</label><input class="form-input" id="ob-industry" placeholder="e.g. Real estate, consulting" /></div>
+      </div>
+      <div class="grid-2">
+        <div class="form-group"><label class="form-label">Team size</label><select class="form-select" id="ob-team-size"><option value="Solo">Solo</option><option value="2-5">2-5</option><option value="6-15">6-15</option><option value="16-50">16-50</option><option value="51+">51+</option></select></div>
+        <div class="form-group"><label class="form-label">Time zone</label><select class="form-select" id="ob-timezone"></select></div>
+      </div>
+    </div>
+
+    <div class="onboarding-step" data-step="2">
+      <div class="card-title" style="font-size:16px;margin-bottom:16px;">Define your current quarter</div>
+      <div class="grid-2">
+        <div class="form-group"><label class="form-label">Quarter starts</label><input type="date" class="form-input" id="ob-quarter-start" /></div>
+        <div class="form-group"><label class="form-label">Quarter ends</label><input type="date" class="form-input" id="ob-quarter-end" /></div>
+      </div>
+      <div class="form-group"><label class="form-label">Primary 90-day objective</label><textarea class="form-textarea" id="ob-goal" placeholder="What is the most important outcome you want this quarter?"></textarea></div>
+      <div class="form-group"><label class="form-label">First priority</label><input class="form-input" id="ob-priority" placeholder="A measurable priority that supports the objective" /></div>
+    </div>
+
+    <div class="onboarding-step" data-step="3">
+      <div class="card-title" style="font-size:16px;margin-bottom:10px;">Your workspace is ready</div>
+      <p class="text-sm text-muted" style="margin-bottom:16px;">QORA will start clean. Only the information you entered here will be added.</p>
+      <div class="onboarding-summary" id="onboarding-summary"></div>
+    </div>
+
+    <div class="onboarding-actions">
+      <button class="btn btn-secondary" id="ob-back" onclick="onboardingBack()" style="visibility:hidden;">Back</button>
+      <button class="btn btn-primary" id="ob-next" onclick="onboardingNext()">Continue</button>
+    </div>
+  </div>
+</div>
+
+<div class="app">
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark">
+      <div class="logo-circle"><img src="images/logomini.png" alt="EVA's Consulting logo"></div>
+      <div class="logo-text">
+        <div class="logo-name">QORA</div>
+        <div class="logo-sub">by EVA's Consulting</div>
+      </div>
+    </div>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-section-label">Overview</div>
+    <div class="nav-item active" onclick="navigate('dashboard')">
+      <span class="nav-icon">⬡</span> Dashboard
+    </div>
+    <div class="nav-item" onclick="navigate('framework')">
+      <span class="nav-icon">✦</span> QORA Framework
+    </div>
+    <div class="nav-section-label">Execution</div>
+    <div class="nav-item" onclick="navigate('scorecard')">
+      <span class="nav-icon">◈</span> Scorecard
+    </div>
+    <div class="nav-item" onclick="navigate('rocks')">
+      <span class="nav-icon">◆</span> Priorities
+    </div>
+    <div class="nav-item" onclick="navigate('todos')">
+      <span class="nav-icon">◻</span> To-Dos
+    </div>
+    <div class="nav-item" onclick="navigate('issues')">
+      <span class="nav-icon">⚑</span> Issues
+    </div>
+    <div class="nav-section-label">Meetings</div>
+    <div class="nav-item" onclick="navigate('l10')">
+      <span class="nav-icon">◷</span> Weekly Meeting
+    </div>
+    <div class="nav-section-label">Vision</div>
+    <div class="nav-item" onclick="navigate('vto')">
+      <span class="nav-icon">◎</span> Vision & Plan
+    </div>
+    <div class="nav-section-label">Workspace</div>
+    <div class="nav-item" onclick="navigate('settings')">
+      <span class="nav-icon">⚙</span> Settings
+    </div>
+  </nav>
+  <div class="sidebar-footer">EVA's QORA Framework © 2026</div>
+</aside>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="topbar">
+    <div>
+      <div class="topbar-title" id="topbar-title">Dashboard</div>
+      <div class="topbar-sub" id="topbar-sub">Weekly pulse | EVA's Consulting</div>
+    </div>
+    <div class="topbar-actions">
+      <div class="user-chip" id="user-chip" style="display:none;">
+        <div class="user-avatar" id="user-avatar"></div>
+        <div class="user-name" id="user-name"></div>
+      </div>
+      <button class="btn btn-secondary btn-sm" onclick="exportData()">⬇ Export</button>
+      <button class="btn btn-primary btn-sm" onclick="saveAll()">Save</button>
+      <button class="btn btn-secondary btn-sm signout-btn" id="signout-btn" onclick="signOut()" aria-label="Sign out of QORA"><span aria-hidden="true">↪</span> Sign Out</button>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- DASHBOARD -->
+    <section id="sec-dashboard" class="section active">
+      <div class="grid-4 mb-4" id="dash-stats"></div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <div><div class="card-title">Active priorities</div><div class="card-sub">90-day priorities</div></div>
+            <button class="btn btn-ghost btn-sm" onclick="navigate('rocks')">View all →</button>
+          </div>
+          <div class="card-body" id="dash-rocks"></div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <div><div class="card-title">Open issues</div><div class="card-sub">Unresolved items</div></div>
+            <button class="btn btn-ghost btn-sm" onclick="navigate('issues')">View all →</button>
+          </div>
+          <div class="card-body" id="dash-issues"></div>
+        </div>
+      </div>
+      <div class="card mt-4">
+        <div class="card-header">
+          <div><div class="card-title">This week's to-dos</div><div class="card-sub">Pending action items</div></div>
+          <button class="btn btn-ghost btn-sm" onclick="navigate('todos')">View all →</button>
+        </div>
+        <div class="card-body" id="dash-todos"></div>
+      </div>
+    </section>
+
+    <!-- SCORECARD -->
+    <section id="sec-scorecard" class="section">
+      <div class="flex items-center justify-between mb-4">
+        <div class="week-nav">
+          <button onclick="shiftWeek(-1)">← Prev</button>
+          <div class="week-range" id="sc-week-range"></div>
+          <button onclick="shiftWeek(1)">Next →</button>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="openAddKpi()">+ Add metric</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-title">Weekly scorecard</div><div class="card-sub">Track your most important numbers</div></div>
+          <div class="flex gap-2">
+            <span class="badge badge-teal" id="sc-on-track">0 on track</span>
+            <span class="badge badge-orange" id="sc-off-track">0 off track</span>
+          </div>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="data-table" id="sc-table">
+            <thead>
+              <tr>
+                <th style="width:200px;">Metric</th>
+                <th>Category</th>
+                <th>Target</th>
+                <th>This week</th>
+                <th>Progress</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="sc-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROCKS -->
+    <section id="sec-rocks" class="section">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <div style="font-size:13px;color:var(--muted);">90-day priorities | Prioritize & Plan phase</div>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="openAddRock()">+ Add priority</button>
+      </div>
+      <div id="rocks-list"></div>
+    </section>
+
+    <!-- TODOS -->
+    <section id="sec-todos" class="section">
+      <div class="flex items-center justify-between mb-4">
+        <div></div>
+        <button class="btn btn-primary btn-sm" onclick="openAddTodo()">+ Add to-do</button>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header"><div class="card-title">Open</div></div>
+          <div class="card-body" id="todos-open"></div>
+        </div>
+        <div class="card">
+          <div class="card-header"><div class="card-title">Completed</div></div>
+          <div class="card-body" id="todos-done"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ISSUES -->
+    <section id="sec-issues" class="section">
+      <div class="flex items-center justify-between mb-4">
+        <div></div>
+        <button class="btn btn-primary btn-sm" onclick="openAddIssue()">+ Add issue</button>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div><div class="card-title">Issues list</div><div class="card-sub">Identify, discuss, solve</div></div>
+        </div>
+        <table class="data-table">
+          <thead><tr><th>Priority</th><th>Issue</th><th>Owner</th><th>Status</th><th>Added</th><th></th></tr></thead>
+          <tbody id="issues-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- L10 MEETING -->
+    <section id="sec-l10" class="section">
+      <div class="grid-2 mb-4">
+        <div class="card">
+          <div class="card-header"><div class="card-title">Meeting timer</div></div>
+          <div class="card-body" style="text-align:center;">
+            <div class="meeting-timer" id="l10-timer">90:00</div>
+            <div class="timer-controls" style="justify-content:center;">
+              <button class="btn btn-primary" onclick="timerStart()" id="timer-start-btn">Start</button>
+              <button class="btn btn-secondary" onclick="timerPause()" id="timer-pause-btn" disabled>Pause</button>
+              <button class="btn btn-secondary" onclick="timerReset()">Reset</button>
+            </div>
+            <div style="font-size:12px;color:var(--muted);margin-top:10px;" id="l10-segment-label">Ready to start</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><div class="card-title">Meeting details</div></div>
+          <div class="card-body">
+            <div class="form-group">
+              <label class="form-label">Meeting date</label>
+              <input type="date" class="form-input" id="l10-date" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Attendees</label>
+              <input type="text" class="form-input" id="l10-attendees" placeholder="e.g. Eva, Chelsea" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Notes</label>
+              <textarea class="form-textarea" id="l10-notes" placeholder="Key decisions and outcomes..." style="min-height:60px;"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-title">Weekly agenda</div><div class="card-sub">90-minute Execute-phase meeting format</div></div>
+        <div class="card-body">
+          <div id="l10-agenda"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FRAMEWORK -->
+    <section id="sec-framework" class="section">
+      <div class="card mb-4">
+        <div class="card-body">
+          <p style="font-size:13px;color:var(--text-secondary);line-height:1.6;">Every 90 days, EVA's Consulting clients move through the <strong>QORA Framework</strong> | a repeatable cycle that turns operational chaos into a clear quarterly rhythm.</p>
+        </div>
+      </div>
+      <div class="qora-cycle">
+        <div class="qora-step"><div class="qora-step-num">01 | REFLECT</div><div class="qora-step-name">Reflect</div><div class="qora-step-desc">Review KPIs and wins.</div></div>
+        <div class="qora-step"><div class="qora-step-num">02 | ANALYZE</div><div class="qora-step-name">Analyze</div><div class="qora-step-desc">Identify bottlenecks.</div></div>
+        <div class="qora-step"><div class="qora-step-num">03 | PRIORITIZE</div><div class="qora-step-name">Prioritize</div><div class="qora-step-desc">Select the biggest opportunities.</div></div>
+        <div class="qora-step"><div class="qora-step-num">04 | PLAN</div><div class="qora-step-name">Plan</div><div class="qora-step-desc">Define quarterly objectives and initiatives.</div></div>
+        <div class="qora-step"><div class="qora-step-num">05 | EXECUTE</div><div class="qora-step-name">Execute</div><div class="qora-step-desc">Weekly accountability and tracking.</div></div>
+        <div class="qora-step"><div class="qora-step-num">06 | REVIEW</div><div class="qora-step-name">Review</div><div class="qora-step-desc">Measure results and prepare for the next quarter.</div></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-title">Where each tool fits</div></div>
+        <div class="card-body">
+          <table class="data-table">
+            <thead><tr><th>QORA phase</th><th>Where it happens in the app</th></tr></thead>
+            <tbody>
+              <tr><td style="font-weight:500;">Reflect</td><td>Scorecard</td></tr>
+              <tr><td style="font-weight:500;">Analyze</td><td>Issues</td></tr>
+              <tr><td style="font-weight:500;">Prioritize &amp; Plan</td><td>Priorities | Vision &amp; Plan</td></tr>
+              <tr><td style="font-weight:500;">Execute</td><td>To-Dos | Weekly Meeting</td></tr>
+              <tr><td style="font-weight:500;">Review</td><td>Dashboard | Scorecard</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- VTO -->
+    <section id="sec-vto" class="section">
+      <div class="grid-2">
+        <div>
+          <div class="card mb-4">
+            <div class="card-header"><div class="card-title">Core values</div></div>
+            <div class="card-body">
+              <div class="vto-section">
+                <div class="vto-field">
+                  <label>Core focus (purpose / cause / passion)</label>
+                  <div class="vto-value" contenteditable="true" id="vto-focus" onblur="saveVTO()"></div>
+                </div>
+                <div class="vto-field">
+                  <label>Core values (what you stand for)</label>
+                  <div class="vto-value" contenteditable="true" id="vto-values" onblur="saveVTO()" style="min-height:80px;"></div>
+                </div>
+                <div class="vto-field">
+                  <label>Niche (who you serve + what you do)</label>
+                  <div class="vto-value" contenteditable="true" id="vto-niche" onblur="saveVTO()"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header"><div class="card-title">1-year plan</div></div>
+            <div class="card-body">
+              <div class="vto-field">
+                <label>Revenue goal</label>
+                <div class="vto-value" contenteditable="true" id="vto-rev1" onblur="saveVTO()">$___</div>
+              </div>
+              <div class="vto-field">
+                <label>Profit goal</label>
+                <div class="vto-value" contenteditable="true" id="vto-profit1" onblur="saveVTO()">$___</div>
+              </div>
+              <div class="vto-field">
+                <label>1-year goals (3-7 priorities)</label>
+                <div class="vto-value" contenteditable="true" id="vto-goals1" onblur="saveVTO()" style="min-height:100px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="card mb-4">
+            <div class="card-header"><div class="card-title">10-year target</div></div>
+            <div class="card-body">
+              <div class="vto-field">
+                <label>Big hairy audacious goal</label>
+                <div class="vto-value" contenteditable="true" id="vto-bhag" onblur="saveVTO()"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-4">
+            <div class="card-header"><div class="card-title">3-year picture</div></div>
+            <div class="card-body">
+              <div class="vto-field">
+                <label>Revenue</label>
+                <div class="vto-value" contenteditable="true" id="vto-rev3" onblur="saveVTO()">$___</div>
+              </div>
+              <div class="vto-field">
+                <label>What does it look like?</label>
+                <div class="vto-value" contenteditable="true" id="vto-look3" onblur="saveVTO()" style="min-height:80px;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header"><div class="card-title">Marketing strategy</div></div>
+            <div class="card-body">
+              <div class="vto-field">
+                <label>Target market</label>
+                <div class="vto-value" contenteditable="true" id="vto-market" onblur="saveVTO()"></div>
+              </div>
+              <div class="vto-field">
+                <label>Unique differentiator</label>
+                <div class="vto-value" contenteditable="true" id="vto-diff" onblur="saveVTO()"></div>
+              </div>
+              <div class="vto-field">
+                <label>Proven process</label>
+                <div class="vto-value" contenteditable="true" id="vto-process" onblur="saveVTO()"></div>
+              </div>
+              <div class="vto-field">
+                <label>Guarantee</label>
+                <div class="vto-value" contenteditable="true" id="vto-guarantee" onblur="saveVTO()"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SETTINGS -->
+    <section id="sec-settings" class="section">
+      <div class="settings-grid">
+        <div>
+          <div class="card mb-4">
+            <div class="card-header"><div><div class="card-title">Workspace profile</div><div class="card-sub">Personalize QORA for your business</div></div></div>
+            <div class="card-body">
+              <div class="grid-2">
+                <div class="form-group"><label class="form-label">Business name</label><input class="form-input" id="set-company" /></div>
+                <div class="form-group"><label class="form-label">Industry</label><input class="form-input" id="set-industry" /></div>
+              </div>
+              <div class="grid-2">
+                <div class="form-group"><label class="form-label">Team size</label><select class="form-select" id="set-team-size"><option>Solo</option><option>2-5</option><option>6-15</option><option>16-50</option><option>51+</option></select></div>
+                <div class="form-group"><label class="form-label">Time zone</label><select class="form-select" id="set-timezone"></select></div>
+              </div>
+              <div class="grid-2">
+                <div class="form-group"><label class="form-label">Quarter starts</label><input type="date" class="form-input" id="set-quarter-start" /></div>
+                <div class="form-group"><label class="form-label">Quarter ends</label><input type="date" class="form-input" id="set-quarter-end" /></div>
+              </div>
+              <div class="form-group"><label class="form-label">Logo image URL</label><input class="form-input" id="set-logo" placeholder="https://..." /><div class="setting-help">Optional. Use a direct HTTPS image URL.</div></div>
+              <div class="form-group"><label class="form-label">Accent color</label><input type="color" class="form-input" id="set-accent" value="#00CFC1" style="height:42px;padding:5px;" /></div>
+              <button class="btn btn-primary" onclick="saveSettings()">Save settings</button>
+            </div>
+          </div>
+          <div class="card danger-zone">
+            <div class="card-header"><div><div class="card-title" style="color:#c53030;">Danger zone</div><div class="card-sub">These actions cannot be undone</div></div></div>
+            <div class="card-body">
+              <div class="flex items-center justify-between gap-3" style="margin-bottom:18px;">
+                <div><div class="font-medium">Reset workspace data</div><div class="text-sm text-muted">Remove KPIs, priorities, tasks, issues, meetings, and vision data. Keep your account and settings.</div></div>
+                <button class="btn btn-danger" onclick="resetWorkspace()">Reset</button>
+              </div>
+              <hr class="divider">
+              <div class="flex items-center justify-between gap-3">
+                <div><div class="font-medium">Delete workspace</div><div class="text-sm text-muted">Delete the Firestore workspace document and sign out.</div></div>
+                <button class="btn btn-danger" onclick="deleteWorkspace()">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="card mb-4">
+            <div class="card-header"><div class="card-title">Brand preview</div></div>
+            <div class="card-body"><div class="brand-preview"><div class="brand-preview-logo" id="brand-preview-logo">Q</div><div><div class="font-medium" id="brand-preview-name">Your workspace</div><div class="text-sm text-muted">Powered by QORA</div></div></div></div>
+          </div>
+          <div class="card">
+            <div class="card-header"><div class="card-title">Data</div></div>
+            <div class="card-body">
+              <p class="text-sm text-muted" style="margin-bottom:14px;">Download a JSON backup of your entire QORA workspace.</p>
+              <button class="btn btn-secondary" onclick="exportData()">Download backup</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /content -->
+</div><!-- /main -->
+</div><!-- /app -->
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal" id="modal-box">
+    <div class="modal-header">
+      <div class="modal-title" id="modal-title">Add item</div>
+      <button class="btn btn-ghost btn-sm" onclick="closeModalDirect()">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+    <div class="modal-footer" id="modal-footer"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ─── DATA ───────────────────────────────────────────────────────────────────
+const DEFAULT_KPIS = [];
+const DEFAULT_ROCKS = [];
+const DEFAULT_ISSUES = [];
+const DEFAULT_TODOS = [];
+
+const L10_AGENDA = [
+  { time: '5m', name: 'Segue', desc: 'Good news / personal and professional wins' },
+  { time: '5m', name: 'Scorecard review', desc: 'Review weekly KPI numbers | identify off-track items' },
+  { time: '5m', name: 'Priority review', desc: 'On track / off track for each 90-day priority' },
+  { time: '5m', name: 'Customer & team headlines', desc: 'Key updates on clients, partners, or team' },
+  { time: '5m', name: 'To-do review', desc: 'Review completion of last week\'s to-dos (90% done?)' },
+  { time: '60m', name: 'IDS | Issues solving', desc: 'Identify, discuss, solve the most important issues' },
+  { time: '5m', name: 'Conclude', desc: 'Recap to-dos, set next meeting date, rate the meeting 1-10' },
+];
+
+// ─── STATE ───────────────────────────────────────────────────────────────────
+function load(key, def) {
+  try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : def; } catch { return def; }
+}
+function save(key, val) {
+  try { localStorage.setItem(key, JSON.stringify(val)); } catch {}
+  if (window.firebaseCloudSync) window.firebaseCloudSync(key, val);
+}
+
+let kpis = load('eva_kpis', DEFAULT_KPIS);
+let weeklyData = load('eva_weekly', {});
+let rocks = load('eva_rocks', DEFAULT_ROCKS);
+let todos = load('eva_todos', DEFAULT_TODOS);
+let issues = load('eva_issues', DEFAULT_ISSUES);
+let weekOffset = 0;
+let vtoData = load('eva_vto', {});
+let workspaceSettings = load('eva_settings', {});
+let currentUserProfile = null;
+let onboardingStep = 1;
+
+// ─── WEEK HELPERS ────────────────────────────────────────────────────────────
+function getWeekKey(offset) {
+  const d = new Date();
+  const day = d.getDay();
+  const diff = d.getDate() - day + (day === 0 ? -6 : 1);
+  const mon = new Date(d); mon.setDate(diff + offset * 7);
+  return `${mon.getFullYear()}-${String(mon.getMonth()+1).padStart(2,'0')}-${String(mon.getDate()).padStart(2,'0')}`;
+}
+function getWeekRange(offset) {
+  const d = new Date();
+  const day = d.getDay();
+  const diff = d.getDate() - day + (day === 0 ? -6 : 1);
+  const mon = new Date(d); mon.setDate(diff + offset * 7);
+  const fri = new Date(mon); fri.setDate(mon.getDate() + 4);
+  const fmt = dt => dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  const lbl = offset === 0 ? 'This week' : offset === -1 ? 'Last week' : offset === 1 ? 'Next week' : `Week ${offset > 0 ? '+' : ''}${offset}`;
+  return `${lbl} | ${fmt(mon)} - ${fmt(fri)}`;
+}
+function shiftWeek(delta) {
+  weekOffset += delta;
+  renderScorecard();
+}
+function getWeekVal(kpiId) {
+  const wk = getWeekKey(weekOffset);
+  return weeklyData[wk]?.[kpiId] ?? '';
+}
+function setWeekVal(kpiId, val) {
+  const wk = getWeekKey(weekOffset);
+  if (!weeklyData[wk]) weeklyData[wk] = {};
+  weeklyData[wk][kpiId] = val;
+  save('eva_weekly', weeklyData);
+}
+
+// ─── AUTH (Google Sign-In via Firebase) ────────────────────────────────────
+// Firebase project setup + config lives in the small <script type="module">
+// block near the end of this file (search for "FIREBASE CONFIG"). This
+// section just reacts to what that module tells it.
+
+// Called by the Firebase module once a user is signed in. cloudData is that
+// person's own Firestore document (or null if this is their very first
+// sign-in / Firebase isn't configured yet).
+function onCloudSignedIn(user, cloudData) {
+  currentUserProfile = user;
+  const isReadyWorkspace = cloudData?.onboardingComplete === true;
+  if (isReadyWorkspace) {
+    kpis = Array.isArray(cloudData.kpis) ? cloudData.kpis : [];
+    weeklyData = cloudData.weekly || {};
+    rocks = Array.isArray(cloudData.rocks) ? cloudData.rocks : [];
+    todos = Array.isArray(cloudData.todos) ? cloudData.todos : [];
+    issues = Array.isArray(cloudData.issues) ? cloudData.issues : [];
+    vtoData = cloudData.vto || {};
+    workspaceSettings = cloudData.settings || {};
+    syncLocalState();
+  } else {
+    clearWorkspaceState(false);
+  }
+  showApp(user);
+  if (!isReadyWorkspace) openOnboarding();
+}
+
+// Called by the Firebase module when there's no signed-in user.
+function onCloudSignedOut() {
+  currentUserProfile = null;
+  closeModalDirect();
+  document.getElementById('login-screen').style.display = 'flex';
+  document.getElementById('user-chip').style.display = 'none';
+  const signoutBtn = document.getElementById('signout-btn');
+  if (signoutBtn) {
+    signoutBtn.disabled = false;
+    signoutBtn.innerHTML = '<span aria-hidden="true">↪</span> Sign Out';
+  }
+}
+
+// Preview-only fallback so the workspace is usable before Firebase is configured.
+// Uses whatever is already in this browser's local storage | no cloud sync.
+function devSignIn() {
+  showApp({ name: 'Eva', email: '', picture: '' });
+}
+
+function showApp(user) {
+  document.getElementById('login-screen').style.display = 'none';
+  const chip = document.getElementById('user-chip');
+  const avatar = document.getElementById('user-avatar');
+  const name = document.getElementById('user-name');
+  avatar.innerHTML = user.picture ? `<img src="${esc(user.picture)}" alt="" />` : esc((user.name || '?').charAt(0).toUpperCase());
+  name.textContent = user.name || user.email || 'Signed in';
+  chip.style.display = 'flex';
+  applyWorkspaceBranding();
+  renderDashboard();
+}
+
+async function signOut() {
+  const button = document.getElementById('signout-btn');
+  if (button) {
+    button.disabled = true;
+    button.textContent = 'Signing out...';
+  }
+  try {
+    if (window.firebaseSignOut) {
+      await window.firebaseSignOut();
+    } else {
+      clearWorkspaceState(false);
+      onCloudSignedOut();
+    }
+  } catch (error) {
+    console.error('Sign-out failed', error);
+    toast('Sign-out failed. Please try again.');
+    if (button) {
+      button.disabled = false;
+      button.innerHTML = '<span aria-hidden="true">↪</span> Sign Out';
+    }
+  }
+}
+
+// ─── NAVIGATION ──────────────────────────────────────────────────────────────
+const PAGE_TITLES = {
+  dashboard: ['Dashboard', 'Weekly pulse | EVA\'s QORA Framework'],
+  framework: ['QORA Framework', 'The 90-day cycle behind this workspace'],
+  scorecard: ['Scorecard', 'Reflect: review your KPIs and wins'],
+  rocks: ['Priorities', 'Prioritize & Plan: your 90-day priorities'],
+  todos: ['To-Dos', 'Execute: action items and commitments'],
+  issues: ['Issues', 'Analyze: identify, discuss, solve'],
+  l10: ['Weekly Meeting', 'Execute: 90-minute weekly meeting'],
+  vto: ['Vision & Plan', 'Your business blueprint'],
+  settings: ['Settings', 'Workspace profile, brand, and data'],
+};
+let currentPage = 'dashboard';
+function navigate(page) {
+  currentPage = page;
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('sec-' + page).classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n => {
+    if (n.getAttribute('onclick')?.includes(`'${page}'`)) n.classList.add('active');
+  });
+  const [title, sub] = PAGE_TITLES[page] || [page, ''];
+  document.getElementById('topbar-title').textContent = title;
+  document.getElementById('topbar-sub').textContent = sub;
+  renderPage(page);
+}
+function renderPage(p) {
+  if (p === 'dashboard') renderDashboard();
+  if (p === 'scorecard') renderScorecard();
+  if (p === 'rocks') renderRocks();
+  if (p === 'todos') renderTodos();
+  if (p === 'issues') renderIssues();
+  if (p === 'l10') renderL10();
+  if (p === 'vto') renderVTO();
+  if (p === 'settings') renderSettings();
+}
+
+// ─── DASHBOARD ───────────────────────────────────────────────────────────────
+function renderDashboard() {
+  const wk = getWeekKey(0);
+  const wData = weeklyData[wk] || {};
+  const kpiConvos = kpis.find(k => k.id === 'qual_convos');
+  const convos = wData['qual_convos'] || 0;
+  const convoTarget = kpiConvos?.target || 0;
+  const openTodos = todos.filter(t => !t.done).length;
+  const openIssues = issues.filter(i => i.status === 'open').length;
+  const onTrackRocks = rocks.filter(r => r.status === 'on-track').length;
+
+  document.getElementById('dash-stats').innerHTML = `
+    <div class="stat-tile">
+      <div class="stat-label">Qualified conversations</div>
+      <div class="stat-value">${convos}</div>
+      <div class="stat-meta">${convoTarget ? `Target: ${convoTarget} / week` : 'Add this metric in Scorecard'}</div>
+      <div class="stat-bar"><div class="stat-bar-fill" style="width:${convoTarget ? Math.min(100,Math.round(convos/convoTarget*100)) : 0}%"></div></div>
+    </div>
+    <div class="stat-tile">
+      <div class="stat-label">Priorities on track</div>
+      <div class="stat-value">${onTrackRocks}<span style="font-size:16px;color:var(--muted);font-weight:400;"> / ${rocks.length}</span></div>
+      <div class="stat-meta">90-day priorities</div>
+    </div>
+    <div class="stat-tile">
+      <div class="stat-label">Open to-dos</div>
+      <div class="stat-value">${openTodos}</div>
+      <div class="stat-meta">${todos.filter(t=>t.done).length} completed</div>
+    </div>
+    <div class="stat-tile">
+      <div class="stat-label">Open issues</div>
+      <div class="stat-value">${openIssues}</div>
+      <div class="stat-meta">Pending resolution</div>
+    </div>
+  `;
+
+  document.getElementById('dash-rocks').innerHTML = rocks.slice(0,3).map(r => `
+    <div class="rock-card">
+      <div class="rock-header">
+        <div><div class="rock-title">${esc(r.title)}</div><div class="rock-owner">${esc(r.owner)}</div></div>
+        ${statusBadge(r.status)}
+      </div>
+      <div class="progress-track"><div class="progress-fill ${r.pct < 30 ? 'warn' : ''}" style="width:${r.pct}%"></div></div>
+      <div class="rock-foot"><span class="rock-pct">${r.pct}% complete</span><span class="rock-due">Due ${r.due}</span></div>
+    </div>
+  `).join('') || '<div class="empty-state"><div class="empty-desc">No priorities yet</div></div>';
+
+  document.getElementById('dash-issues').innerHTML = issues.filter(i=>i.status==='open').slice(0,4).map(i => `
+    <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);">
+      <div class="priority-dot p-${i.priority}" style="margin-top:5px;"></div>
+      <div style="flex:1;">
+        <div style="font-size:13px;font-weight:500;">${esc(i.title)}</div>
+        <div style="font-size:11px;color:var(--muted);">${esc(i.owner)} | ${i.priority} priority</div>
+      </div>
+    </div>
+  `).join('') || '<div class="empty-state"><div class="empty-desc">No open issues</div></div>';
+
+  document.getElementById('dash-todos').innerHTML = todos.filter(t=>!t.done).slice(0,5).map(t => `
+    <div class="checkbox-row">
+      <div class="custom-cb ${t.done?'checked':''}" onclick="toggleTodo('${t.id}')"></div>
+      <div style="flex:1;">
+        <div class="cb-text ${t.done?'done':''}">${esc(t.title)}</div>
+        <div class="cb-meta">${esc(t.owner)} | Due ${t.due}</div>
+      </div>
+    </div>
+  `).join('') || '<div class="empty-state"><div class="empty-desc">All caught up!</div></div>';
+}
+
+// ─── SCORECARD ───────────────────────────────────────────────────────────────
+function renderScorecard() {
+  document.getElementById('sc-week-range').textContent = getWeekRange(weekOffset);
+  let onTrack = 0, offTrack = 0;
+  const rows = kpis.map(k => {
+    const v = getWeekVal(k.id);
+    const numV = parseFloat(v);
+    const tgt = k.target;
+    let pct = 0, statusBadgeHtml = '<span class="badge badge-gray">|</span>';
+    if (tgt && v !== '') {
+      pct = Math.min(100, Math.round(numV / tgt * 100));
+      if (pct >= 100) { onTrack++; statusBadgeHtml = '<span class="badge badge-green">On track</span>'; }
+      else { offTrack++; statusBadgeHtml = '<span class="badge badge-orange">Off track</span>'; }
+    }
+    const barColor = pct >= 100 ? '' : pct >= 50 ? '' : 'warn';
+    return `<tr>
+      <td style="font-weight:500;">${esc(k.label)}</td>
+      <td><span class="badge badge-gray">${esc(k.category)}</span></td>
+      <td style="color:var(--muted);">${k.target ?? 'Track'}</td>
+      <td><input type="number" min="0" value="${v}" style="width:80px;padding:5px 8px;border:1px solid var(--border-strong);border-radius:var(--radius);font-family:inherit;font-size:13px;" onchange="setWeekVal('${k.id}',this.value);renderScorecard();" /></td>
+      <td style="min-width:100px;">
+        <div class="progress-track"><div class="progress-fill ${barColor}" style="width:${pct}%"></div></div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px;">${pct}%</div>
+      </td>
+      <td>${statusBadgeHtml}</td>
+      <td><div class="actions"><button class="btn btn-ghost btn-sm" onclick="deleteKpi('${k.id}')">✕</button></div></td>
+    </tr>`;
+  }).join('');
+  document.getElementById('sc-tbody').innerHTML = rows || '<tr><td colspan="7" style="text-align:center;color:var(--muted);padding:32px;">No metrics yet | add one above</td></tr>';
+  document.getElementById('sc-on-track').textContent = `${onTrack} on track`;
+  document.getElementById('sc-off-track').textContent = `${offTrack} off track`;
+}
+
+function openAddKpi() {
+  openModal('Add metric', `
+    <div class="form-group"><label class="form-label">Metric name</label><input type="text" class="form-input" id="f-kpi-label" placeholder="e.g. Discovery calls booked" /></div>
+    <div class="form-group"><label class="form-label">Category</label>
+      <select class="form-select" id="f-kpi-cat"><option>Outreach</option><option>Marketing</option><option>Sales</option><option>Partnerships</option><option>Website</option><option>Operations</option></select>
+    </div>
+    <div class="form-group"><label class="form-label">Weekly target</label><input type="number" class="form-input" id="f-kpi-target" placeholder="e.g. 5 (leave blank to just track)" /></div>
+  `, () => {
+    const label = document.getElementById('f-kpi-label').value.trim();
+    if (!label) return toast('Please enter a metric name');
+    const newKpi = {
+      id: 'kpi_' + Date.now(),
+      label,
+      category: document.getElementById('f-kpi-cat').value,
+      target: document.getElementById('f-kpi-target').value ? parseFloat(document.getElementById('f-kpi-target').value) : null
+    };
+    kpis.push(newKpi);
+    save('eva_kpis', kpis);
+    closeModalDirect();
+    renderScorecard();
+    toast('Metric added');
+  });
+}
+
+function deleteKpi(id) {
+  kpis = kpis.filter(k => k.id !== id);
+  save('eva_kpis', kpis);
+  renderScorecard();
+}
+
+// ─── ROCKS ───────────────────────────────────────────────────────────────────
+function statusBadge(s) {
+  if (s === 'on-track') return '<span class="badge badge-green">On track</span>';
+  if (s === 'at-risk') return '<span class="badge badge-orange">At risk</span>';
+  if (s === 'off-track') return '<span class="badge badge-red">Off track</span>';
+  if (s === 'complete') return '<span class="badge badge-teal">Complete</span>';
+  return '<span class="badge badge-gray">Not started</span>';
+}
+
+function renderRocks() {
+  document.getElementById('rocks-list').innerHTML = rocks.length ? rocks.map(r => `
+    <div class="rock-card" style="margin-bottom:12px;">
+      <div class="rock-header">
+        <div style="flex:1;">
+          <div class="rock-title" style="font-size:14px;">${esc(r.title)}</div>
+          <div class="rock-owner" style="margin-top:3px;">Owner: ${esc(r.owner)} | Due: ${r.due}</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          ${statusBadge(r.status)}
+          <button class="btn btn-ghost btn-sm" onclick="editRock('${r.id}')">Edit</button>
+          <button class="btn btn-ghost btn-sm" onclick="deleteRock('${r.id}')">✕</button>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="progress-track" style="flex:1;"><div class="progress-fill ${r.pct < 30 && r.status!=='not-started' ? 'warn' : ''}" style="width:${r.pct}%"></div></div>
+        <input type="range" min="0" max="100" value="${r.pct}" style="width:100px;" oninput="updateRockPct('${r.id}',this.value)" />
+        <span style="font-size:12px;font-weight:600;width:36px;">${r.pct}%</span>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:10px;">
+        ${['on-track','at-risk','off-track','complete'].map(s => `<button class="btn btn-secondary btn-sm ${r.status===s?'':'opacity-50'}" style="${r.status===s?'border-color:var(--teal);color:var(--teal-dark);':''}" onclick="setRockStatus('${r.id}','${s}')">${statusLabel(s)}</button>`).join('')}
+      </div>
+    </div>
+  `).join('') : `<div class="empty-state"><div class="empty-icon">◆</div><div class="empty-title">No priorities defined</div><div class="empty-desc">Add your 90-day priorities</div><button class="btn btn-primary" onclick="openAddRock()">+ Add priority</button></div>`;
+}
+
+function statusLabel(s) {
+  return {  'on-track': 'On track', 'at-risk': 'At risk', 'off-track': 'Off track', 'complete': 'Complete' }[s] || s;
+}
+
+function updateRockPct(id, val) {
+  const r = rocks.find(r => r.id === id); if (!r) return;
+  r.pct = parseInt(val);
+  save('eva_rocks', rocks);
+  renderRocks();
+  if (currentPage === 'dashboard') renderDashboard();
+}
+
+function setRockStatus(id, status) {
+  const r = rocks.find(r => r.id === id); if (!r) return;
+  r.status = status;
+  save('eva_rocks', rocks);
+  renderRocks();
+}
+
+function openAddRock() {
+  openModal('Add priority', `
+    <div class="form-group"><label class="form-label">Priority title</label><input type="text" class="form-input" id="f-rock-title" placeholder="e.g. Land first 3 paying clients" /></div>
+    <div class="form-group"><label class="form-label">Owner</label><input type="text" class="form-input" id="f-rock-owner" value="Eva" /></div>
+    <div class="form-group"><label class="form-label">Due date</label><input type="date" class="form-input" id="f-rock-due" value="2026-09-30" /></div>
+    <div class="form-group"><label class="form-label">Status</label>
+      <select class="form-select" id="f-rock-status"><option value="not-started">Not started</option><option value="on-track">On track</option><option value="at-risk">At risk</option></select>
+    </div>
+  `, () => {
+    const title = document.getElementById('f-rock-title').value.trim();
+    if (!title) return toast('Please enter a priority title');
+    rocks.push({ id: 'r_' + Date.now(), title, owner: document.getElementById('f-rock-owner').value, due: document.getElementById('f-rock-due').value, pct: 0, status: document.getElementById('f-rock-status').value });
+    save('eva_rocks', rocks);
+    closeModalDirect();
+    renderRocks();
+    toast('Priority added');
+  });
+}
+
+function editRock(id) {
+  const r = rocks.find(r => r.id === id); if (!r) return;
+  openModal('Edit priority', `
+    <div class="form-group"><label class="form-label">Priority title</label><input type="text" class="form-input" id="f-rock-title" value="${esc(r.title)}" /></div>
+    <div class="form-group"><label class="form-label">Owner</label><input type="text" class="form-input" id="f-rock-owner" value="${esc(r.owner)}" /></div>
+    <div class="form-group"><label class="form-label">Due date</label><input type="date" class="form-input" id="f-rock-due" value="${r.due}" /></div>
+  `, () => {
+    r.title = document.getElementById('f-rock-title').value.trim();
+    r.owner = document.getElementById('f-rock-owner').value;
+    r.due = document.getElementById('f-rock-due').value;
+    save('eva_rocks', rocks);
+    closeModalDirect();
+    renderRocks();
+    toast('Priority updated');
+  });
+}
+
+function deleteRock(id) {
+  rocks = rocks.filter(r => r.id !== id);
+  save('eva_rocks', rocks);
+  renderRocks();
+  toast('Priority removed');
+}
+
+// ─── TO-DOS ──────────────────────────────────────────────────────────────────
+function renderTodos() {
+  const open = todos.filter(t => !t.done);
+  const done = todos.filter(t => t.done);
+  const renderList = (list) => list.length ? list.map(t => `
+    <div class="checkbox-row">
+      <div class="custom-cb ${t.done?'checked':''}" onclick="toggleTodo('${t.id}')"></div>
+      <div style="flex:1;">
+        <div class="cb-text ${t.done?'done':''}">${esc(t.title)}</div>
+        <div class="cb-meta">${esc(t.owner)} | Due ${t.due}</div>
+      </div>
+      <button class="btn btn-ghost btn-sm" onclick="deleteTodo('${t.id}')">✕</button>
+    </div>
+  `).join('') : '<div style="color:var(--muted);font-size:13px;padding:16px 0;">None</div>';
+  document.getElementById('todos-open').innerHTML = renderList(open);
+  document.getElementById('todos-done').innerHTML = renderList(done);
+}
+
+function toggleTodo(id) {
+  const t = todos.find(t => t.id === id); if (!t) return;
+  t.done = !t.done;
+  save('eva_todos', todos);
+  renderTodos();
+  if (currentPage === 'dashboard') renderDashboard();
+}
+
+function deleteTodo(id) {
+  todos = todos.filter(t => t.id !== id);
+  save('eva_todos', todos);
+  renderTodos();
+}
+
+function openAddTodo() {
+  openModal('Add to-do', `
+    <div class="form-group"><label class="form-label">Task</label><input type="text" class="form-input" id="f-todo-title" placeholder="e.g. Send outreach campaign" /></div>
+    <div class="form-group"><label class="form-label">Owner</label><input type="text" class="form-input" id="f-todo-owner" value="Eva" /></div>
+    <div class="form-group"><label class="form-label">Due date</label><input type="date" class="form-input" id="f-todo-due" /></div>
+  `, () => {
+    const title = document.getElementById('f-todo-title').value.trim();
+    if (!title) return toast('Please enter a task');
+    todos.push({ id: 't_' + Date.now(), title, owner: document.getElementById('f-todo-owner').value, due: document.getElementById('f-todo-due').value, done: false });
+    save('eva_todos', todos);
+    closeModalDirect();
+    renderTodos();
+    toast('To-do added');
+  });
+}
+
+// ─── ISSUES ───────────────────────────────────────────────────────────────────
+function renderIssues() {
+  document.getElementById('issues-tbody').innerHTML = issues.length ? issues.map(i => `
+    <tr>
+      <td><div style="display:flex;align-items:center;gap:8px;"><div class="priority-dot p-${i.priority}"></div>${i.priority.charAt(0).toUpperCase()+i.priority.slice(1)}</div></td>
+      <td style="font-weight:500;max-width:280px;">${esc(i.title)}</td>
+      <td>${esc(i.owner)}</td>
+      <td>${i.status === 'open' ? '<span class="badge badge-orange">Open</span>' : '<span class="badge badge-green">Resolved</span>'}</td>
+      <td style="color:var(--muted);">${i.date}</td>
+      <td><div class="actions">
+        <button class="btn btn-ghost btn-sm" onclick="toggleIssue('${i.id}')">${i.status==='open'?'Resolve':'Reopen'}</button>
+        <button class="btn btn-ghost btn-sm" onclick="deleteIssue('${i.id}')">✕</button>
+      </div></td>
+    </tr>
+  `).join('') : '<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:32px;">No issues logged</td></tr>';
+}
+
+function toggleIssue(id) {
+  const i = issues.find(i => i.id === id); if (!i) return;
+  i.status = i.status === 'open' ? 'resolved' : 'open';
+  save('eva_issues', issues);
+  renderIssues();
+}
+
+function deleteIssue(id) {
+  issues = issues.filter(i => i.id !== id);
+  save('eva_issues', issues);
+  renderIssues();
+}
+
+function openAddIssue() {
+  openModal('Add issue', `
+    <div class="form-group"><label class="form-label">Issue</label><input type="text" class="form-input" id="f-issue-title" placeholder="Describe the issue clearly" /></div>
+    <div class="form-group"><label class="form-label">Owner</label><input type="text" class="form-input" id="f-issue-owner" value="Eva" /></div>
+    <div class="form-group"><label class="form-label">Priority</label>
+      <select class="form-select" id="f-issue-priority"><option value="high">High</option><option value="medium" selected>Medium</option><option value="low">Low</option></select>
+    </div>
+  `, () => {
+    const title = document.getElementById('f-issue-title').value.trim();
+    if (!title) return toast('Please describe the issue');
+    issues.unshift({ id: 'i_' + Date.now(), title, owner: document.getElementById('f-issue-owner').value, priority: document.getElementById('f-issue-priority').value, status: 'open', date: new Date().toISOString().slice(0,10) });
+    save('eva_issues', issues);
+    closeModalDirect();
+    renderIssues();
+    toast('Issue added');
+  });
+}
+
+// ─── L10 ─────────────────────────────────────────────────────────────────────
+let timerInterval = null;
+let timerSeconds = 90 * 60;
+let timerRunning = false;
+
+function renderL10() {
+  document.getElementById('l10-date').value = load('eva_l10_date', new Date().toISOString().slice(0,10));
+  document.getElementById('l10-attendees').value = load('eva_l10_attendees', 'Eva');
+  document.getElementById('l10-notes').value = load('eva_l10_notes', '');
+
+  document.getElementById('l10-agenda').innerHTML = L10_AGENDA.map((a, i) => `
+    <div class="agenda-item">
+      <div class="agenda-time">${a.time}</div>
+      <div class="agenda-body">
+        <div class="agenda-name">${a.name}</div>
+        <div class="agenda-desc">${a.desc}</div>
+      </div>
+    </div>
+  `).join('');
+
+  document.getElementById('l10-date').addEventListener('change', function() { save('eva_l10_date', this.value); });
+  document.getElementById('l10-attendees').addEventListener('change', function() { save('eva_l10_attendees', this.value); });
+  document.getElementById('l10-notes').addEventListener('input', function() { save('eva_l10_notes', this.value); });
+}
+
+function timerStart() {
+  if (timerRunning) return;
+  timerRunning = true;
+  document.getElementById('timer-start-btn').disabled = true;
+  document.getElementById('timer-pause-btn').disabled = false;
+  timerInterval = setInterval(() => {
+    if (timerSeconds <= 0) { clearInterval(timerInterval); timerRunning = false; toast('Meeting time is up!'); return; }
+    timerSeconds--;
+    updateTimerDisplay();
+  }, 1000);
+}
+function timerPause() {
+  clearInterval(timerInterval);
+  timerRunning = false;
+  document.getElementById('timer-start-btn').disabled = false;
+  document.getElementById('timer-pause-btn').disabled = true;
+}
+function timerReset() {
+  clearInterval(timerInterval);
+  timerRunning = false;
+  timerSeconds = 90 * 60;
+  document.getElementById('timer-start-btn').disabled = false;
+  document.getElementById('timer-pause-btn').disabled = true;
+  updateTimerDisplay();
+  document.getElementById('l10-segment-label').textContent = 'Ready to start';
+}
+function updateTimerDisplay() {
+  const m = Math.floor(timerSeconds / 60);
+  const s = timerSeconds % 60;
+  document.getElementById('l10-timer').textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  const elapsed = 90*60 - timerSeconds;
+  let seg = 'Segue (0-5 min)';
+  if (elapsed >= 5*60) seg = 'Scorecard review (5-10 min)';
+  if (elapsed >= 10*60) seg = 'Priority review (10-15 min)';
+  if (elapsed >= 15*60) seg = 'Headlines (15-20 min)';
+  if (elapsed >= 20*60) seg = 'To-do review (20-25 min)';
+  if (elapsed >= 25*60) seg = 'IDS | Issues solving (25-85 min)';
+  if (elapsed >= 85*60) seg = 'Conclude (85-90 min)';
+  document.getElementById('l10-segment-label').textContent = seg;
+}
+
+// ─── VTO ─────────────────────────────────────────────────────────────────────
+function renderVTO() {
+  const fields = ['vto-focus','vto-values','vto-niche','vto-bhag','vto-rev3','vto-look3','vto-rev1','vto-profit1','vto-goals1','vto-market','vto-diff','vto-process','vto-guarantee'];
+  fields.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && vtoData[id]) el.textContent = vtoData[id];
+  });
+}
+function saveVTO() {
+  const fields = ['vto-focus','vto-values','vto-niche','vto-bhag','vto-rev3','vto-look3','vto-rev1','vto-profit1','vto-goals1','vto-market','vto-diff','vto-process','vto-guarantee'];
+  fields.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) vtoData[id] = el.textContent;
+  });
+  save('eva_vto', vtoData);
+  save('eva_settings', workspaceSettings);
+  toast('Vision saved');
+}
+
+
+// ─── ONBOARDING & SETTINGS ─────────────────────────────────────────────────
+const TIME_ZONES = [
+  'America/New_York','America/Chicago','America/Denver','America/Los_Angeles',
+  'America/Puerto_Rico','America/Caracas','Europe/London','Europe/Madrid','Europe/Rome',
+  'Asia/Tokyo','UTC'
+];
+
+function syncLocalState() {
+  try {
+    localStorage.setItem('eva_kpis', JSON.stringify(kpis));
+    localStorage.setItem('eva_weekly', JSON.stringify(weeklyData));
+    localStorage.setItem('eva_rocks', JSON.stringify(rocks));
+    localStorage.setItem('eva_todos', JSON.stringify(todos));
+    localStorage.setItem('eva_issues', JSON.stringify(issues));
+    localStorage.setItem('eva_vto', JSON.stringify(vtoData));
+    localStorage.setItem('eva_settings', JSON.stringify(workspaceSettings));
+  } catch {}
+}
+
+function clearWorkspaceState(keepSettings = true) {
+  kpis = [];
+  weeklyData = {};
+  rocks = [];
+  todos = [];
+  issues = [];
+  vtoData = {};
+  if (!keepSettings) workspaceSettings = {};
+  syncLocalState();
+}
+
+function populateTimeZones(selectId, selected) {
+  const el = document.getElementById(selectId);
+  if (!el) return;
+  const guessed = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+  const zones = [...new Set([guessed, ...TIME_ZONES])];
+  el.innerHTML = zones.map(z => `<option value="${esc(z)}" ${z === (selected || guessed) ? 'selected' : ''}>${esc(z)}</option>`).join('');
+}
+
+function getQuarterDates() {
+  const now = new Date();
+  const quarter = Math.floor(now.getMonth() / 3);
+  const start = new Date(now.getFullYear(), quarter * 3, 1);
+  const end = new Date(now.getFullYear(), quarter * 3 + 3, 0);
+  const iso = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  return { start: iso(start), end: iso(end) };
+}
+
+function openOnboarding() {
+  onboardingStep = 1;
+  const q = getQuarterDates();
+  document.getElementById('ob-company').value = workspaceSettings.companyName || '';
+  document.getElementById('ob-industry').value = workspaceSettings.industry || '';
+  document.getElementById('ob-team-size').value = workspaceSettings.teamSize || 'Solo';
+  document.getElementById('ob-quarter-start').value = workspaceSettings.quarterStart || q.start;
+  document.getElementById('ob-quarter-end').value = workspaceSettings.quarterEnd || q.end;
+  populateTimeZones('ob-timezone', workspaceSettings.timezone);
+  updateOnboardingUI();
+  const screen = document.getElementById('onboarding-screen');
+  screen.classList.add('open');
+  screen.setAttribute('aria-hidden','false');
+}
+
+function updateOnboardingUI() {
+  document.querySelectorAll('.onboarding-step').forEach(el => el.classList.toggle('active', Number(el.dataset.step) === onboardingStep));
+  document.querySelectorAll('#onboarding-progress span').forEach((el,i) => el.classList.toggle('active', i < onboardingStep));
+  document.getElementById('ob-back').style.visibility = onboardingStep === 1 ? 'hidden' : 'visible';
+  document.getElementById('ob-next').textContent = onboardingStep === 3 ? 'Open my workspace' : 'Continue';
+  if (onboardingStep === 3) {
+    const company = document.getElementById('ob-company').value.trim() || 'My business';
+    const industry = document.getElementById('ob-industry').value.trim() || 'Not specified';
+    const goal = document.getElementById('ob-goal').value.trim() || 'No objective added yet';
+    document.getElementById('onboarding-summary').innerHTML = `
+      <div class="onboarding-summary-row"><span class="text-muted">Workspace</span><strong>${esc(company)}</strong></div>
+      <div class="onboarding-summary-row"><span class="text-muted">Industry</span><strong>${esc(industry)}</strong></div>
+      <div class="onboarding-summary-row"><span class="text-muted">Quarter</span><strong>${esc(document.getElementById('ob-quarter-start').value)} to ${esc(document.getElementById('ob-quarter-end').value)}</strong></div>
+      <div class="onboarding-summary-row"><span class="text-muted">Objective</span><strong style="text-align:right;max-width:65%;">${esc(goal)}</strong></div>`;
+  }
+}
+
+function onboardingBack() {
+  if (onboardingStep > 1) onboardingStep--;
+  updateOnboardingUI();
+}
+
+function onboardingNext() {
+  if (onboardingStep === 1) {
+    if (!document.getElementById('ob-company').value.trim()) return toast('Enter your business name');
+    onboardingStep = 2;
+    updateOnboardingUI();
+    return;
+  }
+  if (onboardingStep === 2) {
+    const start = document.getElementById('ob-quarter-start').value;
+    const end = document.getElementById('ob-quarter-end').value;
+    if (!start || !end || start > end) return toast('Choose a valid quarter date range');
+    onboardingStep = 3;
+    updateOnboardingUI();
+    return;
+  }
+  finishOnboarding();
+}
+
+function finishOnboarding() {
+  workspaceSettings = {
+    ...workspaceSettings,
+    companyName: document.getElementById('ob-company').value.trim(),
+    industry: document.getElementById('ob-industry').value.trim(),
+    teamSize: document.getElementById('ob-team-size').value,
+    timezone: document.getElementById('ob-timezone').value,
+    quarterStart: document.getElementById('ob-quarter-start').value,
+    quarterEnd: document.getElementById('ob-quarter-end').value,
+    accentColor: workspaceSettings.accentColor || '#00CFC1'
+  };
+  const goal = document.getElementById('ob-goal').value.trim();
+  const priority = document.getElementById('ob-priority').value.trim();
+  if (goal) vtoData['vto-goals1'] = goal;
+  if (priority) rocks.push({ id: 'r_' + Date.now(), title: priority, owner: currentUserProfile?.name || 'Owner', due: workspaceSettings.quarterEnd, pct: 0, status: 'not-started' });
+  save('eva_settings', workspaceSettings);
+  save('eva_vto', vtoData);
+  save('eva_rocks', rocks);
+  if (window.firebaseCompleteOnboarding) window.firebaseCompleteOnboarding({
+    settings: workspaceSettings, kpis, weekly: weeklyData, rocks, todos, issues, vto: vtoData
+  });
+  document.getElementById('onboarding-screen').classList.remove('open');
+  document.getElementById('onboarding-screen').setAttribute('aria-hidden','true');
+  applyWorkspaceBranding();
+  renderDashboard();
+  toast('Workspace created');
+}
+
+function renderSettings() {
+  const q = getQuarterDates();
+  populateTimeZones('set-timezone', workspaceSettings.timezone);
+  document.getElementById('set-company').value = workspaceSettings.companyName || '';
+  document.getElementById('set-industry').value = workspaceSettings.industry || '';
+  document.getElementById('set-team-size').value = workspaceSettings.teamSize || 'Solo';
+  document.getElementById('set-quarter-start').value = workspaceSettings.quarterStart || q.start;
+  document.getElementById('set-quarter-end').value = workspaceSettings.quarterEnd || q.end;
+  document.getElementById('set-logo').value = workspaceSettings.logoUrl || '';
+  document.getElementById('set-accent').value = workspaceSettings.accentColor || '#00CFC1';
+  updateBrandPreview();
+}
+
+function saveSettings() {
+  const start = document.getElementById('set-quarter-start').value;
+  const end = document.getElementById('set-quarter-end').value;
+  if (start && end && start > end) return toast('Choose a valid quarter date range');
+  workspaceSettings = {
+    ...workspaceSettings,
+    companyName: document.getElementById('set-company').value.trim(),
+    industry: document.getElementById('set-industry').value.trim(),
+    teamSize: document.getElementById('set-team-size').value,
+    timezone: document.getElementById('set-timezone').value,
+    quarterStart: start,
+    quarterEnd: end,
+    logoUrl: document.getElementById('set-logo').value.trim(),
+    accentColor: document.getElementById('set-accent').value
+  };
+  save('eva_settings', workspaceSettings);
+  applyWorkspaceBranding();
+  updateBrandPreview();
+  toast('Settings saved');
+}
+
+function applyWorkspaceBranding() {
+  const accent = workspaceSettings.accentColor || '#00CFC1';
+  document.documentElement.style.setProperty('--teal', accent);
+  const company = workspaceSettings.companyName || "EVA's Consulting";
+  const topSub = document.getElementById('topbar-sub');
+  if (topSub && currentPage === 'dashboard') topSub.textContent = `Weekly pulse | ${company}`;
+}
+
+function updateBrandPreview() {
+  const name = document.getElementById('brand-preview-name');
+  const logo = document.getElementById('brand-preview-logo');
+  if (!name || !logo) return;
+  const company = document.getElementById('set-company')?.value.trim() || workspaceSettings.companyName || 'Your workspace';
+  const logoUrl = document.getElementById('set-logo')?.value.trim() || workspaceSettings.logoUrl || '';
+  name.textContent = company;
+  logo.innerHTML = logoUrl ? `<img src="${esc(logoUrl)}" alt="">` : esc(company.charAt(0).toUpperCase() || 'Q');
+}
+
+document.addEventListener('input', e => {
+  if (['set-company','set-logo'].includes(e.target.id)) updateBrandPreview();
+});
+
+function resetWorkspace() {
+  if (!confirm('Reset all workspace data? Your account and settings will remain.')) return;
+  clearWorkspaceState(true);
+  save('eva_kpis', kpis); save('eva_weekly', weeklyData); save('eva_rocks', rocks);
+  save('eva_todos', todos); save('eva_issues', issues); save('eva_vto', vtoData);
+  renderDashboard();
+  toast('Workspace reset');
+}
+
+async function deleteWorkspace() {
+  if (!confirm('Delete this QORA workspace and sign out? This cannot be undone.')) return;
+  if (window.firebaseDeleteWorkspace) {
+    await window.firebaseDeleteWorkspace();
+  } else {
+    clearWorkspaceState(false);
+    signOut();
+  }
+}
+
+// ─── MODAL ───────────────────────────────────────────────────────────────────
+let modalCallback = null;
+function openModal(title, body, onConfirm) {
+  document.getElementById('modal-title').textContent = title;
+  document.getElementById('modal-body').innerHTML = body;
+  document.getElementById('modal-footer').innerHTML = `<button class="btn btn-secondary" onclick="closeModalDirect()">Cancel</button><button class="btn btn-primary" onclick="modalConfirm()">Save</button>`;
+  modalCallback = onConfirm;
+  document.getElementById('modal-overlay').classList.add('open');
+  setTimeout(() => { const first = document.querySelector('#modal-body .form-input'); if (first) first.focus(); }, 50);
+}
+function modalConfirm() { if (modalCallback) modalCallback(); }
+function closeModal(e) { if (e.target === document.getElementById('modal-overlay')) closeModalDirect(); }
+function closeModalDirect() { document.getElementById('modal-overlay').classList.remove('open'); }
+
+// ─── UTILS ───────────────────────────────────────────────────────────────────
+function esc(str) { return String(str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = '✓  ' + msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2000);
+}
+function saveAll() {
+  save('eva_kpis', kpis);
+  save('eva_weekly', weeklyData);
+  save('eva_rocks', rocks);
+  save('eva_todos', todos);
+  save('eva_issues', issues);
+  saveVTO();
+  toast('All data saved');
+}
+function exportData() {
+  const data = { kpis, weeklyData, rocks, todos, issues, vtoData, workspaceSettings, exported: new Date().toISOString() };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'qora-workspace-export.json'; a.click();
+  toast('Data exported');
+}
+
+// ─── INIT ────────────────────────────────────────────────────────────────────
+// No call needed here | the Firebase module below drives sign-in state and
+// calls onCloudSignedIn / onCloudSignedOut / devSignIn as appropriate.
+</script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+  import {
+    getAuth,
+    GoogleAuthProvider,
+    browserLocalPersistence,
+    onAuthStateChanged,
+    setPersistence,
+    signInWithPopup,
+    signOut
+  } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
+  import {
+    deleteDoc,
+    doc,
+    getDoc,
+    getFirestore,
+    serverTimestamp,
+    setDoc
+  } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
+  // Firebase web configuration for the QORA project.
+  const firebaseConfig = {
+    apiKey: "AIzaSyCl74Y5vzd05gbf1Kkh2-9mu0ugcS9XIy0",
+    authDomain: "qora-eva.firebaseapp.com",
+    projectId: "qora-eva",
+    storageBucket: "qora-eva.firebasestorage.app",
+    messagingSenderId: "1090715009486",
+    appId: "1:1090715009486:web:776741c694dde4f079ab9f",
+    measurementId: "G-46B53C0EDN"
+  };
+
+  const loginLoading = document.getElementById('login-loading');
+  const loginBtn = document.getElementById('login-btn-google');
+  const loginFallback = document.getElementById('login-fallback');
+  let userDocRef = null;
+  let cloudWriteTimer = null;
+  let pendingCloudFields = {};
+
+  try {
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    const provider = new GoogleAuthProvider();
+    provider.setCustomParameters({ prompt: 'select_account' });
+
+    await setPersistence(auth, browserLocalPersistence);
+
+    loginBtn.addEventListener('click', async () => {
+      loginBtn.disabled = true;
+      loginLoading.textContent = 'Opening Google sign-in...';
+      loginLoading.style.display = 'block';
+      try {
+        await signInWithPopup(auth, provider);
+      } catch (error) {
+        console.error('Google sign-in failed', error);
+        loginLoading.textContent = 'Sign-in failed. Please try again.';
+        loginBtn.disabled = false;
+      }
+    });
+
+    window.firebaseSignOut = async () => {
+      clearTimeout(cloudWriteTimer);
+      pendingCloudFields = {};
+      clearWorkspaceState(false);
+      await signOut(auth);
+    };
+
+    window.firebaseCompleteOnboarding = async workspace => {
+      if (!userDocRef) return;
+      try {
+        await setDoc(userDocRef, {
+          ...workspace,
+          onboardingComplete: true,
+          email: auth.currentUser?.email || null,
+          displayName: auth.currentUser?.displayName || null,
+          updatedAt: serverTimestamp()
+        }, { merge: true });
+      } catch (error) {
+        console.error('Could not complete onboarding', error);
+        toast('Saved locally | onboarding cloud sync failed');
+      }
+    };
+
+    window.firebaseDeleteWorkspace = async () => {
+      if (!userDocRef) return;
+      try {
+        await deleteDoc(userDocRef);
+        clearWorkspaceState(false);
+        await signOut(auth);
+      } catch (error) {
+        console.error('Workspace deletion failed', error);
+        toast('Workspace deletion failed');
+      }
+    };
+
+    // Debounce cloud writes so sliders and rapid edits do not create a write
+    // for every tiny interaction. Local storage still updates immediately.
+    window.firebaseCloudSync = (key, value) => {
+      if (!userDocRef) return;
+      const field = key.replace(/^eva_/, '');
+      pendingCloudFields[field] = value;
+      clearTimeout(cloudWriteTimer);
+      cloudWriteTimer = setTimeout(async () => {
+        const payload = {
+          ...pendingCloudFields,
+          email: auth.currentUser?.email || null,
+          updatedAt: serverTimestamp()
+        };
+        pendingCloudFields = {};
+        try {
+          await setDoc(userDocRef, payload, { merge: true });
+        } catch (error) {
+          console.error('Cloud sync failed', error);
+          toast('Saved locally | cloud sync failed');
+        }
+      }, 500);
+    };
+
+    onAuthStateChanged(auth, async user => {
+      loginLoading.style.display = 'none';
+      loginBtn.disabled = false;
+
+      if (!user) {
+        userDocRef = null;
+        loginBtn.style.display = 'inline-flex';
+        window.onCloudSignedOut();
+        return;
+      }
+
+      loginBtn.style.display = 'none';
+      userDocRef = doc(db, 'users', user.uid);
+      let cloudData = null;
+
+      try {
+        const snapshot = await getDoc(userDocRef);
+        if (snapshot.exists()) {
+          cloudData = snapshot.data();
+        } else {
+          await setDoc(userDocRef, {
+            email: user.email || null,
+            displayName: user.displayName || null,
+            onboardingComplete: false,
+            kpis: [], weekly: {}, rocks: [], todos: [], issues: [], vto: {}, settings: {},
+            createdAt: serverTimestamp(),
+            updatedAt: serverTimestamp()
+          });
+        }
+      } catch (error) {
+        console.error('Could not load account data from Firestore', error);
+        toast('Cloud data unavailable | using local data');
+      }
+
+      window.onCloudSignedIn(
+        {
+          name: user.displayName || '',
+          email: user.email || '',
+          picture: user.photoURL || ''
+        },
+        cloudData
+      );
+    });
+  } catch (error) {
+    console.error('Firebase failed to initialize', error);
+    loginLoading.style.display = 'none';
+    loginFallback.style.display = 'block';
+  }
+</script>
+</body>
+</html>
