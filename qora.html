@@ -79,6 +79,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
   ]
 }
+
 </script>
 
 <link rel="apple-touch-icon" href="/images/favicon.png">
@@ -461,14 +462,11 @@ body {
   text-align: center;
 }
 .login-logo-mark { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-bottom: 22px; }
-.login-logo-circle {
-  width: 58px; height: 58px; border-radius: 50%;
-  background: var(--teal);
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0,207,193,0.22);
-}
-.login-logo-circle img { width: 100%; height: 100%; object-fit: cover; }
+.login-brand-logo { width: 168px; max-width: 72%; height: auto; display: block; object-fit: contain; }
+.onboarding-brand-logo { width: 132px; max-width: 42vw; height: auto; display:block; object-fit:contain; }
+.sidebar-brand-logo { width: 142px; max-width: 100%; height: auto; display:block; object-fit:contain; }
+.tool-brand-logo { width: 104px !important; height: auto !important; display:block; object-fit:contain; }
+.preview-brand-logo { width: 118px; max-width:100%; height:auto; display:block; object-fit:contain; }
 .login-title { font-size: 20px; font-weight: 700; color: var(--text); letter-spacing: 0.01em; }
 .login-subtitle { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
 .login-tagline { font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 24px; }
@@ -564,9 +562,67 @@ body {
 .brand-preview-logo img { width:100%; height:100%; object-fit:cover; }
 @media (max-width: 900px) { .settings-grid { grid-template-columns: 1fr; } }
 
+
+
+
+/* QORA OFFICIAL LOGO */
+.sidebar-logo{padding:22px 20px 18px}.sidebar-logo .logo-mark{display:flex;align-items:center;justify-content:flex-start}.sidebar-logo .logo-text,.sidebar-logo .logo-circle{display:none}.login-logo-mark{gap:0;margin-bottom:24px}.tool-overlay-brand{gap:14px}.brand-preview-logo{width:auto;height:auto;border-radius:0;background:transparent;overflow:visible}.brand-preview-logo img{width:118px;height:auto;object-fit:contain}.report-brand img{width:120px;height:auto;object-fit:contain}
+
+/* QORA V1 POLISH */
+:root[data-theme="dark"] {
+  --surface:#171b1e; --surface-card:#22272b; --text:#f5f7f8; --text-secondary:#c5ccd1;
+  --muted:#98a2aa; --light:#77828b; --border:#394147; --border-strong:#4a545c;
+  --teal-light:rgba(0,207,193,.14); --orange-light:rgba(255,98,29,.14);
+  --shadow:0 1px 3px rgba(0,0,0,.34); --shadow-md:0 8px 24px rgba(0,0,0,.32);
+}
+:root[data-theme="dark"] .form-input,:root[data-theme="dark"] .form-select,:root[data-theme="dark"] .form-textarea{background:#1b2024;color:var(--text)}
+:root[data-theme="dark"] .btn-secondary{background:transparent;color:var(--text)}
+.logo-circle{background:none!important;border-radius:0!important;padding:0!important;box-shadow:none!important}
+.logo-circle img{border-radius:0!important}
+.autosave-state{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:6px;min-width:88px}
+.autosave-dot{width:7px;height:7px;border-radius:50%;background:#48bb78}.autosave-state.saving .autosave-dot{background:var(--orange);animation:pulse 1s infinite}.autosave-state.error .autosave-dot{background:#e53e3e}
+@keyframes pulse{50%{opacity:.35}}
+.icon-btn{width:34px;height:34px;padding:0;display:inline-flex;align-items:center;justify-content:center}
+.quarter-hero{background:linear-gradient(135deg,var(--dark),#424a4f);color:#fff;border-radius:16px;padding:24px 26px;margin-bottom:20px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;overflow:hidden;position:relative}
+.quarter-hero:after{content:'';position:absolute;width:220px;height:220px;border-radius:50%;right:-90px;top:-110px;background:rgba(0,207,193,.12)}
+.quarter-hero h2{font-size:24px;margin-bottom:5px}.quarter-hero p{color:rgba(255,255,255,.65);font-size:13px}.quarter-progress{width:150px;height:150px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--teal) var(--quarter-pct,0%),rgba(255,255,255,.1) 0);position:relative;z-index:1}.quarter-progress:after{content:'';position:absolute;inset:12px;background:var(--dark);border-radius:50%}.quarter-progress strong,.quarter-progress span{position:relative;z-index:2;display:block;text-align:center}.quarter-progress strong{font-size:27px}.quarter-progress span{font-size:10px;color:rgba(255,255,255,.58);text-transform:uppercase;letter-spacing:.08em}
+.quick-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.quick-action{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:#fff;padding:8px 12px;border-radius:7px;font:inherit;font-size:12px;cursor:pointer}.quick-action:hover{background:rgba(255,255,255,.14)}
+.activity-list{display:flex;flex-direction:column}.activity-row{display:flex;gap:11px;padding:11px 0;border-bottom:1px solid var(--border)}.activity-row:last-child{border-bottom:0}.activity-icon{width:30px;height:30px;border-radius:8px;background:var(--teal-light);color:var(--teal-dark);display:grid;place-items:center;flex:none}.activity-copy{font-size:12px}.activity-copy strong{display:block;font-size:13px}.activity-time{color:var(--muted);font-size:10px}
+.resource-hub-grid,.report-grid,.sop-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.resource-hub-card,.report-card,.sop-card{background:var(--surface-card);border:1px solid var(--border);border-radius:12px;padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}.resource-hub-card.featured{background:linear-gradient(135deg,var(--orange),#e5571a);color:#fff;border:none}.resource-hub-card.featured p{color:rgba(255,255,255,.78)}.resource-hub-icon{font-size:25px}.resource-hub-card p,.report-card p,.sop-card p{font-size:12px;color:var(--muted);line-height:1.65}.resource-hub-card .btn,.report-card .btn{margin-top:auto;align-self:flex-start}
+.sop-toolbar{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:16px}.sop-search{max-width:320px}.sop-card h3{font-size:14px}.sop-meta{font-size:10px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}.sop-actions{display:flex;gap:6px;margin-top:auto}.sop-body-preview{white-space:pre-wrap;max-height:110px;overflow:hidden;mask-image:linear-gradient(#000 65%,transparent)}
+.tool-overlay{position:fixed;inset:0;background:var(--surface);z-index:1000;display:none;flex-direction:column}.tool-overlay.open{display:flex}.tool-overlay-bar{height:58px;background:var(--dark);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 18px}.tool-overlay-brand{display:flex;align-items:center;gap:10px}.tool-overlay-brand img{width:30px;height:30px;object-fit:contain}.tool-overlay iframe{border:0;flex:1;width:100%;background:#fff}.tool-overlay-actions{display:flex;gap:8px}.tool-overlay-actions .btn{border-color:rgba(255,255,255,.25);color:#fff;background:rgba(255,255,255,.06)}
+.command-palette{position:fixed;inset:0;background:rgba(15,20,23,.58);z-index:1200;display:none;align-items:flex-start;justify-content:center;padding-top:12vh}.command-palette.open{display:flex}.command-box{width:min(620px,calc(100% - 32px));background:var(--surface-card);border:1px solid var(--border);border-radius:14px;box-shadow:0 24px 80px rgba(0,0,0,.28);overflow:hidden}.command-input{width:100%;border:0;border-bottom:1px solid var(--border);padding:18px 20px;background:transparent;color:var(--text);font:inherit;font-size:16px;outline:0}.command-results{max-height:420px;overflow:auto;padding:8px}.command-result{padding:11px 12px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:15px}.command-result:hover{background:var(--teal-light)}.command-result small{color:var(--muted)}
+.report-preview{background:#fff;color:#1a202c;border:1px solid var(--border);border-radius:12px;padding:32px;min-height:480px}.report-brand{display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid var(--teal);padding-bottom:16px;margin-bottom:22px}.report-brand img{width:44px}.report-stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}.report-stat{background:#f7f8fa;border-radius:8px;padding:13px}.report-stat strong{font-size:22px;display:block}.report-section{margin-top:22px}.report-section h3{font-size:14px;border-bottom:1px solid #e2e8f0;padding-bottom:7px;margin-bottom:8px}.report-list{padding-left:18px;font-size:12px}.report-list li{margin:5px 0}
+.undo-bar{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120px);background:var(--dark);color:#fff;padding:11px 14px;border-radius:8px;box-shadow:var(--shadow-md);display:flex;align-items:center;gap:14px;z-index:1300;transition:.25s}.undo-bar.show{transform:translateX(-50%) translateY(0)}.undo-bar button{background:none;border:0;color:var(--teal);font:inherit;font-weight:600;cursor:pointer}
+.mobile-bottom-nav{display:none}
+@media(max-width:900px){.resource-hub-grid,.report-grid,.sop-grid{grid-template-columns:1fr 1fr}.quarter-hero{grid-template-columns:1fr}.quarter-progress{width:110px;height:110px}}
+@media(max-width:700px){.sidebar{transform:translateX(-100%);transition:.25s}.sidebar.mobile-open{transform:translateX(0)}.main{margin-left:0}.content{padding:18px 14px 82px}.topbar{padding:0 14px}.topbar-actions .btn:not(.icon-btn):not(.signout-btn){display:none}.topbar-sub{display:none}.resource-hub-grid,.report-grid,.sop-grid{grid-template-columns:1fr}.report-stat-grid{grid-template-columns:1fr 1fr}.mobile-bottom-nav{position:fixed;left:0;right:0;bottom:0;height:66px;background:var(--surface-card);border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(5,1fr);z-index:90;padding-bottom:env(safe-area-inset-bottom)}.mobile-bottom-nav button{border:0;background:none;color:var(--muted);font:inherit;font-size:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px}.mobile-bottom-nav button span{font-size:18px}.quarter-hero{padding:21px}.settings-grid{grid-template-columns:1fr!important}}
+@media print{.sidebar,.topbar,.mobile-bottom-nav,.btn,.sop-toolbar{display:none!important}.main{margin:0!important}.content{padding:0!important}.section{display:none!important}#sec-reports{display:block!important}.report-grid,.card-header{display:none!important}.report-preview{border:0;padding:0}.report-preview-wrap{display:block!important}body{background:#fff}}
+
+
+/* ─── SPRINT 2: PREMIUM SAAS + OPERATIONS HUB ───────────────────────────── */
+.skip-link{position:fixed;left:12px;top:-60px;z-index:3000;background:var(--teal);color:#102326;padding:10px 14px;border-radius:8px;font-weight:700;transition:.2s}.skip-link:focus{top:12px}
+:focus-visible{outline:3px solid color-mix(in srgb,var(--teal) 70%,white);outline-offset:2px}
+.nav-item,.btn,.tool-card,.resource-hub-card,.report-card,.sop-card,.process-card{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,background .18s ease}
+.tool-card:hover,.resource-hub-card:hover,.report-card:hover,.sop-card:hover,.process-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.dashboard-toolbar{display:flex;justify-content:flex-end;gap:8px;margin:-8px 0 14px;flex-wrap:wrap}
+.widget-shell{position:relative}.widget-drag{cursor:grab;color:var(--muted);font-size:14px;padding:4px 6px}.widget-drag:active{cursor:grabbing}.widget-hidden{display:none!important}.widget-shell.dragging{opacity:.55}.widget-shell.drag-over{outline:2px dashed var(--teal);outline-offset:4px}
+.chart-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:16px}.chart-card{min-height:260px}.chart-wrap{height:190px;position:relative}.chart-wrap svg{width:100%;height:100%;overflow:visible}.chart-axis{stroke:var(--border);stroke-width:1}.chart-line{fill:none;stroke:var(--teal);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.chart-area{fill:color-mix(in srgb,var(--teal) 18%,transparent)}.chart-dot{fill:var(--surface-card);stroke:var(--teal);stroke-width:3}.chart-label{fill:var(--muted);font-size:10px}.donut{width:150px;height:150px;border-radius:50%;display:grid;place-items:center;margin:8px auto;background:conic-gradient(var(--teal) var(--donut-pct),var(--border) 0)}.donut:after{content:'';width:108px;height:108px;background:var(--surface-card);border-radius:50%}.donut-copy{position:absolute;text-align:center}.donut-copy strong{font-size:26px;display:block}.donut-box{position:relative;display:grid;place-items:center;height:185px}
+.process-toolbar,.template-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap}.process-grid,.template-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.process-card,.template-card{background:var(--surface-card);border:1px solid var(--border);border-radius:14px;padding:18px;position:relative}.process-card h3,.template-card h3{font-size:15px;margin:8px 0 5px}.process-meta{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.process-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.process-status{display:inline-flex;align-items:center;gap:6px;font-size:10px;text-transform:uppercase;letter-spacing:.06em;font-weight:700}.process-status:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--muted)}.process-status.active:before{background:var(--teal)}.process-status.review:before{background:var(--orange)}.process-status.archived:before{background:#94a3b8}.process-owner{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:11px}.mini-avatar{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--teal-light);color:var(--teal-dark);font-weight:700}.filter-row{display:flex;gap:8px;flex-wrap:wrap}.filter-chip{border:1px solid var(--border);background:var(--surface-card);color:var(--muted);padding:7px 10px;border-radius:999px;font:inherit;font-size:11px;cursor:pointer}.filter-chip.active{background:var(--teal-light);border-color:var(--teal);color:var(--teal-dark)}
+.sop-card .sop-meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}.sop-meta-item{font-size:10px;color:var(--muted)}.sop-meta-item strong{display:block;color:var(--text);font-size:11px;margin-top:2px}.version-pill{font-size:9px;padding:3px 7px;border-radius:999px;background:var(--surface);border:1px solid var(--border)}
+.template-card{cursor:pointer}.template-icon{width:42px;height:42px;border-radius:10px;background:var(--teal-light);color:var(--teal-dark);display:grid;place-items:center;font-size:20px}.template-card p{color:var(--muted);font-size:12px;line-height:1.55;min-height:56px}.template-list{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:5px}.template-list li{font-size:11px;color:var(--muted)}.template-list li:before{content:'✓';color:var(--teal-dark);font-weight:700;margin-right:7px}
+.command-section-label{padding:9px 12px 5px;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.09em;font-weight:700}.command-result kbd{font:inherit;font-size:9px;border:1px solid var(--border);background:var(--surface);padding:2px 5px;border-radius:4px;color:var(--muted)}
+.report-cover{padding:36px;border-radius:14px;background:linear-gradient(135deg,var(--dark),#41494e);color:#fff;margin-bottom:18px}.report-cover img{width:150px;max-height:60px;object-fit:contain;object-position:left center;margin-bottom:30px}.report-cover h1{font-size:30px;margin-bottom:7px}.report-cover p{color:rgba(255,255,255,.66)}.report-kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}.report-kpi{border:1px solid var(--border);border-radius:10px;padding:13px}.report-kpi strong{display:block;font-size:22px}.report-recommendations{background:var(--teal-light);border-left:4px solid var(--teal);padding:16px;border-radius:0 10px 10px 0;margin-top:18px}.report-recommendations h3{margin-bottom:8px}
+.context-menu{position:fixed;z-index:1500;display:none;min-width:170px;background:var(--surface-card);border:1px solid var(--border);border-radius:10px;box-shadow:var(--shadow-md);padding:6px}.context-menu.open{display:block}.context-menu button{width:100%;border:0;background:transparent;color:var(--text);text-align:left;padding:9px 10px;border-radius:6px;font:inherit;font-size:12px;cursor:pointer}.context-menu button:hover{background:var(--teal-light)}
+.release-banner{display:flex;align-items:center;justify-content:space-between;gap:12px;background:linear-gradient(90deg,var(--teal-light),var(--orange-light));border:1px solid color-mix(in srgb,var(--teal) 28%,var(--border));padding:11px 14px;border-radius:10px;margin-bottom:16px;font-size:12px}.release-banner strong{font-size:12px}.release-banner button{border:0;background:transparent;cursor:pointer;color:var(--muted)}
+@media(max-width:1000px){.process-grid,.template-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.chart-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.process-grid,.template-grid,.report-kpi-grid{grid-template-columns:1fr}.dashboard-toolbar{justify-content:stretch}.dashboard-toolbar .btn{flex:1}.release-banner{align-items:flex-start}}
+@media print{.sidebar,.topbar,.mobile-bottom-nav,.dashboard-toolbar,.release-banner{display:none!important}.main{margin:0!important}.content{padding:0!important}.report-preview-wrap{border:0;box-shadow:none}.report-cover{break-inside:avoid}}
+
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGPT7VMK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
@@ -575,11 +631,7 @@ body {
 <div class="login-screen" id="login-screen">
   <div class="login-card">
     <div class="login-logo-mark">
-      <div class="login-logo-circle"><img src="images/favicon.png" alt="EVA's Consulting logo"></div>
-      <div>
-        <div class="login-title">QORA</div>
-        <div class="login-subtitle">by EVA's Consulting</div>
-      </div>
+      <img class="login-brand-logo" src="images/qora-logo.png" alt="QORA by EVA's Consulting">
     </div>
     <div class="login-tagline">Sign in with Google to open your private QORA workspace. Plan your quarter, track execution, and review results in one structured operating rhythm.</div>
     <div id="login-loading" style="font-size:12px;color:var(--muted);margin-bottom:16px;">Checking sign-in status…</div>
@@ -612,7 +664,7 @@ body {
         <div class="login-title">Welcome to QORA</div>
         <div class="text-sm text-muted" style="margin-top:4px;">Set up your workspace and first 90-day operating cycle.</div>
       </div>
-      <div class="logo-circle"><img src="images/favicon.png" alt="EVA's Consulting logo"></div>
+      <img class="onboarding-brand-logo" src="images/qora-logo.png" alt="QORA by EVA's Consulting">
     </div>
     <div class="onboarding-progress" id="onboarding-progress"><span class="active"></span><span></span><span></span></div>
 
@@ -655,12 +707,8 @@ body {
 <!-- SIDEBAR -->
 <aside class="sidebar">
   <div class="sidebar-logo">
-    <div class="logo-mark">
-      <div class="logo-circle"><img src="images/favicon.png" alt="EVA's Consulting logo"></div>
-      <div class="logo-text">
-        <div class="logo-name">QORA</div>
-        <div class="logo-sub">by EVA's Consulting</div>
-      </div>
+    <div class="logo-mark" style="background:none;border:0;box-shadow:none;width:auto;height:auto;">
+      <img class="sidebar-brand-logo" src="images/qora-logo-white.png" alt="QORA by EVA's Consulting">
     </div>
   </div>
   <nav class="sidebar-nav">
@@ -692,13 +740,12 @@ body {
     <div class="nav-item" onclick="navigate('vto')">
       <span class="nav-icon">◎</span> Vision & Plan
     </div>
-    <div class="nav-section-label">Tools</div>
-    <a class="nav-item" href="process-builder.html" target="_blank" rel="noopener">
-      <span class="nav-icon">⌘</span> Process Builder
-    </a>
-    <a class="nav-item" href="sopstarter.html" target="_blank" rel="noopener">
-      <span class="nav-icon">▤</span> SOP Starter Kit
-    </a>
+    <div class="nav-section-label">Operations Hub</div>
+    <div class="nav-item" onclick="navigate('resources')"><span class="nav-icon">▦</span> Resources</div>
+    <div class="nav-item" onclick="navigate('processes')"><span class="nav-icon">⌘</span> Process Library</div>
+    <div class="nav-item" onclick="navigate('sops')"><span class="nav-icon">▤</span> SOP Library</div>
+    <div class="nav-item" onclick="navigate('reports')"><span class="nav-icon">▥</span> Reports</div>
+    <div class="nav-item" onclick="navigate('templates')"><span class="nav-icon">✦</span> Templates</div>
     <div class="nav-section-label">Workspace</div>
     <div class="nav-item" onclick="navigate('settings')">
       <span class="nav-icon">⚙</span> Settings
@@ -708,13 +755,17 @@ body {
 </aside>
 
 <!-- MAIN -->
-<div class="main">
+<div class="main" id="main-content">
   <div class="topbar">
     <div>
       <div class="topbar-title" id="topbar-title">Dashboard</div>
       <div class="topbar-sub" id="topbar-sub">Weekly pulse | EVA's Consulting</div>
     </div>
     <div class="topbar-actions">
+      <button class="btn btn-secondary btn-sm icon-btn" onclick="toggleMobileSidebar()" aria-label="Open navigation">☰</button>
+      <div class="autosave-state" id="autosave-state"><span class="autosave-dot"></span><span id="autosave-text">Saved</span></div>
+      <button class="btn btn-secondary btn-sm icon-btn" onclick="openCommandPalette()" aria-label="Search">⌕</button>
+      <button class="btn btn-secondary btn-sm icon-btn" onclick="toggleTheme()" id="theme-btn" aria-label="Toggle dark mode">◐</button>
       <div class="user-chip" id="user-chip" style="display:none;">
         <div class="user-avatar" id="user-avatar"></div>
         <div class="user-name" id="user-name"></div>
@@ -730,7 +781,10 @@ body {
 
     <!-- DASHBOARD -->
     <section id="sec-dashboard" class="section active">
-      <div class="grid-4 mb-4" id="dash-stats"></div>
+      <div class="release-banner" id="release-banner"><div><strong>QORA Sprint 2 is live.</strong> Process Library, templates, enhanced reports, charts, and workspace customization are ready.</div><button onclick="dismissReleaseBanner()" aria-label="Dismiss update">✕</button></div>
+      <div class="dashboard-toolbar"><button class="btn btn-secondary btn-sm" onclick="toggleWidgetCustomize()">⚙ Customize dashboard</button><button class="btn btn-secondary btn-sm" onclick="resetDashboardLayout()">Reset layout</button></div>
+      <div class="widget-shell" data-widget="quarter" draggable="false"><div class="quarter-hero" id="quarter-hero"></div></div>
+      <div class="widget-shell" data-widget="stats" draggable="false"><div class="grid-4 mb-4" id="dash-stats"></div></div>
       <div class="grid-2">
         <div class="card">
           <div class="card-header">
@@ -754,6 +808,12 @@ body {
         </div>
         <div class="card-body" id="dash-todos"></div>
       </div>
+      <div class="widget-shell mt-4" data-widget="charts" draggable="false">
+        <div class="chart-grid">
+          <div class="card chart-card"><div class="card-header"><div><div class="card-title">KPI trend</div><div class="card-sub">Last six weeks across tracked metrics</div></div></div><div class="card-body"><div class="chart-wrap" id="kpi-trend-chart"></div></div></div>
+          <div class="card chart-card"><div class="card-header"><div><div class="card-title">Execution health</div><div class="card-sub">Combined priorities and tasks</div></div></div><div class="card-body"><div class="donut-box"><div class="donut" id="execution-donut"></div><div class="donut-copy" id="execution-donut-copy"></div></div></div></div>
+        </div>
+      </div>
       <div class="mt-4">
         <div class="flex items-center justify-between mb-4">
           <div><div class="card-title" style="font-size:15px;">Workspace tools</div><div class="card-sub">Build and document the systems behind your quarterly plan</div></div>
@@ -762,14 +822,18 @@ body {
           <div class="tool-card">
             <div class="tool-card-head"><div class="tool-icon">⌘</div><div><h3>EVA's Process Builder</h3><div class="card-sub">Interactive workflow design</div></div></div>
             <p>Map processes, create decision paths, organize SOP workflows, and export finished diagrams as PDF.</p>
-            <div class="tool-card-actions"><a href="process-builder.html" target="_blank" rel="noopener" class="btn btn-primary">Open Process Builder</a></div>
+            <div class="tool-card-actions"><button class="btn btn-primary" onclick="openEmbeddedTool('process-builder.html','EVA Process Builder')">Open inside QORA</button></div>
           </div>
           <div class="tool-card orange">
             <div class="tool-card-head"><div class="tool-icon">▤</div><div><h3>SOP Starter Kit</h3><div class="card-sub">Documentation resource</div></div></div>
             <p>Use the guide, checklist, blank template, and completed example to turn repeatable work into clear SOPs.</p>
-            <div class="tool-card-actions"><a href="sopstarter.html" target="_blank" rel="noopener" class="btn btn-secondary">Open SOP Starter Kit</a></div>
+            <div class="tool-card-actions"><button class="btn btn-secondary" onclick="openEmbeddedTool('sopstarter.html','SOP Starter Kit')">Open inside QORA</button></div>
           </div>
         </div>
+      </div>
+      <div class="grid-2 mt-4">
+        <div class="card"><div class="card-header"><div><div class="card-title">Recent activity</div><div class="card-sub">Latest workspace changes</div></div></div><div class="card-body activity-list" id="dash-activity"></div></div>
+        <div class="card"><div class="card-header"><div><div class="card-title">This week's focus</div><div class="card-sub">Your highest leverage work</div></div></div><div class="card-body" id="dash-focus"></div></div>
       </div>
     </section>
 
@@ -1020,6 +1084,48 @@ body {
     </section>
 
 
+
+    <!-- RESOURCES -->
+    <section id="sec-resources" class="section">
+      <div class="resource-hub-grid">
+        <article class="resource-hub-card featured"><div class="resource-hub-icon">⌘</div><h2>EVA's Process Builder</h2><p>Build process maps, SOP workflows, and decision trees without leaving QORA.</p><button class="btn" style="background:#fff;color:var(--dark)" onclick="openEmbeddedTool('process-builder.html','EVA Process Builder')">Launch builder</button></article>
+        <article class="resource-hub-card"><div class="resource-hub-icon">▤</div><h2>SOP Starter Kit</h2><p>Open the guide, checklist, blank template, and completed SOP example inside your workspace.</p><button class="btn btn-secondary" onclick="openEmbeddedTool('sopstarter.html','SOP Starter Kit')">Open starter kit</button></article>
+        <article class="resource-hub-card"><div class="resource-hub-icon">▥</div><h2>Executive Reports</h2><p>Generate weekly, KPI, priority, and quarterly reports with EVA's branding.</p><button class="btn btn-secondary" onclick="navigate('reports')">Create report</button></article>
+        <article class="resource-hub-card"><div class="resource-hub-icon">▦</div><h2>SOP Library</h2><p>Create, edit, duplicate, search, print, and export SOPs from one organized library.</p><button class="btn btn-secondary" onclick="navigate('sops')">Open SOP library</button></article>
+        <article class="resource-hub-card"><div class="resource-hub-icon">↗</div><h2>Workspace Sharing</h2><p>Share a portable snapshot, JSON backup, printable report, or email-ready summary.</p><button class="btn btn-secondary" onclick="shareWorkspace()">Share workspace</button></article>
+        <article class="resource-hub-card"><div class="resource-hub-icon">⌕</div><h2>Universal Search</h2><p>Find KPIs, priorities, tasks, issues, SOPs, and pages. Press Ctrl or Cmd + K.</p><button class="btn btn-secondary" onclick="openCommandPalette()">Search QORA</button></article>
+      </div>
+    </section>
+
+    <!-- SOP LIBRARY -->
+    <section id="sec-sops" class="section">
+      <div class="sop-toolbar"><input class="form-input sop-search" id="sop-search" placeholder="Search SOPs..." oninput="renderSops()"><button class="btn btn-primary" onclick="openAddSop()">+ New SOP</button></div>
+      <div class="sop-grid" id="sop-grid"></div>
+    </section>
+
+
+    <!-- PROCESS LIBRARY -->
+    <section id="sec-processes" class="section">
+      <div class="process-toolbar"><div class="filter-row" id="process-filters"><button class="filter-chip active" onclick="setProcessFilter('all',this)">All</button><button class="filter-chip" onclick="setProcessFilter('active',this)">Active</button><button class="filter-chip" onclick="setProcessFilter('review',this)">Needs review</button><button class="filter-chip" onclick="setProcessFilter('archived',this)">Archived</button></div><div class="flex gap-2"><button class="btn btn-secondary" onclick="openEmbeddedTool('process-builder.html','EVA Process Builder')">Open Builder</button><button class="btn btn-primary" onclick="openAddProcess()">+ Add process</button></div></div>
+      <div class="process-grid" id="process-grid"></div>
+    </section>
+
+    <!-- WORKSPACE TEMPLATES -->
+    <section id="sec-templates" class="section">
+      <div class="template-toolbar"><div><div class="card-title" style="font-size:16px">Start with an operating system built for your business</div><div class="card-sub">Templates add recommended KPIs, priorities, SOPs, and processes without replacing existing work.</div></div><button class="btn btn-secondary" onclick="openTemplatePreview('consulting')">Preview EVA template</button></div>
+      <div class="template-grid" id="template-grid"></div>
+    </section>
+
+    <!-- REPORTS -->
+    <section id="sec-reports" class="section">
+      <div class="report-grid mb-4">
+        <article class="report-card"><h3>Weekly Pulse</h3><p>KPIs, open tasks, issues, and priority status for the current week.</p><button class="btn btn-secondary" onclick="generateReport('weekly')">Generate</button></article>
+        <article class="report-card"><h3>Quarterly Executive Summary</h3><p>Quarter progress, priorities, KPI health, wins, and unresolved issues.</p><button class="btn btn-primary" onclick="generateReport('quarterly')">Generate</button></article>
+        <article class="report-card"><h3>KPI Scorecard</h3><p>A clean, printable view of your current weekly metrics and targets.</p><button class="btn btn-secondary" onclick="generateReport('kpi')">Generate</button></article>
+      </div>
+      <div class="card report-preview-wrap"><div class="card-header"><div><div class="card-title" id="report-title">Report preview</div><div class="card-sub">Generate a report above</div></div><div class="flex gap-2"><button class="btn btn-secondary btn-sm" onclick="emailReport()">Email</button><button class="btn btn-primary btn-sm" onclick="window.print()">Print / PDF</button></div></div><div class="card-body"><div class="report-preview" id="report-preview"><div class="empty-state"><div class="empty-icon">▥</div><div class="empty-title">No report generated</div><div class="empty-desc">Choose a report type to create an executive-ready summary.</div></div></div></div></div>
+    </section>
+
     <!-- SETTINGS -->
     <section id="sec-settings" class="section">
       <div class="settings-grid">
@@ -1062,21 +1168,21 @@ body {
         <div>
           <div class="card mb-4">
             <div class="card-header"><div class="card-title">Brand preview</div></div>
-            <div class="card-body"><div class="brand-preview"><div class="brand-preview-logo" id="brand-preview-logo"><img src="images/favicon.png" alt="EVA's Consulting logo"></div><div><div class="font-medium" id="brand-preview-name">Your workspace</div><div class="text-sm text-muted">Powered by QORA</div></div></div></div>
+            <div class="card-body"><div class="brand-preview"><div class="brand-preview-logo" id="brand-preview-logo"><img class="preview-brand-logo" src="images/qora-logo.png" alt="QORA by EVA's Consulting"></div><div><div class="font-medium" id="brand-preview-name">Your workspace</div><div class="text-sm text-muted">Powered by QORA</div></div></div></div>
           </div>
           <div class="card mb-4">
             <div class="card-header"><div><div class="card-title">Share workspace</div><div class="card-sub">Send a portable workspace copy</div></div></div>
             <div class="card-body">
-              <p class="text-sm text-muted" style="margin-bottom:14px;">Share an exported JSON copy through your device's share menu, or download it to send manually.</p>
+              <p class="text-sm text-muted" style="margin-bottom:14px;">Share a portable workspace snapshot, copy the QORA link, or send an executive summary by email.</p>
               <div class="flex gap-2" style="flex-wrap:wrap;"><button class="btn btn-primary" onclick="shareWorkspace()">Share workspace</button><button class="btn btn-secondary" onclick="copyWorkspaceLink()">Copy QORA link</button></div>
-              <p class="share-note">This sends a snapshot, not live collaborative access. The recipient cannot edit your private Firestore workspace.</p>
+              <p class="share-note">Portable sharing works immediately. Live multi-user editing requires the future shared-workspace Firebase migration.</p>
             </div>
           </div>
           <div class="card">
             <div class="card-header"><div class="card-title">Data</div></div>
             <div class="card-body">
               <p class="text-sm text-muted" style="margin-bottom:14px;">Download a JSON backup of your entire QORA workspace.</p>
-              <button class="btn btn-secondary" onclick="exportData()">Download backup</button>
+              <div class="flex gap-2" style="flex-wrap:wrap"><button class="btn btn-secondary" onclick="exportData()">Download JSON</button><button class="btn btn-secondary" onclick="generateReport('quarterly');navigate('reports')">Create PDF report</button><button class="btn btn-secondary" onclick="importData()">Import backup</button></div>
             </div>
           </div>
         </div>
@@ -1086,6 +1192,12 @@ body {
   </div><!-- /content -->
 </div><!-- /main -->
 </div><!-- /app -->
+
+<div class="tool-overlay" id="tool-overlay" aria-hidden="true"><div class="tool-overlay-bar"><div class="tool-overlay-brand"><img class="tool-brand-logo" src="images/qora-logo-white.png" alt="QORA by EVA's Consulting"><div><strong id="tool-overlay-title">QORA Tool</strong></div></div><div class="tool-overlay-actions"><button class="btn btn-sm" onclick="openToolNewTab()">Open new tab</button><button class="btn btn-sm" onclick="closeEmbeddedTool()">Close</button></div></div><iframe id="tool-frame" title="QORA embedded tool"></iframe></div>
+<div class="command-palette" id="command-palette" onclick="closeCommandPalette(event)"><div class="command-box"><input class="command-input" id="command-input" placeholder="Search QORA or type a command..." autocomplete="off" oninput="renderCommandResults()"><div class="command-results" id="command-results"></div></div></div>
+<div class="context-menu" id="context-menu"></div>
+<div class="undo-bar" id="undo-bar"><span id="undo-copy">Item deleted</span><button onclick="undoLastAction()">Undo</button></div>
+<div class="mobile-bottom-nav"><button onclick="navigate('dashboard')"><span>⬡</span>Home</button><button onclick="navigate('scorecard')"><span>◈</span>KPIs</button><button onclick="navigate('rocks')"><span>◆</span>Priorities</button><button onclick="navigate('sops')"><span>▤</span>SOPs</button><button onclick="navigate('resources')"><span>▦</span>Tools</button></div>
 
 <!-- MODALS -->
 <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
@@ -1107,6 +1219,7 @@ const DEFAULT_KPIS = [];
 const DEFAULT_ROCKS = [];
 const DEFAULT_ISSUES = [];
 const DEFAULT_TODOS = [];
+const DEFAULT_SOPS = [];
 
 const L10_AGENDA = [
   { time: '5m', name: 'Segue', desc: 'Good news / personal and professional wins' },
@@ -1123,8 +1236,19 @@ function load(key, def) {
   try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : def; } catch { return def; }
 }
 function save(key, val) {
+  setSaveState('saving');
   try { localStorage.setItem(key, JSON.stringify(val)); } catch {}
   if (window.firebaseCloudSync) window.firebaseCloudSync(key, val);
+  clearTimeout(window.__saveStateTimer);
+  window.__saveStateTimer = setTimeout(() => setSaveState('saved'), 650);
+}
+function setSaveState(state) {
+  const el=document.getElementById('autosave-state'), txt=document.getElementById('autosave-text'); if(!el||!txt)return;
+  el.className='autosave-state'+(state==='saving'?' saving':state==='error'?' error':''); txt.textContent=state==='saving'?'Saving...':state==='error'?'Sync issue':'Saved';
+}
+function logActivity(action, detail) {
+  activityLog.unshift({id:'a_'+Date.now(),action,detail,time:new Date().toISOString()});
+  activityLog=activityLog.slice(0,40); try{localStorage.setItem('eva_activity',JSON.stringify(activityLog))}catch{}
 }
 
 let kpis = load('eva_kpis', DEFAULT_KPIS);
@@ -1135,6 +1259,10 @@ let issues = load('eva_issues', DEFAULT_ISSUES);
 let weekOffset = 0;
 let vtoData = load('eva_vto', {});
 let workspaceSettings = load('eva_settings', {});
+let sops = load('eva_sops', DEFAULT_SOPS);
+let activityLog = load('eva_activity', []);
+let lastUndo = null;
+let currentReportType = null;
 let currentUserProfile = null;
 let onboardingStep = 1;
 
@@ -1189,6 +1317,9 @@ function onCloudSignedIn(user, cloudData) {
     todos = Array.isArray(cloudData.todos) ? cloudData.todos : [];
     issues = Array.isArray(cloudData.issues) ? cloudData.issues : [];
     vtoData = cloudData.vto || {};
+    sops = Array.isArray(cloudData.sops) ? cloudData.sops : [];
+    processes = Array.isArray(cloudData.processes) ? cloudData.processes : [];
+    dashboardPrefs = cloudData.dashboardPrefs || dashboardPrefs;
     workspaceSettings = cloudData.settings || {};
     syncLocalState();
   } else {
@@ -1262,9 +1393,18 @@ const PAGE_TITLES = {
   issues: ['Issues', 'Analyze: identify, discuss, solve'],
   l10: ['Weekly Meeting', 'Execute: 90-minute weekly meeting'],
   vto: ['Vision & Plan', 'Your business blueprint'],
+  resources: ['Operations Hub', 'Processes, SOPs, reports, and sharing'],
+  sops: ['SOP Library', 'Document and maintain repeatable work'],
+  processes: ['Process Library', 'Own, review, and improve core workflows'],
+  templates: ['Workspace Templates', 'Launch faster with an industry-ready operating system'],
+  reports: ['Reports', 'Executive-ready workspace summaries'],
   settings: ['Settings', 'Workspace profile, brand, and data'],
 };
 let currentPage = 'dashboard';
+let processes = JSON.parse(localStorage.getItem('eva_processes') || '[]');
+let dashboardPrefs = JSON.parse(localStorage.getItem('qora_dashboard_prefs') || '{"order":["quarter","stats","charts"],"hidden":[]}');
+let processFilter = 'all';
+let widgetCustomize = false;
 function navigate(page) {
   currentPage = page;
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -1286,11 +1426,19 @@ function renderPage(p) {
   if (p === 'issues') renderIssues();
   if (p === 'l10') renderL10();
   if (p === 'vto') renderVTO();
+  if (p === 'resources') {}
+  if (p === 'sops') renderSops();
+  if (p === 'processes') renderProcesses();
+  if (p === 'templates') renderTemplates();
+  if (p === 'reports' && currentReportType) generateReport(currentReportType);
   if (p === 'settings') renderSettings();
 }
 
 // ─── DASHBOARD ───────────────────────────────────────────────────────────────
 function renderDashboard() {
+  renderQuarterHero();
+  renderDashboardCharts();
+  applyDashboardLayout();
   const wk = getWeekKey(0);
   const wData = weeklyData[wk] || {};
   const kpiConvos = kpis.find(k => k.id === 'qual_convos');
@@ -1354,7 +1502,19 @@ function renderDashboard() {
       </div>
     </div>
   `).join('') || '<div class="empty-state"><div class="empty-desc">All caught up!</div></div>';
+  renderDashboardActivity();
+  renderDashboardFocus();
 }
+
+function renderQuarterHero(){
+  const el=document.getElementById('quarter-hero'); if(!el)return;
+  const q=getQuarterDates(), start=new Date(workspaceSettings.quarterStart||q.start), end=new Date(workspaceSettings.quarterEnd||q.end), now=new Date();
+  const total=Math.max(1,end-start), elapsed=Math.max(0,Math.min(total,now-start)), pct=Math.round(elapsed/total*100);
+  const days=Math.max(0,Math.ceil((end-now)/86400000));
+  el.innerHTML=`<div><div style="font-size:10px;color:var(--teal);text-transform:uppercase;letter-spacing:.1em;font-weight:700">Current Quarter</div><h2>${esc(workspaceSettings.companyName||'Your business')} | ${start.toLocaleDateString('en-US',{month:'short',day:'numeric'})} - ${end.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}</h2><p>${days} days remaining. Keep the team focused on the outcomes that matter most.</p><div class="quick-actions"><button class="quick-action" onclick="openAddRock()">+ Priority</button><button class="quick-action" onclick="openAddKpi()">+ KPI</button><button class="quick-action" onclick="openAddTodo()">+ To-do</button><button class="quick-action" onclick="openAddIssue()">+ Issue</button><button class="quick-action" onclick="openCommandPalette()">⌕ Search</button></div></div><div class="quarter-progress" style="--quarter-pct:${pct}%"><div><strong>${pct}%</strong><span>quarter elapsed</span></div></div>`;
+}
+function renderDashboardActivity(){const el=document.getElementById('dash-activity');if(!el)return;el.innerHTML=activityLog.slice(0,5).map(a=>`<div class="activity-row"><div class="activity-icon">✓</div><div class="activity-copy"><strong>${esc(a.action)}</strong>${esc(a.detail||'')}<div class="activity-time">${new Date(a.time).toLocaleString()}</div></div></div>`).join('')||'<div class="empty-state"><div class="empty-desc">Your latest changes will appear here.</div></div>'}
+function renderDashboardFocus(){const el=document.getElementById('dash-focus');if(!el)return;const rock=rocks.filter(r=>r.status!=='complete').sort((a,b)=>(a.pct||0)-(b.pct||0))[0],todo=todos.filter(t=>!t.done).sort((a,b)=>(a.due||'9999').localeCompare(b.due||'9999'))[0],issue=issues.find(i=>i.status==='open'&&i.priority==='high')||issues.find(i=>i.status==='open');el.innerHTML=[rock&&`<div class="activity-row"><div class="activity-icon">◆</div><div class="activity-copy"><strong>Priority</strong>${esc(rock.title)} | ${rock.pct||0}% complete</div></div>`,todo&&`<div class="activity-row"><div class="activity-icon">◻</div><div class="activity-copy"><strong>Next to-do</strong>${esc(todo.title)}${todo.due?' | due '+todo.due:''}</div></div>`,issue&&`<div class="activity-row"><div class="activity-icon">⚑</div><div class="activity-copy"><strong>Issue to solve</strong>${esc(issue.title)}</div></div>`].filter(Boolean).join('')||'<div class="empty-state"><div class="empty-desc">Add a priority, task, or issue to create your weekly focus.</div></div>'}
 
 // ─── SCORECARD ───────────────────────────────────────────────────────────────
 function renderScorecard() {
@@ -1405,7 +1565,7 @@ function openAddKpi() {
       category: document.getElementById('f-kpi-cat').value,
       target: document.getElementById('f-kpi-target').value ? parseFloat(document.getElementById('f-kpi-target').value) : null
     };
-    kpis.push(newKpi);
+    kpis.push(newKpi); logActivity('KPI added',label);
     save('eva_kpis', kpis);
     closeModalDirect();
     renderScorecard();
@@ -1414,7 +1574,7 @@ function openAddKpi() {
 }
 
 function deleteKpi(id) {
-  kpis = kpis.filter(k => k.id !== id);
+  const item=kpis.find(k=>k.id===id); setUndo('kpi',item); kpis = kpis.filter(k => k.id !== id);
   save('eva_kpis', kpis);
   renderScorecard();
 }
@@ -1484,7 +1644,7 @@ function openAddRock() {
   `, () => {
     const title = document.getElementById('f-rock-title').value.trim();
     if (!title) return toast('Please enter a priority title');
-    rocks.push({ id: 'r_' + Date.now(), title, owner: document.getElementById('f-rock-owner').value, due: document.getElementById('f-rock-due').value, pct: 0, status: document.getElementById('f-rock-status').value });
+    logActivity('Priority added',title); rocks.push({ id: 'r_' + Date.now(), title, owner: document.getElementById('f-rock-owner').value, due: document.getElementById('f-rock-due').value, pct: 0, status: document.getElementById('f-rock-status').value });
     save('eva_rocks', rocks);
     closeModalDirect();
     renderRocks();
@@ -1510,7 +1670,7 @@ function editRock(id) {
 }
 
 function deleteRock(id) {
-  rocks = rocks.filter(r => r.id !== id);
+  const item=rocks.find(r=>r.id===id); setUndo('rock',item); rocks = rocks.filter(r => r.id !== id);
   save('eva_rocks', rocks);
   renderRocks();
   toast('Priority removed');
@@ -1543,7 +1703,7 @@ function toggleTodo(id) {
 }
 
 function deleteTodo(id) {
-  todos = todos.filter(t => t.id !== id);
+  const item=todos.find(t=>t.id===id); setUndo('todo',item); todos = todos.filter(t => t.id !== id);
   save('eva_todos', todos);
   renderTodos();
 }
@@ -1556,7 +1716,7 @@ function openAddTodo() {
   `, () => {
     const title = document.getElementById('f-todo-title').value.trim();
     if (!title) return toast('Please enter a task');
-    todos.push({ id: 't_' + Date.now(), title, owner: document.getElementById('f-todo-owner').value, due: document.getElementById('f-todo-due').value, done: false });
+    logActivity('To-do added',title); todos.push({ id: 't_' + Date.now(), title, owner: document.getElementById('f-todo-owner').value, due: document.getElementById('f-todo-due').value, done: false });
     save('eva_todos', todos);
     closeModalDirect();
     renderTodos();
@@ -1589,7 +1749,7 @@ function toggleIssue(id) {
 }
 
 function deleteIssue(id) {
-  issues = issues.filter(i => i.id !== id);
+  const item=issues.find(i=>i.id===id); setUndo('issue',item); issues = issues.filter(i => i.id !== id);
   save('eva_issues', issues);
   renderIssues();
 }
@@ -1604,7 +1764,7 @@ function openAddIssue() {
   `, () => {
     const title = document.getElementById('f-issue-title').value.trim();
     if (!title) return toast('Please describe the issue');
-    issues.unshift({ id: 'i_' + Date.now(), title, owner: document.getElementById('f-issue-owner').value, priority: document.getElementById('f-issue-priority').value, status: 'open', date: new Date().toISOString().slice(0,10) });
+    logActivity('Issue added',title); issues.unshift({ id: 'i_' + Date.now(), title, owner: document.getElementById('f-issue-owner').value, priority: document.getElementById('f-issue-priority').value, status: 'open', date: new Date().toISOString().slice(0,10) });
     save('eva_issues', issues);
     closeModalDirect();
     renderIssues();
@@ -1713,6 +1873,9 @@ function syncLocalState() {
     localStorage.setItem('eva_todos', JSON.stringify(todos));
     localStorage.setItem('eva_issues', JSON.stringify(issues));
     localStorage.setItem('eva_vto', JSON.stringify(vtoData));
+    localStorage.setItem('eva_sops', JSON.stringify(sops));
+    localStorage.setItem('eva_processes', JSON.stringify(processes));
+    localStorage.setItem('qora_dashboard_prefs', JSON.stringify(dashboardPrefs));
     localStorage.setItem('eva_settings', JSON.stringify(workspaceSettings));
   } catch {}
 }
@@ -1724,6 +1887,9 @@ function clearWorkspaceState(keepSettings = true) {
   todos = [];
   issues = [];
   vtoData = {};
+  sops = [];
+  processes = [];
+  dashboardPrefs = {order:['quarter','stats','charts'],hidden:[]};
   if (!keepSettings) workspaceSettings = {};
   syncLocalState();
 }
@@ -1819,7 +1985,7 @@ function finishOnboarding() {
   save('eva_vto', vtoData);
   save('eva_rocks', rocks);
   if (window.firebaseCompleteOnboarding) window.firebaseCompleteOnboarding({
-    settings: workspaceSettings, kpis, weekly: weeklyData, rocks, todos, issues, vto: vtoData
+    settings: workspaceSettings, kpis, weekly: weeklyData, rocks, todos, issues, vto: vtoData, sops
   });
   document.getElementById('onboarding-screen').classList.remove('open');
   document.getElementById('onboarding-screen').setAttribute('aria-hidden','true');
@@ -1888,7 +2054,7 @@ function resetWorkspace() {
   if (!confirm('Reset all workspace data? Your account and settings will remain.')) return;
   clearWorkspaceState(true);
   save('eva_kpis', kpis); save('eva_weekly', weeklyData); save('eva_rocks', rocks);
-  save('eva_todos', todos); save('eva_issues', issues); save('eva_vto', vtoData);
+  save('eva_todos', todos); save('eva_issues', issues); save('eva_vto', vtoData); save('eva_sops', sops); save('eva_processes', processes);
   renderDashboard();
   toast('Workspace reset');
 }
@@ -1919,6 +2085,8 @@ function closeModalDirect() { document.getElementById('modal-overlay').classList
 
 // ─── UTILS ───────────────────────────────────────────────────────────────────
 function esc(str) { return String(str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function uid(){return 'q_'+Date.now().toString(36)+'_'+Math.random().toString(36).slice(2,8)}
+function formatDate(value){if(!value)return 'today';const d=new Date(value);return Number.isNaN(d.getTime())?String(value):d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'})}
 function toast(msg) {
   const t = document.getElementById('toast');
   t.textContent = '✓  ' + msg;
@@ -1932,6 +2100,9 @@ function saveAll() {
   save('eva_todos', todos);
   save('eva_issues', issues);
   saveVTO();
+  save('eva_sops', sops);
+  save('eva_processes', processes);
+  save('eva_dashboardPrefs', dashboardPrefs);
   toast('All data saved');
 }
 async function shareWorkspace() {
@@ -1945,7 +2116,10 @@ async function shareWorkspace() {
     rocks,
     todos,
     issues,
-    vtoData
+    vtoData,
+    sops,
+    processes,
+    dashboardPrefs
   };
   const json = JSON.stringify(snapshot, null, 2);
   const filename = `qora-workspace-${new Date().toISOString().slice(0,10)}.json`;
@@ -1988,15 +2162,106 @@ async function copyWorkspaceLink() {
 }
 
 function exportData() {
-  const data = { app: 'QORA', version: 1, kpis, weeklyData, rocks, todos, issues, vtoData, workspaceSettings, exportedAt: new Date().toISOString() };
+  const data = { app: 'QORA', version: 2, kpis, weeklyData, rocks, todos, issues, vtoData, sops, workspaceSettings, exportedAt: new Date().toISOString() };
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
   const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'qora-workspace-export.json'; a.click();
   toast('Data exported');
 }
 
+
+// ─── QORA V1 PRODUCTIVITY & OPERATIONS HUB ──────────────────────────────────
+function toggleTheme(){const next=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=next;localStorage.setItem('qora_theme',next);document.getElementById('theme-btn').textContent=next==='dark'?'☀':'◐';toast(next==='dark'?'Dark mode on':'Light mode on')}
+(function initTheme(){const t=localStorage.getItem('qora_theme')||'light';document.documentElement.dataset.theme=t;document.addEventListener('DOMContentLoaded',()=>{if(localStorage.getItem('qora_release_seen')==='2')document.getElementById('release-banner')?.remove();const b=document.getElementById('theme-btn');if(b)b.textContent=t==='dark'?'☀':'◐'})})()
+function toggleMobileSidebar(){document.querySelector('.sidebar')?.classList.toggle('mobile-open')}
+
+let activeToolUrl='';
+function openEmbeddedTool(url,title){activeToolUrl=url;document.getElementById('tool-overlay-title').textContent=title;document.getElementById('tool-frame').src=url;document.getElementById('tool-overlay').classList.add('open');document.getElementById('tool-overlay').setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+function closeEmbeddedTool(){document.getElementById('tool-overlay').classList.remove('open');document.getElementById('tool-frame').src='about:blank';document.body.style.overflow=''}
+function openToolNewTab(){if(activeToolUrl)window.open(activeToolUrl,'_blank','noopener')}
+
+const COMMAND_PAGES=[['Dashboard','dashboard'],['Scorecard','scorecard'],['Priorities','rocks'],['To-Dos','todos'],['Issues','issues'],['Weekly Meeting','l10'],['Vision & Plan','vto'],['Operations Hub','resources'],['SOP Library','sops'],['Process Library','processes'],['Templates','templates'],['Reports','reports'],['Settings','settings']];
+function openCommandPalette(){document.getElementById('command-palette').classList.add('open');const i=document.getElementById('command-input');i.value='';renderCommandResults();setTimeout(()=>i.focus(),30)}
+function closeCommandPalette(e){if(!e||e.target===document.getElementById('command-palette'))document.getElementById('command-palette').classList.remove('open')}
+function commandGo(page){closeCommandPalette();navigate(page)}
+function renderCommandResults(){const q=(document.getElementById('command-input')?.value||'').toLowerCase().trim();let items=COMMAND_PAGES.map(x=>({title:x[0],type:'Page',action:`commandGo('${x[1]}')`}));items.push(...kpis.map(x=>({title:x.label,type:'KPI',action:"commandGo('scorecard')"})),...rocks.map(x=>({title:x.title,type:'Priority',action:"commandGo('rocks')"})),...todos.map(x=>({title:x.title,type:'To-do',action:"commandGo('todos')"})),...issues.map(x=>({title:x.title,type:'Issue',action:"commandGo('issues')"})),...sops.map(x=>({title:x.title,type:'SOP',action:`openEditSop('${x.id}')`})));items=items.filter(x=>!q||x.title.toLowerCase().includes(q)||x.type.toLowerCase().includes(q)).slice(0,18);document.getElementById('command-results').innerHTML=items.map(x=>`<div class="command-result" onclick="${x.action};closeCommandPalette()"><span>${esc(x.title)}</span><small>${x.type}</small></div>`).join('')||'<div class="empty-state"><div class="empty-desc">No matching results</div></div>'}
+document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openCommandPalette()}if(e.key==='Escape'){closeCommandPalette();closeEmbeddedTool()}})
+
+function setUndo(type,item){if(!item)return;lastUndo={type,item};document.getElementById('undo-copy').textContent=`${type.charAt(0).toUpperCase()+type.slice(1)} deleted`;const b=document.getElementById('undo-bar');b.classList.add('show');clearTimeout(window.__undoTimer);window.__undoTimer=setTimeout(()=>{b.classList.remove('show');lastUndo=null},6000)}
+function undoLastAction(){if(!lastUndo)return;const {type,item}=lastUndo;if(type==='kpi'){kpis.push(item);save('eva_kpis',kpis);renderScorecard()}if(type==='rock'){rocks.push(item);save('eva_rocks',rocks);renderRocks()}if(type==='todo'){todos.push(item);save('eva_todos',todos);renderTodos()}if(type==='issue'){issues.push(item);save('eva_issues',issues);renderIssues()}if(type==='sop'){sops.push(item);save('eva_sops',sops);renderSops()}if(type==='process'){processes.push(item);save('eva_processes',processes);renderProcesses()}document.getElementById('undo-bar').classList.remove('show');lastUndo=null;toast('Restored')}
+
+function renderSops(){const grid=document.getElementById('sop-grid');if(!grid)return;const q=(document.getElementById('sop-search')?.value||'').toLowerCase();const list=sops.filter(x=>!q||[x.title,x.category,x.owner,x.body].join(' ').toLowerCase().includes(q));grid.innerHTML=list.length?list.map(x=>`<article class="sop-card"><div class="sop-meta"><span>${esc(x.category||'General')}</span><span>Updated ${new Date(x.updatedAt||x.createdAt).toLocaleDateString()}</span></div><h3>${esc(x.title)}</h3><p class="sop-body-preview">${esc(x.body||'No content yet.')}</p><div class="sop-actions"><button class="btn btn-secondary btn-sm" onclick="openEditSop('${x.id}')">Edit</button><button class="btn btn-ghost btn-sm" onclick="duplicateSop('${x.id}')">Duplicate</button><button class="btn btn-ghost btn-sm" onclick="printSop('${x.id}')">Print</button><button class="btn btn-ghost btn-sm" onclick="deleteSop('${x.id}')">✕</button></div></article>`).join(''):`<div class="empty-state" style="grid-column:1/-1"><div class="empty-icon">▤</div><div class="empty-title">No SOPs yet</div><div class="empty-desc">Document the repeatable work behind your business.</div><button class="btn btn-primary" onclick="openAddSop()">Create your first SOP</button></div>`}
+function sopForm(x={}){return `<div class="grid-2"><div class="form-group"><label class="form-label">SOP title</label><input class="form-input" id="f-sop-title" value="${esc(x.title||'')}"></div><div class="form-group"><label class="form-label">Category</label><input class="form-input" id="f-sop-category" value="${esc(x.category||'Operations')}" placeholder="Operations, Sales, HR..."></div></div><div class="grid-2"><div class="form-group"><label class="form-label">Owner</label><input class="form-input" id="f-sop-owner" value="${esc(x.owner||currentUserProfile?.name||'Owner')}"></div><div class="form-group"><label class="form-label">Status</label><select class="form-select" id="f-sop-status"><option ${x.status==='Draft'?'selected':''}>Draft</option><option ${x.status==='Approved'?'selected':''}>Approved</option><option ${x.status==='Archived'?'selected':''}>Archived</option></select></div></div><div class="form-group"><label class="form-label">Purpose, scope, responsibilities, and steps</label><textarea class="form-textarea" id="f-sop-body" style="min-height:280px" placeholder="Purpose:\n\nScope:\n\nResponsible role:\n\nProcedure:\n1. ...\n\nQuality check:\n">${esc(x.body||'')}</textarea></div>`}
+function openAddSop(){openModal('Create SOP',sopForm(),()=>{const title=document.getElementById('f-sop-title').value.trim();if(!title)return toast('Enter an SOP title');const now=new Date().toISOString();sops.unshift({id:'sop_'+Date.now(),title,category:document.getElementById('f-sop-category').value.trim(),owner:document.getElementById('f-sop-owner').value.trim(),status:document.getElementById('f-sop-status').value,body:document.getElementById('f-sop-body').value,createdAt:now,updatedAt:now});save('eva_sops',sops);logActivity('SOP created',title);closeModalDirect();renderSops();toast('SOP created')})}
+function openEditSop(id){const x=sops.find(s=>s.id===id);if(!x)return;openModal('Edit SOP',sopForm(x),()=>{x.title=document.getElementById('f-sop-title').value.trim();x.category=document.getElementById('f-sop-category').value.trim();x.owner=document.getElementById('f-sop-owner').value.trim();x.status=document.getElementById('f-sop-status').value;x.body=document.getElementById('f-sop-body').value;x.updatedAt=new Date().toISOString();save('eva_sops',sops);logActivity('SOP updated',x.title);closeModalDirect();renderSops();toast('SOP updated')})}
+function duplicateSop(id){const x=sops.find(s=>s.id===id);if(!x)return;const copy={...x,id:'sop_'+Date.now(),title:x.title+' | Copy',createdAt:new Date().toISOString(),updatedAt:new Date().toISOString()};sops.unshift(copy);save('eva_sops',sops);renderSops();toast('SOP duplicated')}
+function deleteSop(id){const item=sops.find(s=>s.id===id);setUndo('sop',item);sops=sops.filter(s=>s.id!==id);save('eva_sops',sops);renderSops()}
+function printSop(id){const x=sops.find(s=>s.id===id);if(!x)return;const w=window.open('','_blank');w.document.write(`<html><head><title>${esc(x.title)}</title><style>body{font-family:Arial;max-width:800px;margin:40px auto;line-height:1.65;color:#2f3437}header{border-bottom:4px solid #00cfc1;padding-bottom:15px}img{width:44px}pre{white-space:pre-wrap;font:inherit}</style></head><body><header><img src="images/favicon.png"><h1>${esc(x.title)}</h1><p>${esc(x.category)} | ${esc(x.status)} | Owner: ${esc(x.owner)}</p></header><pre>${esc(x.body)}</pre></body></html>`);w.document.close();setTimeout(()=>w.print(),250)}
+
+function reportData(){const wk=getWeekKey(0),wd=weeklyData[wk]||{};return{company:workspaceSettings.companyName||'Your Business',date:new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'}),openTodos:todos.filter(t=>!t.done),openIssues:issues.filter(i=>i.status==='open'),activeRocks:rocks.filter(r=>r.status!=='complete'),completeRocks:rocks.filter(r=>r.status==='complete'),kpis:kpis.map(k=>({...k,value:wd[k.id]??'—'}))}}
+function generateReport(type){currentReportType=type;const d=reportData(),title=type==='weekly'?'Weekly Pulse Report':type==='kpi'?'KPI Scorecard Report':'Quarterly Executive Summary';document.getElementById('report-title').textContent=title;const list=(arr,fn)=>arr.length?`<ul class="report-list">${arr.map(x=>`<li>${fn(x)}</li>`).join('')}</ul>`:'<p style="font-size:12px;color:#718096">None recorded.</p>';document.getElementById('report-preview').innerHTML=`<div class="report-brand"><div><div style="font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#00a99d;font-weight:700">QORA by EVA's Consulting</div><h1 style="font-size:25px">${title}</h1><p style="font-size:12px;color:#718096">${esc(d.company)} | ${d.date}</p></div><img src="images/favicon.png" alt="EVA's Consulting"></div><div class="report-stat-grid"><div class="report-stat"><span>Active priorities</span><strong>${d.activeRocks.length}</strong></div><div class="report-stat"><span>Completed priorities</span><strong>${d.completeRocks.length}</strong></div><div class="report-stat"><span>Open to-dos</span><strong>${d.openTodos.length}</strong></div><div class="report-stat"><span>Open issues</span><strong>${d.openIssues.length}</strong></div></div>${type!=='kpi'?`<div class="report-section"><h3>Priority status</h3>${list(d.activeRocks,x=>`${esc(x.title)} | ${x.pct||0}% | ${esc(statusLabel(x.status))}`)}</div><div class="report-section"><h3>Open to-dos</h3>${list(d.openTodos,x=>`${esc(x.title)}${x.due?' | due '+x.due:''}`)}</div><div class="report-section"><h3>Issues requiring attention</h3>${list(d.openIssues,x=>`${esc(x.title)} | ${esc(x.priority)} priority`)}</div>`:''}<div class="report-section"><h3>Current KPI scorecard</h3>${list(d.kpis,x=>`${esc(x.label)}: ${esc(x.value)} / target ${x.target??'not set'}`)}</div><div class="report-section"><h3>Executive note</h3><p style="font-size:12px">Use this report to align the team, identify constraints, and decide the next most important actions.</p></div>`;toast('Report generated')}
+function emailReport(){if(!currentReportType)generateReport('quarterly');const subject=encodeURIComponent(`QORA ${document.getElementById('report-title').textContent} | ${workspaceSettings.companyName||'Workspace'}`),body=encodeURIComponent('I am sharing the latest QORA executive summary. Please open the attached or printed report for the full workspace snapshot.');window.location.href=`mailto:?subject=${subject}&body=${body}`}
+function importData(){const input=document.createElement('input');input.type='file';input.accept='application/json';input.onchange=()=>{const f=input.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(!confirm('Import this QORA backup and replace current workspace data?'))return;kpis=d.kpis||[];weeklyData=d.weeklyData||d.weekly||{};rocks=d.rocks||[];todos=d.todos||[];issues=d.issues||[];vtoData=d.vtoData||d.vto||{};sops=d.sops||[];processes=d.processes||[];dashboardPrefs=d.dashboardPrefs||dashboardPrefs;workspaceSettings=d.workspaceSettings||d.settings||workspaceSettings;saveAll();applyWorkspaceBranding();renderPage(currentPage);toast('Backup imported')}catch(e){toast('Invalid QORA backup')}};r.readAsText(f)};input.click()}
+
 // ─── INIT ────────────────────────────────────────────────────────────────────
 // No call needed here | the Firebase module below drives sign-in state and
 // calls onCloudSignedIn / onCloudSignedOut / devSignIn as appropriate.
+// ─── SPRINT 2: DASHBOARD CHARTS & CUSTOMIZATION ────────────────────────────
+function dismissReleaseBanner(){const b=document.getElementById('release-banner');if(b)b.remove();localStorage.setItem('qora_release_seen','2')}
+function renderDashboardCharts(){
+  const el=document.getElementById('kpi-trend-chart'); if(!el)return;
+  const weeks=[-5,-4,-3,-2,-1,0].map(getWeekKey); const vals=weeks.map(w=>{const wd=weeklyData[w]||{};if(!kpis.length)return 0;return Math.round(kpis.reduce((sum,k)=>sum+(k.target?Math.min(130,(Number(wd[k.id]||0)/Number(k.target))*100):0),0)/kpis.length)});
+  const W=620,H=180,pad=28,max=Math.max(100,...vals);const pts=vals.map((v,i)=>[pad+i*(W-pad*2)/5,H-pad-(v/max)*(H-pad*2)]);const path=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');const area=path+` L ${pts.at(-1)[0]} ${H-pad} L ${pts[0][0]} ${H-pad} Z`;
+  el.innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="KPI performance trend for the last six weeks"><line class="chart-axis" x1="${pad}" y1="${H-pad}" x2="${W-pad}" y2="${H-pad}"/><line class="chart-axis" x1="${pad}" y1="${pad}" x2="${pad}" y2="${H-pad}"/><path class="chart-area" d="${area}"/><path class="chart-line" d="${path}"/>${pts.map((p,i)=>`<circle class="chart-dot" cx="${p[0]}" cy="${p[1]}" r="4"><title>${vals[i]}% | ${weeks[i]}</title></circle><text class="chart-label" x="${p[0]}" y="${H-7}" text-anchor="middle">W${i+1}</text>`).join('')}</svg>`;
+  const done=todos.filter(t=>t.done).length, total=todos.length;const complete=rocks.filter(r=>r.status==='complete').length;const base=total+rocks.length;const pct=base?Math.round((done+complete)/base*100):0;const d=document.getElementById('execution-donut'),copy=document.getElementById('execution-donut-copy');if(d)d.style.setProperty('--donut-pct',pct+'%');if(copy)copy.innerHTML=`<strong>${pct}%</strong><span class="text-sm text-muted">complete</span>`;
+}
+function toggleWidgetCustomize(){widgetCustomize=!widgetCustomize;document.querySelectorAll('.widget-shell').forEach(w=>{w.draggable=widgetCustomize;if(widgetCustomize&&!w.querySelector('.widget-drag')){const h=document.createElement('button');h.className='widget-drag btn btn-ghost btn-sm';h.type='button';h.textContent='⋮⋮ Drag widget';h.setAttribute('aria-label','Drag dashboard widget');w.prepend(h)}else if(!widgetCustomize)w.querySelector('.widget-drag')?.remove()});toast(widgetCustomize?'Dashboard customization enabled':'Dashboard layout saved')}
+function applyDashboardLayout(){const container=document.getElementById('sec-dashboard');if(!container)return;dashboardPrefs.hidden=(dashboardPrefs.hidden||[]);document.querySelectorAll('.widget-shell').forEach(w=>w.classList.toggle('widget-hidden',dashboardPrefs.hidden.includes(w.dataset.widget)));setupWidgetDnD()}
+function setupWidgetDnD(){document.querySelectorAll('.widget-shell').forEach(w=>{w.ondragstart=e=>{if(!widgetCustomize){e.preventDefault();return}w.classList.add('dragging');e.dataTransfer.setData('text/plain',w.dataset.widget)};w.ondragend=()=>{w.classList.remove('dragging');document.querySelectorAll('.widget-shell').forEach(x=>x.classList.remove('drag-over'));saveDashboardOrder()};w.ondragover=e=>{if(widgetCustomize){e.preventDefault();w.classList.add('drag-over')}};w.ondragleave=()=>w.classList.remove('drag-over');w.ondrop=e=>{if(!widgetCustomize)return;e.preventDefault();const id=e.dataTransfer.getData('text/plain'),src=document.querySelector(`[data-widget="${id}"]`);if(src&&src!==w)w.parentNode.insertBefore(src,w);w.classList.remove('drag-over')}})}
+function saveDashboardOrder(){dashboardPrefs.order=[...document.querySelectorAll('#sec-dashboard .widget-shell')].map(x=>x.dataset.widget);localStorage.setItem('qora_dashboard_prefs',JSON.stringify(dashboardPrefs));saveAll()}
+function resetDashboardLayout(){dashboardPrefs={order:['quarter','stats','charts'],hidden:[]};localStorage.setItem('qora_dashboard_prefs',JSON.stringify(dashboardPrefs));location.reload()}
+
+function openRichModal(title,body,footer){document.getElementById('modal-title').textContent=title;document.getElementById('modal-body').innerHTML=body;document.getElementById('modal-footer').innerHTML=footer;modalCallback=null;document.getElementById('modal-overlay').classList.add('open');setTimeout(()=>document.querySelector('#modal-body .form-input')?.focus(),40)}
+
+// ─── PROCESS LIBRARY ────────────────────────────────────────────────────────
+function renderProcesses(){const grid=document.getElementById('process-grid');if(!grid)return;let list=processFilter==='all'?processes:processes.filter(p=>p.status===processFilter);grid.innerHTML=list.length?list.map(p=>`<article class="process-card" oncontextmenu="openProcessContext(event,'${p.id}')"><div class="flex items-center justify-between"><span class="process-status ${esc(p.status||'active')}">${esc((p.status||'active').replace('-',' '))}</span><span class="version-pill">v${esc(p.version||'1.0')}</span></div><h3>${esc(p.title)}</h3><p class="text-sm text-muted">${esc(p.description||'No description yet.')}</p><div class="process-meta"><span class="badge badge-teal">${esc(p.category||'Operations')}</span><span class="badge">Review ${esc(p.reviewDate||'not set')}</span></div><div class="process-owner"><span class="mini-avatar">${esc((p.owner||'U')[0].toUpperCase())}</span>${esc(p.owner||'Unassigned')} · Updated ${formatDate(p.updatedAt||p.createdAt)}</div><div class="process-actions"><button class="btn btn-secondary btn-sm" onclick="openEditProcess('${p.id}')">Edit</button><button class="btn btn-secondary btn-sm" onclick="openEmbeddedTool('process-builder.html','${esc(p.title)}')">Map process</button><button class="btn btn-ghost btn-sm" onclick="duplicateProcess('${p.id}')">Duplicate</button></div></article>`).join(''):`<div class="empty-state" style="grid-column:1/-1"><div class="empty-icon">⌘</div><div class="empty-title">No processes in this view</div><div class="empty-desc">Create a process record or start mapping in EVA's Process Builder.</div><button class="btn btn-primary" onclick="openAddProcess()">Add first process</button></div>`}
+function setProcessFilter(v,btn){processFilter=v;document.querySelectorAll('#process-filters .filter-chip').forEach(x=>x.classList.remove('active'));btn?.classList.add('active');renderProcesses()}
+function processForm(p={}){return `<div class="form-group"><label class="form-label">Process name</label><input class="form-input" id="proc-title" value="${esc(p.title||'')}"></div><div class="form-group"><label class="form-label">Description</label><textarea class="form-textarea" id="proc-desc">${esc(p.description||'')}</textarea></div><div class="grid-2"><div class="form-group"><label class="form-label">Category</label><input class="form-input" id="proc-category" value="${esc(p.category||'Operations')}"></div><div class="form-group"><label class="form-label">Owner</label><input class="form-input" id="proc-owner" value="${esc(p.owner||'')}"></div></div><div class="grid-2"><div class="form-group"><label class="form-label">Status</label><select class="form-select" id="proc-status"><option value="active" ${p.status==='active'?'selected':''}>Active</option><option value="review" ${p.status==='review'?'selected':''}>Needs review</option><option value="archived" ${p.status==='archived'?'selected':''}>Archived</option></select></div><div class="form-group"><label class="form-label">Next review</label><input type="date" class="form-input" id="proc-review" value="${esc(p.reviewDate||'')}"></div></div>`}
+function openAddProcess(){openRichModal('Add process',processForm(),`<button class="btn btn-secondary" onclick="closeModalDirect()">Cancel</button><button class="btn btn-primary" onclick="saveProcess()">Create process</button>`)}
+function openEditProcess(id){const p=processes.find(x=>x.id===id);if(!p)return;openRichModal('Edit process',processForm(p),`<button class="btn btn-danger" onclick="deleteProcess('${id}')">Delete</button><button class="btn btn-primary" onclick="saveProcess('${id}')">Save changes</button>`)}
+function saveProcess(id){const title=document.getElementById('proc-title').value.trim();if(!title){toast('Add a process name');return}const old=processes.find(x=>x.id===id);const item={id:id||uid(),title,description:document.getElementById('proc-desc').value.trim(),category:document.getElementById('proc-category').value.trim()||'Operations',owner:document.getElementById('proc-owner').value.trim()||'Unassigned',status:document.getElementById('proc-status').value,reviewDate:document.getElementById('proc-review').value,version:old?.version||'1.0',createdAt:old?.createdAt||new Date().toISOString(),updatedAt:new Date().toISOString()};if(old)processes=processes.map(x=>x.id===id?item:x);else processes.unshift(item);syncLocalState();saveAll();closeModalDirect();renderProcesses();toast(id?'Process updated':'Process created')}
+function duplicateProcess(id){const p=processes.find(x=>x.id===id);if(!p)return;processes.unshift({...p,id:uid(),title:p.title+' (Copy)',version:'1.0',createdAt:new Date().toISOString(),updatedAt:new Date().toISOString()});syncLocalState();saveAll();renderProcesses();toast('Process duplicated')}
+function deleteProcess(id){const item=processes.find(x=>x.id===id);if(!item)return;processes=processes.filter(x=>x.id!==id);syncLocalState();saveAll();closeModalDirect();renderProcesses();setUndo('process',item)}
+function openProcessContext(e,id){e.preventDefault();const m=document.getElementById('context-menu');m.innerHTML=`<button onclick="openEditProcess('${id}');closeContextMenu()">Edit process</button><button onclick="duplicateProcess('${id}');closeContextMenu()">Duplicate</button><button onclick="deleteProcess('${id}');closeContextMenu()">Delete</button>`;m.style.left=Math.min(e.clientX,innerWidth-190)+'px';m.style.top=Math.min(e.clientY,innerHeight-150)+'px';m.classList.add('open')}
+function closeContextMenu(){document.getElementById('context-menu')?.classList.remove('open')}
+document.addEventListener('click',e=>{if(!e.target.closest('#context-menu'))closeContextMenu()});
+
+// ─── WORKSPACE TEMPLATES ────────────────────────────────────────────────────
+const QORA_TEMPLATES={
+ consulting:{name:"Consulting Business",icon:'◎',description:'A delivery-focused operating system for consultants and small agencies.',features:['Lead generation scorecard','Client delivery priorities','Core SOP starter set'],kpis:[['Qualified conversations',10],['Discovery calls',4],['Proposals sent',3],['New clients',1]],processes:['Lead qualification','Client onboarding','Project delivery','Client offboarding'],sops:['Discovery Call Preparation','Client Onboarding','Weekly Client Update']},
+ realestate:{name:'Real Estate Team',icon:'⌂',description:'Pipeline, client experience, listings, and follow-up for a producing team.',features:['Pipeline activity KPIs','Listing execution priorities','Client follow-up SOPs'],kpis:[['Meaningful conversations',25],['Appointments set',5],['Agreements signed',2],['Closings',1]],processes:['Lead follow-up','Listing launch','Buyer onboarding'],sops:['New Lead Follow-Up','Listing Preparation','Buyer Consultation']},
+ property:{name:'Property Management',icon:'▦',description:'Owner acquisition, onboarding, operations, and guest-ready execution.',features:['Owner pipeline metrics','Property launch workflows','Operational SOPs'],kpis:[['Owner conversations',15],['Property proposals',4],['Properties signed',1],['Properties launched',1]],processes:['Owner acquisition','Property onboarding','Go-live readiness'],sops:['Property Onboarding','Vendor Coordination','Guest Issue Escalation']},
+ agency:{name:'Marketing Agency',icon:'✦',description:'A repeatable rhythm for sales, campaign delivery, and client retention.',features:['Sales and delivery KPIs','Campaign priorities','Approval workflows'],kpis:[['Sales calls',8],['Proposals sent',4],['Campaigns launched',3],['Client retention %',95]],processes:['Campaign kickoff','Creative approval','Monthly reporting'],sops:['Campaign Intake','Creative QA','Monthly Client Report']},
+ startup:{name:'Startup',icon:'△',description:'Focus a small team on traction, product learning, and fast execution.',features:['Growth scorecard','Product priorities','Learning loops'],kpis:[['Activated users',25],['Weekly active users',100],['Customer interviews',5],['Revenue',1000]],processes:['Customer discovery','Feature release','Incident response'],sops:['Weekly Product Review','Release Checklist','Customer Interview']},
+ service:{name:'Local Service Business',icon:'◇',description:'Track leads, jobs, quality, and cash flow with a simple weekly cadence.',features:['Lead and job KPIs','Service quality priorities','Frontline SOPs'],kpis:[['New leads',20],['Jobs booked',10],['Jobs completed',8],['5-star reviews',3]],processes:['Lead intake','Job scheduling','Quality check'],sops:['New Inquiry Response','Job Completion','Review Request']}
+};
+function renderTemplates(){const g=document.getElementById('template-grid');if(!g)return;g.innerHTML=Object.entries(QORA_TEMPLATES).map(([id,t])=>`<article class="template-card" onclick="openTemplatePreview('${id}')"><div class="template-icon">${t.icon}</div><h3>${esc(t.name)}</h3><p>${esc(t.description)}</p><ul class="template-list">${t.features.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><button class="btn btn-primary btn-sm mt-4" onclick="event.stopPropagation();applyTemplate('${id}')">Use template</button></article>`).join('')}
+function openTemplatePreview(id){const t=QORA_TEMPLATES[id];openRichModal(t.name,`<p class="text-muted" style="margin-bottom:16px">${esc(t.description)}</p><div class="grid-2"><div><div class="font-medium mb-2">Suggested KPIs</div>${t.kpis.map(x=>`<div class="activity-row"><div class="activity-icon">◈</div><div class="activity-copy"><strong>${esc(x[0])}</strong><span class="activity-time">Weekly target ${esc(x[1])}</span></div></div>`).join('')}</div><div><div class="font-medium mb-2">Included documentation</div>${[...t.processes,...t.sops].map(x=>`<div class="activity-row"><div class="activity-icon">▤</div><div class="activity-copy"><strong>${esc(x)}</strong><span class="activity-time">Starter record</span></div></div>`).join('')}</div></div>`,`<button class="btn btn-secondary" onclick="closeModalDirect()">Cancel</button><button class="btn btn-primary" onclick="applyTemplate('${id}')">Add to workspace</button>`)}
+function applyTemplate(id){const t=QORA_TEMPLATES[id],now=new Date().toISOString();t.kpis.forEach(([label,target])=>{if(!kpis.some(k=>k.label.toLowerCase()===label.toLowerCase()))kpis.push({id:uid(),label,category:'Template',target,direction:'up'})});t.processes.forEach(title=>{if(!processes.some(p=>p.title===title))processes.push({id:uid(),title,description:`Starter process from the ${t.name} template.`,category:'Template',owner:'Unassigned',status:'active',version:'1.0',createdAt:now,updatedAt:now})});t.sops.forEach(title=>{if(!sops.some(s=>s.title===title))sops.push({id:uid(),title,category:'Template',content:'Purpose\n\nScope\n\nOwner\n\nProcedure\n1. Define the steps for this SOP.\n2. Assign an owner.\n3. Test and review.',owner:'Unassigned',version:'1.0',reviewDate:'',createdAt:now,updatedAt:now})});syncLocalState();saveAll();closeModalDirect();renderTemplates();toast(`${t.name} template added`)}
+
+// Enhance command palette with actions
+const QORA_COMMANDS=[
+ {title:'Create KPI',type:'Command',key:'K',run:()=>openAddKpi()}, {title:'Create priority',type:'Command',key:'P',run:()=>openAddRock()}, {title:'Create SOP',type:'Command',key:'S',run:()=>openAddSop()}, {title:'Create process',type:'Command',key:'R',run:()=>openAddProcess()}, {title:'Generate quarterly report',type:'Command',key:'G',run:()=>{generateReport('quarterly');navigate('reports')}}, {title:'Toggle dark mode',type:'Command',key:'D',run:()=>toggleTheme()}
+];
+const _renderCommandResults=renderCommandResults;
+renderCommandResults=function(){const q=(document.getElementById('command-input')?.value||'').toLowerCase().trim();let commands=QORA_COMMANDS.filter(x=>!q||x.title.toLowerCase().includes(q));let pages=COMMAND_PAGES.map(x=>({title:x[0],type:'Page',run:()=>commandGo(x[1])}));let records=[...kpis.map(x=>({title:x.label,type:'KPI',run:()=>commandGo('scorecard')})),...rocks.map(x=>({title:x.title,type:'Priority',run:()=>commandGo('rocks')})),...todos.map(x=>({title:x.title,type:'To-do',run:()=>commandGo('todos')})),...issues.map(x=>({title:x.title,type:'Issue',run:()=>commandGo('issues')})),...sops.map(x=>({title:x.title,type:'SOP',run:()=>openEditSop(x.id)})),...processes.map(x=>({title:x.title,type:'Process',run:()=>openEditProcess(x.id)}))].filter(x=>!q||x.title.toLowerCase().includes(q)||x.type.toLowerCase().includes(q));pages=pages.filter(x=>!q||x.title.toLowerCase().includes(q));const groups=[['Commands',commands],['Pages',pages],['Workspace',records.slice(0,12)]];const box=document.getElementById('command-results');box.innerHTML=groups.map(([name,items])=>items.length?`<div class="command-section-label">${name}</div>${items.map((x,i)=>`<div class="command-result" data-command-group="${name}" data-command-index="${i}"><span>${esc(x.title)}</span><span>${x.key?`<kbd>${x.key}</kbd>`:`<small>${x.type}</small>`}</span></div>`).join('')}`:'').join('')||'<div class="empty-state"><div class="empty-desc">No matching results</div></div>';[...box.querySelectorAll('.command-result')].forEach(el=>{const group=groups.find(g=>g[0]===el.dataset.commandGroup);el.onclick=()=>{group[1][Number(el.dataset.commandIndex)].run();closeCommandPalette()}})};
+
+// Upgrade generated reports after original renderer runs
+const _generateReport=generateReport;
+generateReport=function(type){_generateReport(type);const preview=document.getElementById('report-preview');if(!preview)return;const title=document.getElementById('report-title')?.textContent||'QORA Report';const health=rocks.length?Math.round(rocks.filter(r=>['on-track','complete'].includes(r.status)).length/rocks.length*100):0;const completion=todos.length?Math.round(todos.filter(t=>t.done).length/todos.length*100):0;const khealth=kpis.length?Math.round(kpis.filter(k=>{const v=Number((weeklyData[getWeekKey(0)]||{})[k.id]||0);return k.direction==='down'?v<=k.target:v>=k.target}).length/kpis.length*100):0;const rec=[];if(khealth<70)rec.push('Review off-track KPIs and assign one corrective action per metric.');if(health<70)rec.push('Reduce or re-scope priorities that are at risk or off track.');if(completion<80)rec.push('Clarify weekly commitments and move blocked tasks into the Issues list.');if(!rec.length)rec.push('Execution health is strong. Preserve focus and document what is working.');preview.innerHTML=`<div class="report-cover"><img src="images/qora-logo-white.png" alt="QORA"><h1>${esc(title)}</h1><p>${esc(workspaceSettings.company||'Your workspace')} · Generated ${new Date().toLocaleDateString()}</p></div><div class="report-kpi-grid"><div class="report-kpi"><span class="text-sm text-muted">KPI health</span><strong>${khealth}%</strong></div><div class="report-kpi"><span class="text-sm text-muted">Priority health</span><strong>${health}%</strong></div><div class="report-kpi"><span class="text-sm text-muted">Task completion</span><strong>${completion}%</strong></div></div>`+preview.innerHTML+`<div class="report-recommendations"><h3>QORA recommendations</h3><ul>${rec.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`}
+
+// Accessibility and keyboard accelerators
+document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&!e.shiftKey){const key=e.key.toLowerCase();if(key==='k'){e.preventDefault();openCommandPalette()}if(key==='s'){e.preventDefault();saveAll()} }if(e.altKey){const map={d:'dashboard',k:'scorecard',p:'rocks',o:'processes',r:'reports'};const page=map[e.key.toLowerCase()];if(page){e.preventDefault();navigate(page)}}if(e.key==='Escape'){closeContextMenu();closeCommandPalette()}});
+
 </script>
 
 <script type="module">
@@ -2141,7 +2406,7 @@ function exportData() {
             email: user.email || null,
             displayName: user.displayName || null,
             onboardingComplete: false,
-            kpis: [], weekly: {}, rocks: [], todos: [], issues: [], vto: {}, settings: {},
+            kpis: [], weekly: {}, rocks: [], todos: [], issues: [], vto: {}, sops: [], processes: [], dashboardPrefs: {}, settings: {},
             createdAt: serverTimestamp(),
             updatedAt: serverTimestamp()
           });
@@ -2165,6 +2430,9 @@ function exportData() {
     loginLoading.style.display = 'none';
     loginFallback.style.display = 'block';
   }
+
+
+
 </script>
 </body>
 </html>
