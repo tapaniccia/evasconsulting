@@ -16,13 +16,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="theme-color" content="#2F3437">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <title>QORA | Quarterly Planning and Business Operating System</title>
-<meta name="description" content="QORA by EVA's Consulting is a free quarterly business operating system for planning priorities, tracking KPIs, solving issues, managing tasks, and running weekly accountability meetings.">
+<meta name="description" content="QORA by EVA's Consulting is a free quarterly business operating system for planning priorities, tracking KPIs, solving issues, managing tasks, building processes, documenting SOPs, and running weekly accountability meetings.">
 <link rel="canonical" href="https://evasconsulting.com/qora.html">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="EVA's Consulting">
 <meta property="og:title" content="QORA | Quarterly Planning and Business Operating System">
-<meta property="og:description" content="Plan your quarter, track priorities and KPIs, solve issues, and run weekly accountability meetings in one structured workspace.">
+<meta property="og:description" content="Plan your quarter, track priorities and KPIs, build processes, document SOPs, and run weekly accountability meetings in one structured workspace.">
 <meta property="og:url" content="https://evasconsulting.com/qora.html">
 <meta property="og:image" content="https://evasconsulting.com/images/social-preview.jpg">
 <meta property="og:image:width" content="1200">
@@ -43,7 +43,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "@id": "https://evasconsulting.com/#organization",
       "name": "EVA's Consulting",
       "url": "https://evasconsulting.com/",
-      "logo": "https://evasconsulting.com/images/logomini.png",
+      "logo": "https://evasconsulting.com/images/favicon.png",
       "email": "services@evasconsulting.com"
     },
     {
@@ -52,7 +52,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "name": "QORA",
       "alternateName": "QORA by EVA's Consulting",
       "url": "https://evasconsulting.com/qora.html",
-      "description": "A quarterly business operating system for planning priorities, tracking KPIs, solving issues, managing tasks, and running weekly accountability meetings.",
+      "description": "A quarterly business operating system for planning priorities, tracking KPIs, solving issues, managing tasks, building processes, documenting SOPs, and running weekly accountability meetings.",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web",
       "browserRequirements": "Requires JavaScript and a modern web browser",
@@ -71,17 +71,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         "Issue tracking",
         "Task management",
         "Weekly meeting agenda",
-        "Vision and business plan"
+        "Vision and business plan",
+        "Process mapping tool",
+        "SOP starter resources",
+        "Workspace sharing and backup"
       ]
     }
   ]
 }
 </script>
 
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/images/favicon.png">
+<link rel="icon" type="image/png" href="/images/favicon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -145,14 +146,11 @@ body {
 }
 
 .logo-circle {
-  width: 34px; height: 34px;
-  background: var(--teal);
-  border-radius: 50%;
+  width: 38px; height: 38px;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
-  overflow: hidden;
 }
-.logo-circle img { width: 100%; height: 100%; object-fit: cover; }
+.logo-circle img { width: 100%; height: 100%; object-fit: contain; }
 
 .logo-text { line-height: 1.2; }
 .logo-name { font-size: 14px; font-weight: 700; color: #fff; letter-spacing: 0.04em; }
@@ -170,7 +168,8 @@ body {
 }
 
 .nav-item {
-  display: flex; align-items: center; gap: 10px;
+  display: flex;
+  text-decoration: none; align-items: center; gap: 10px;
   padding: 8px 18px;
   cursor: pointer;
   color: rgba(255,255,255,0.55);
@@ -543,6 +542,18 @@ body {
 .onboarding-summary-row { display: flex; justify-content: space-between; gap: 20px; padding: 8px 0; border-bottom: 1px solid var(--border); }
 .onboarding-summary-row:last-child { border-bottom: none; }
 
+/* WORKSPACE TOOLS */
+.tools-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.tool-card { display:flex; flex-direction:column; gap:14px; padding:20px; border:1px solid var(--border); border-radius:var(--radius-lg); background:var(--surface-card); box-shadow:var(--shadow); }
+.tool-card-head { display:flex; align-items:center; gap:12px; }
+.tool-icon { width:42px; height:42px; border-radius:10px; display:flex; align-items:center; justify-content:center; background:var(--teal-light); color:var(--teal-dark); font-size:20px; flex-shrink:0; }
+.tool-card.orange .tool-icon { background:var(--orange-light); color:var(--orange-dark); }
+.tool-card h3 { font-size:14px; font-weight:700; }
+.tool-card p { font-size:12px; color:var(--muted); line-height:1.6; flex:1; }
+.tool-card-actions { display:flex; gap:8px; flex-wrap:wrap; }
+.share-note { font-size:11px; color:var(--muted); line-height:1.5; margin-top:10px; }
+@media (max-width: 700px) { .tools-grid { grid-template-columns:1fr; } }
+
 /* SETTINGS */
 .settings-grid { display: grid; grid-template-columns: 1.35fr 0.65fr; gap: 16px; }
 .setting-help { font-size: 11px; color: var(--muted); margin-top: 5px; }
@@ -564,7 +575,7 @@ body {
 <div class="login-screen" id="login-screen">
   <div class="login-card">
     <div class="login-logo-mark">
-      <div class="login-logo-circle"><img src="images/logomini.png" alt="EVA's Consulting logo"></div>
+      <div class="login-logo-circle"><img src="images/favicon.png" alt="EVA's Consulting logo"></div>
       <div>
         <div class="login-title">QORA</div>
         <div class="login-subtitle">by EVA's Consulting</div>
@@ -601,7 +612,7 @@ body {
         <div class="login-title">Welcome to QORA</div>
         <div class="text-sm text-muted" style="margin-top:4px;">Set up your workspace and first 90-day operating cycle.</div>
       </div>
-      <div class="logo-circle"><img src="images/logomini.png" alt="EVA's Consulting logo"></div>
+      <div class="logo-circle"><img src="images/favicon.png" alt="EVA's Consulting logo"></div>
     </div>
     <div class="onboarding-progress" id="onboarding-progress"><span class="active"></span><span></span><span></span></div>
 
@@ -645,7 +656,7 @@ body {
 <aside class="sidebar">
   <div class="sidebar-logo">
     <div class="logo-mark">
-      <div class="logo-circle"><img src="images/logomini.png" alt="EVA's Consulting logo"></div>
+      <div class="logo-circle"><img src="images/favicon.png" alt="EVA's Consulting logo"></div>
       <div class="logo-text">
         <div class="logo-name">QORA</div>
         <div class="logo-sub">by EVA's Consulting</div>
@@ -681,6 +692,13 @@ body {
     <div class="nav-item" onclick="navigate('vto')">
       <span class="nav-icon">◎</span> Vision & Plan
     </div>
+    <div class="nav-section-label">Tools</div>
+    <a class="nav-item" href="process-builder.html" target="_blank" rel="noopener">
+      <span class="nav-icon">⌘</span> Process Builder
+    </a>
+    <a class="nav-item" href="sopstarter.html" target="_blank" rel="noopener">
+      <span class="nav-icon">▤</span> SOP Starter Kit
+    </a>
     <div class="nav-section-label">Workspace</div>
     <div class="nav-item" onclick="navigate('settings')">
       <span class="nav-icon">⚙</span> Settings
@@ -701,6 +719,7 @@ body {
         <div class="user-avatar" id="user-avatar"></div>
         <div class="user-name" id="user-name"></div>
       </div>
+      <button class="btn btn-secondary btn-sm" onclick="shareWorkspace()">↗ Share</button>
       <button class="btn btn-secondary btn-sm" onclick="exportData()">⬇ Export</button>
       <button class="btn btn-primary btn-sm" onclick="saveAll()">Save</button>
       <button class="btn btn-secondary btn-sm signout-btn" id="signout-btn" onclick="signOut()" aria-label="Sign out of QORA"><span aria-hidden="true">↪</span> Sign Out</button>
@@ -734,6 +753,23 @@ body {
           <button class="btn btn-ghost btn-sm" onclick="navigate('todos')">View all →</button>
         </div>
         <div class="card-body" id="dash-todos"></div>
+      </div>
+      <div class="mt-4">
+        <div class="flex items-center justify-between mb-4">
+          <div><div class="card-title" style="font-size:15px;">Workspace tools</div><div class="card-sub">Build and document the systems behind your quarterly plan</div></div>
+        </div>
+        <div class="tools-grid">
+          <div class="tool-card">
+            <div class="tool-card-head"><div class="tool-icon">⌘</div><div><h3>EVA's Process Builder</h3><div class="card-sub">Interactive workflow design</div></div></div>
+            <p>Map processes, create decision paths, organize SOP workflows, and export finished diagrams as PDF.</p>
+            <div class="tool-card-actions"><a href="process-builder.html" target="_blank" rel="noopener" class="btn btn-primary">Open Process Builder</a></div>
+          </div>
+          <div class="tool-card orange">
+            <div class="tool-card-head"><div class="tool-icon">▤</div><div><h3>SOP Starter Kit</h3><div class="card-sub">Documentation resource</div></div></div>
+            <p>Use the guide, checklist, blank template, and completed example to turn repeatable work into clear SOPs.</p>
+            <div class="tool-card-actions"><a href="sopstarter.html" target="_blank" rel="noopener" class="btn btn-secondary">Open SOP Starter Kit</a></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1026,7 +1062,15 @@ body {
         <div>
           <div class="card mb-4">
             <div class="card-header"><div class="card-title">Brand preview</div></div>
-            <div class="card-body"><div class="brand-preview"><div class="brand-preview-logo" id="brand-preview-logo">Q</div><div><div class="font-medium" id="brand-preview-name">Your workspace</div><div class="text-sm text-muted">Powered by QORA</div></div></div></div>
+            <div class="card-body"><div class="brand-preview"><div class="brand-preview-logo" id="brand-preview-logo"><img src="images/favicon.png" alt="EVA's Consulting logo"></div><div><div class="font-medium" id="brand-preview-name">Your workspace</div><div class="text-sm text-muted">Powered by QORA</div></div></div></div>
+          </div>
+          <div class="card mb-4">
+            <div class="card-header"><div><div class="card-title">Share workspace</div><div class="card-sub">Send a portable workspace copy</div></div></div>
+            <div class="card-body">
+              <p class="text-sm text-muted" style="margin-bottom:14px;">Share an exported JSON copy through your device's share menu, or download it to send manually.</p>
+              <div class="flex gap-2" style="flex-wrap:wrap;"><button class="btn btn-primary" onclick="shareWorkspace()">Share workspace</button><button class="btn btn-secondary" onclick="copyWorkspaceLink()">Copy QORA link</button></div>
+              <p class="share-note">This sends a snapshot, not live collaborative access. The recipient cannot edit your private Firestore workspace.</p>
+            </div>
           </div>
           <div class="card">
             <div class="card-header"><div class="card-title">Data</div></div>
@@ -1890,8 +1934,61 @@ function saveAll() {
   saveVTO();
   toast('All data saved');
 }
+async function shareWorkspace() {
+  const snapshot = {
+    app: 'QORA',
+    version: 1,
+    exportedAt: new Date().toISOString(),
+    settings: workspaceSettings,
+    kpis,
+    weeklyData,
+    rocks,
+    todos,
+    issues,
+    vtoData
+  };
+  const json = JSON.stringify(snapshot, null, 2);
+  const filename = `qora-workspace-${new Date().toISOString().slice(0,10)}.json`;
+  const file = new File([json], filename, { type: 'application/json' });
+  const shareData = {
+    title: `${workspaceSettings.companyName || 'My'} QORA workspace`,
+    text: "QORA workspace snapshot from EVA's Consulting.",
+    url: window.location.href
+  };
+  try {
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      await navigator.share({ ...shareData, files: [file] });
+      toast('Workspace shared');
+      return;
+    }
+    if (navigator.share) {
+      await navigator.share(shareData);
+      toast('QORA link shared');
+      return;
+    }
+    exportData();
+    await navigator.clipboard?.writeText(window.location.href);
+    toast('Backup downloaded and QORA link copied');
+  } catch (err) {
+    if (err?.name !== 'AbortError') {
+      console.error(err);
+      exportData();
+      toast('Backup downloaded for sharing');
+    }
+  }
+}
+
+async function copyWorkspaceLink() {
+  try {
+    await navigator.clipboard.writeText(window.location.href);
+    toast('QORA link copied');
+  } catch {
+    toast('Copy failed. Use your browser address bar.');
+  }
+}
+
 function exportData() {
-  const data = { kpis, weeklyData, rocks, todos, issues, vtoData, workspaceSettings, exported: new Date().toISOString() };
+  const data = { app: 'QORA', version: 1, kpis, weeklyData, rocks, todos, issues, vtoData, workspaceSettings, exportedAt: new Date().toISOString() };
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
   const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'qora-workspace-export.json'; a.click();
   toast('Data exported');
