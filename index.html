@@ -227,10 +227,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-weight: 800; line-height: 1.1; letter-spacing: -0.02em;
     color: var(--white); margin-bottom: 24px;
   }
-  .hero-headline .strike {
-    color: var(--orange); position: relative; text-decoration: line-through;
-    text-decoration-color: rgba(255,98,29,0.6);
-  }
   .hero-headline .highlight { color: var(--teal); }
   .hero-sub {
     font-size: 18px; color: rgba(255,255,255,0.65);
@@ -570,6 +566,52 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     box-shadow: 0 18px 48px rgba(255,98,29,0.24);
   }
 
+
+  /* ── QORA ── */
+  .qora-beta-badge {
+    display: inline-flex; align-items: center;
+    padding: 7px 12px; border-radius: 999px;
+    background: rgba(0,207,193,0.14); border: 1px solid rgba(0,207,193,0.32);
+    color: var(--teal); font-size: 11px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; margin-bottom: 18px;
+  }
+  #qora { padding: 110px 0; background: var(--white); }
+  .qora-shell {
+    background: linear-gradient(135deg, #202528 0%, var(--navy) 60%, #394147 100%);
+    border-radius: 22px; padding: 64px; overflow: hidden; position: relative;
+    display: grid; grid-template-columns: minmax(0, 1fr) 1.15fr; gap: 56px; align-items: center;
+  }
+  .qora-shell::before {
+    content: ''; position: absolute; width: 420px; height: 420px; border-radius: 50%;
+    background: rgba(0,207,193,0.10); right: -180px; top: -210px;
+  }
+  .qora-copy, .qora-visual { position: relative; z-index: 1; }
+  .qora-logo { max-width: 230px; width: 60%; height: auto; display: block; margin-bottom: 24px; }
+  .qora-copy h2 { color: var(--white); font-size: clamp(32px, 4vw, 48px); line-height: 1.12; margin-bottom: 18px; }
+  .qora-copy p { color: rgba(255,255,255,0.68); font-size: 16px; line-height: 1.75; margin-bottom: 28px; }
+  .qora-points { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 18px; list-style: none; margin-bottom: 34px; }
+  .qora-points li { color: rgba(255,255,255,0.88); font-size: 14px; font-weight: 600; display:flex; gap:8px; align-items:center; }
+  .qora-points li::before { content: '✓'; color: var(--teal); font-weight: 800; }
+  .qora-actions { display:flex; gap:14px; flex-wrap:wrap; }
+  .qora-visual {
+    background: var(--offwhite); border-radius: 18px; padding: 18px; box-shadow: 0 30px 80px rgba(0,0,0,.28);
+    transform: rotate(1deg);
+  }
+  .qora-window { background: var(--white); border-radius: 12px; overflow: hidden; border:1px solid #e5e7e9; }
+  .qora-window-top { height: 38px; background: #f3f5f6; display:flex; align-items:center; gap:7px; padding:0 14px; border-bottom:1px solid #e3e6e8; }
+  .qora-dot { width:8px; height:8px; border-radius:50%; background:#c9ced2; }
+  .qora-window-body { display:grid; grid-template-columns: 120px 1fr; min-height: 330px; }
+  .qora-sidebar { background: var(--navy); padding:18px 14px; }
+  .qora-mini-logo { width:74px; height:14px; background: var(--white); opacity:.9; border-radius:3px; margin-bottom:24px; }
+  .qora-navline { height:8px; border-radius:999px; background:rgba(255,255,255,.15); margin-bottom:12px; }
+  .qora-navline.active { background:var(--teal); width:76%; }
+  .qora-main { padding:22px; }
+  .qora-main-title { width:46%; height:16px; border-radius:4px; background:var(--navy); margin-bottom:18px; }
+  .qora-stat-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-bottom:16px; }
+  .qora-stat { height:70px; border:1px solid #e3e6e8; border-radius:8px; background:var(--offwhite); }
+  .qora-chart { height:125px; border:1px solid #e3e6e8; border-radius:8px; background:linear-gradient(180deg, rgba(0,207,193,.14), rgba(0,207,193,.02)); position:relative; overflow:hidden; }
+  .qora-chart::after { content:''; position:absolute; left:12px; right:12px; top:62%; height:3px; background:var(--teal); transform:skewY(-7deg); border-radius:10px; }
+
   /* ── TESTIMONIAL ── */
   #testimonial { padding: 100px 0; background: var(--offwhite); }
   .testimonial-inner {
@@ -689,6 +731,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero-card { display: none; }
     .packages-strip { grid-template-columns: 1fr; gap: 28px; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .qora-shell { grid-template-columns: 1fr; }
   }
   @media (max-width: 768px) {
     .nav-links { display: none; }
@@ -713,6 +756,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .ideal-strip { flex-direction: column; align-items: flex-start; gap: 20px; }
     .packages-right { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .qora-shell { padding: 40px 28px; }
+    .qora-points { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
   }
   @media (max-width: 480px) {
@@ -744,8 +789,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
-      <li><a href="#who">Who We Help</a></li>
-      <li><a href="#process">How It Works</a></li>
+      <li><a href="#qora">QORA</a></li>
       <li><a href="#resources">Resources</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="https://calendar.app.google/kbPc9vozRLjeAAYq7" class="nav-cta">Book a Free Call</a></li>
@@ -757,8 +801,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="#services" onclick="toggleMenu()">Services</a>
-  <a href="#who" onclick="toggleMenu()">Who We Help</a>
-  <a href="#process" onclick="toggleMenu()">How It Works</a>
+  <a href="#qora" onclick="toggleMenu()">QORA</a>
   <a href="#resources" onclick="toggleMenu()">Resources</a>
   <a href="about.html" onclick="toggleMenu()">About</a>
   <a href="https://calendar.app.google/kbPc9vozRLjeAAYq7" class="mobile-cta-btn">Book a Free Call</a>
@@ -773,10 +816,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
         <span class="hero-eyebrow">Operations &amp; Business Systems Consulting</span>
         <h1 class="hero-headline">
           Your business is<br>
-          <span class="strike">growing</span> but your<br>
+          <span>growing</span> but your<br>
           operations <span class="highlight">aren't.</span>
         </h1>
-        <p class="hero-sub">We turn operational chaos into clear, scalable systems | so growth doesn't break everything you've built.</p>
+        <p class="hero-sub">We turn operational chaos into clear, scalable systems, and QORA helps you keep those systems running every day.</p>
         <div class="hero-actions">
           <a href="https://calendar.app.google/kbPc9vozRLjeAAYq7" class="btn btn-primary">Book a Free Clarity Call</a>
           <a href="#services" class="btn btn-secondary">See What We Do</a>
@@ -796,7 +839,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
             <div class="hero-stat-icon"><i data-lucide="repeat"></i></div>
             <div class="hero-stat-text">
               <strong>Same questions, every day</strong>
-              We document the answers once | so your team stops asking.
+              We document the answers once, so your team stops asking.
             </div>
           </div>
           <div class="hero-stat-item">
@@ -836,20 +879,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
       <div>
         <div class="truth-box">
           <h3>Your people are fine.<br>Your <em>systems</em> need work.</h3>
-          <p>When a business runs on memory, hustle, and the founder being constantly available | it's not a business, it's a job. And it breaks the moment you try to grow it.</p>
+          <p>When a business runs on memory, hustle, and the founder being constantly available, it is not a business. It is a job. And it breaks the moment you try to grow it.</p>
           <p>Every healthy operation is built on the same three layers. Most businesses are missing at least one.</p>
           <div class="three-layers">
             <div class="layer">
               <div class="layer-num">01</div>
-              <div class="layer-text"><strong>Process</strong> | Defined steps that create clarity</div>
+              <div class="layer-text"><strong>Process</strong>: Defined steps that create clarity</div>
             </div>
             <div class="layer">
               <div class="layer-num">02</div>
-              <div class="layer-text"><strong>People</strong> | Clear roles and responsibilities</div>
+              <div class="layer-text"><strong>People</strong>: Clear roles and responsibilities</div>
             </div>
             <div class="layer">
               <div class="layer-num">03</div>
-              <div class="layer-text"><strong>Tools</strong> | The right systems to scale efficiently</div>
+              <div class="layer-text"><strong>Tools</strong>: The right systems to scale efficiently</div>
             </div>
           </div>
           <a href="https://calendar.app.google/kbPc9vozRLjeAAYq7" class="btn btn-primary" style="width:100%;justify-content:center;">Start With a Free Clarity Call</a>
@@ -877,13 +920,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
       <div class="service-card">
         <div class="service-icon"><i data-lucide="clipboard-list"></i></div>
         <h3>SOP &amp; Process Development</h3>
-        <p>We turn your institutional knowledge into documented, repeatable processes. SOPs, playbooks, training resources | built so new hires can follow them without shadowing you for a month.</p>
+        <p>We turn your institutional knowledge into documented, repeatable processes. SOPs, playbooks, and training resources built so new hires can follow them without shadowing you for a month.</p>
         <span class="service-deliverable">→ Operational Playbook</span>
       </div>
       <div class="service-card">
         <div class="service-icon"><i data-lucide="settings"></i></div>
         <h3>Workflow &amp; Systems Optimization</h3>
-        <p>We analyze where work slows down, stalls, or breaks | and redesign the flow. Accountability structures, technology recommendations, and process redesign so things move without you pushing them.</p>
+        <p>We analyze where work slows down, stalls, or breaks, then redesign the flow. Accountability structures, technology recommendations, and process redesign so things move without you pushing them.</p>
         <span class="service-deliverable">→ Optimized Operating System</span>
       </div>
       <div class="service-card">
@@ -896,19 +939,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
     <div class="packages-strip">
       <div class="packages-left">
         <h3>Ready to start?<br>Packages from $499.</h3>
-        <p>Every engagement starts with a free 20-minute Clarity Call | no commitment, just a clear read on where your operation stands.</p>
+        <p>Every engagement starts with a free 20-minute Clarity Call. There is no commitment, just a clear read on where your operation stands.</p>
         <a href="https://calendar.app.google/kbPc9vozRLjeAAYq7" class="btn btn-primary" style="margin-top:24px;">Book Your Free Call</a>
       </div>
       <div class="packages-right">
         <div class="package-card">
           <div class="package-name">Launch</div>
           <div class="package-price">$499</div>
-          <div class="package-desc">3 sessions | Process map | SOP checklist | Basic KPIs</div>
+          <div class="package-desc">3 sessions, process map, SOP checklist, and basic KPIs</div>
         </div>
         <div class="package-card featured">
           <div class="package-name">Boost</div>
           <div class="package-price">$899</div>
-          <div class="package-desc">5 sessions | Full roadmap | Automation recs | 2 weeks support</div>
+          <div class="package-desc">5 sessions, full roadmap, automation recommendations, and 2 weeks of support</div>
         </div>
       </div>
     </div>
@@ -1003,7 +1046,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
     <div class="process-header">
       <div class="section-eyebrow">How It Works</div>
       <h2 class="section-title">Four steps from chaos to clarity</h2>
-      <p class="section-sub">Every engagement follows the same four-step process | so you always know where you are and what comes next.</p>
+      <p class="section-sub">Every engagement follows the same four-step process, so you always know where you are and what comes next.</p>
     </div>
     <div class="process-steps">
       <div class="step">
@@ -1024,7 +1067,52 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
       <div class="step">
         <div class="step-num">4</div>
         <h3>Implementation Support</h3>
-        <p>SOP creation, workflow design, process mapping, and accountability systems | built and running.</p>
+        <p>SOP creation, workflow design, process mapping, and accountability systems, built and running.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- QORA -->
+<section id="qora" aria-label="QORA business operating system">
+  <div class="container">
+    <div class="qora-shell">
+      <div class="qora-copy">
+        <div class="section-eyebrow">Meet QORA</div>
+        <div class="qora-beta-badge">Beta Access</div>
+        <img src="images/qora-logo-white.png" alt="QORA by EVA's Consulting" class="qora-logo">
+        <h2>Build a business that runs on systems, not memory.</h2>
+        <p>QORA is EVA's Consulting's business operating system, currently available through Beta Access. It is being built to help growing teams turn strategy, processes, and priorities into consistent execution through one focused workspace.</p>
+        <ul class="qora-points">
+          <li>Quarterly execution</li>
+          <li>KPI scorecards</li>
+          <li>Process library</li>
+          <li>SOP management</li>
+          <li>Operations dashboard</li>
+          <li>Executive reports</li>
+        </ul>
+        <div class="qora-actions">
+          <a href="land-qora.html" class="btn btn-primary">Preview QORA</a>
+          <a href="https://calendar.app.google/kbPc9vozRLjeAAYq7" class="btn btn-secondary">Build It With EVA</a>
+        </div>
+      </div>
+      <div class="qora-visual" aria-label="QORA dashboard preview">
+        <div class="qora-window">
+          <div class="qora-window-top"><span class="qora-dot"></span><span class="qora-dot"></span><span class="qora-dot"></span></div>
+          <div class="qora-window-body">
+            <div class="qora-sidebar">
+              <div class="qora-mini-logo"></div>
+              <div class="qora-navline active"></div>
+              <div class="qora-navline"></div><div class="qora-navline"></div><div class="qora-navline"></div><div class="qora-navline"></div>
+            </div>
+            <div class="qora-main">
+              <div class="qora-main-title"></div>
+              <div class="qora-stat-grid"><div class="qora-stat"></div><div class="qora-stat"></div><div class="qora-stat"></div></div>
+              <div class="qora-chart"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1034,51 +1122,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
 <section id="resources" aria-label="Free resources">
   <div class="container">
     <div class="resources-header">
-      <div class="section-eyebrow">Free Resources</div>
+      <div class="section-eyebrow">Free Resources &amp; Tools</div>
       <h2 class="section-title">Start fixing things today</h2>
       <p class="section-sub">Free tools to help you self-diagnose, document your processes, and take your first step toward a more structured operation.</p>
     </div>
     <div class="resources-grid">
       <a href="founder.html" class="resource-card">
-        <div class="resource-type">Assessment | Free Download</div>
+        <div class="resource-type">Assessment, Free Download</div>
         <h3>The Founder Bottleneck Assessment</h3>
-        <p>20 questions across 4 categories to find out how dependent your business really is on you | and where to start fixing it.</p>
+        <p>20 questions across 4 categories to find out how dependent your business really is on you and where to start fixing it.</p>
         <span class="resource-cta">Download Free <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
-      <a href="qora.html" class="resource-card resource-featured">
-  <div class="resource-type">Featured Interactive Tool | Free</div>
-
-  <h3>QORA</h3>
-
-  <p>
-    Plan your quarter, track priorities, review KPIs, manage issues,
-    and run weekly accountability meetings from one operating workspace.
-  </p>
-
-  <span class="resource-cta">
-    Open QORA
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="2.5">
-      <path d="M5 12h14M12 5l7 7-7 7"/>
-    </svg>
-  </span>
-</a>
       <a href="sopstarter.html" class="resource-card">
-        <div class="resource-type">Starter Kit | Free Download</div>
+        <div class="resource-type">Starter Kit, Free Download</div>
         <h3>The SOP Starter Kit</h3>
         <p>A complete bundle: writing guide, documentation checklist, blank template, and a real filled-in example SOP you can model.</p>
         <span class="resource-cta">Download Free <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
       <a href="clarity.html" class="resource-card">
-        <div class="resource-type">Checklist | Free Download</div>
+        <div class="resource-type">Checklist, Free Download</div>
         <h3>The Process Clarity Checklist</h3>
-        <p>25 yes/no questions across 5 categories | Documentation, Delegation, Communication, Tools, Growth Readiness. Takes 10 minutes.</p>
+        <p>25 yes/no questions across 5 categories: Documentation, Delegation, Communication, Tools, and Growth Readiness. Takes 10 minutes.</p>
         <span class="resource-cta">Download Free <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </a>
     
       <a href="process-builder.html" class="resource-card featured-resource">
         <div class="featured-resource-content">
-          <div class="resource-type">Featured Interactive Tool | Free</div>
+          <div class="resource-type">Featured Interactive Tool, Free</div>
           <h3>EVA's Process Builder</h3>
           <p>Design professional process maps, SOP workflows, decision trees, and operational systems directly in your browser. Build visually, organize every step, and export your completed workflow as a PDF.</p>
           <ul class="featured-resource-benefits">
@@ -1102,7 +1172,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
     <div class="testimonial-inner">
       <span class="testimonial-mark" aria-hidden="true">"</span>
       <p class="testimonial-quote">EVA's Consulting helped us build processes, organize our team, and <em>reduce operational chaos by 40% in 60 days.</em></p>
-      <p class="testimonial-source"><strong>Restaurant, Columbus GA</strong> | EVA's Consulting client</p>
+      <p class="testimonial-source"><strong>Restaurant, Columbus GA</strong>, EVA's Consulting client</p>
     </div>
   </div>
 </section>
@@ -1111,12 +1181,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
 <section id="cta" aria-label="Book a call">
   <div class="container">
     <div class="cta-inner">
-      <div class="cta-eyebrow">Get Started</div>
-      <h2>Ready to stop running<br>your business on <span>chaos?</span></h2>
-      <p>Book a free 20-minute Process Clarity Call. We'll identify your biggest bottleneck and tell you exactly what to fix first | no pitch, no obligation.</p>
+      <div class="cta-eyebrow">Choose Your Next Step</div>
+      <h2>Build the systems.<br>Then <span>run them.</span></h2>
+      <p>Work with EVA to design your operation, or explore QORA and start organizing execution on your own.</p>
       <div class="cta-actions">
         <a href="https://calendar.app.google/kbPc9vozRLjeAAYq7" class="btn btn-primary" style="font-size:16px;padding:16px 36px;">Book Your Free Clarity Call</a>
-        <a href="mailto:services@evasconsulting.com" class="btn btn-secondary">Email Us Instead</a>
+        <a href="land-qora.html" class="btn btn-secondary">Preview QORA</a>
       </div>
     </div>
   </div>
@@ -1154,6 +1224,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
           <li><a href="#resources">Founder Bottleneck Assessment</a></li>
           <li><a href="#resources">SOP Starter Kit</a></li>
           <li><a href="#resources">Process Clarity Checklist</a></li>
+          <li><a href="#qora">QORA</a></li>
           <li><a href="https://www.consultingeva.com/blog">Blog</a></li>
         </ul>
       </div>
